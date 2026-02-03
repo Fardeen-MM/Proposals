@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | IRimmigration Inc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Strategy Cards */
+        .strategy-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .strategy-cards { grid-template-columns: 1fr; }
+        }
+
+        .strategy-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .strategy-card-header {
+            padding: 0.7rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .strategy-card:nth-child(1) .strategy-card-header { background: var(--accent-orange); }
+        .strategy-card:nth-child(2) .strategy-card-header { background: var(--accent-blue); }
+
+        .strategy-card-body {
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .strategy-card-body .detail {
+            margin-bottom: 0.4rem;
+        }
+
+        .strategy-card-body .detail strong {
+            color: var(--text-primary);
+        }
+
+        .strategy-card-body .result {
+            font-weight: 600;
+            margin-top: 0.6rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .strategy-card:nth-child(1) .result { color: var(--accent-orange); }
+        .strategy-card:nth-child(2) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        .waived-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        .timeline-item.urgent {
+            border-color: rgba(249, 115, 22, 0.3);
+            background: rgba(249, 115, 22, 0.06);
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" target="_blank" class="nav-cta">Let's Talk →</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal • February 2026</div>
+        <h1>From 2 Retainers to 10+</h1>
+        <p>A lead generation and conversion system you can see, measure, and scale.</p>
+        <p class="hero-client">Prepared for IRimmigration Inc</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Morteza,</div>
+                <p>You told me the truth on our call: <span class="highlight">"We have to survive now."</span> After $400,000+ in refunds, a market that shifted underneath you, and starting over in Canada — you don't need a pitch. You need leads and retainers. Fast.</p>
+                <p>You have <span class="highlight">59 inquiries per month</span>, but 52 of them aren't viable. That's an 88% waste rate. The problem isn't demand — it's that you have no system to generate the <em>right</em> leads, track where they come from, and convert them before someone else does.</p>
+                <p>You also have a deadline. <span class="highlight">February 28th — the Iranian policy extension cutoff.</span> That's 17 days to generate and convert leads for a service only your firm is positioned to offer. We need to start now.</p>
+                <div class="letter-signature">— Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">Lead generation campaigns that fill your pipeline</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You said it: "We don't have leads." That changes immediately. Social media ads put your services in front of people who need them — before they even search.</p>
+                            
+                            <h5>Why Meta ads (not Google):</h5>
+                            <ul>
+                                <li><strong>Cost:</strong> Google immigration keywords are expensive — you're competing with firms spending $10-20K/month. Meta ads generate immigration leads at $4-6 each.</li>
+                                <li><strong>Targeting:</strong> Meta's algorithm knows demographics, behaviour, language, location. We can target Iranians in Ontario, BC, and Quebec directly.</li>
+                                <li><strong>No bidding wars:</strong> Your results aren't affected by competitor budgets. They're based on how good your ad, offer, and intake form are.</li>
+                                <li><strong>Volume:</strong> At $1,000/month, expect 150-200+ leads. That's 4-6x what you're getting now — of people who actually need your services.</li>
+                            </ul>
+
+                            <h5>What we build:</h5>
+                            <ul>
+                                <li><strong>Static + video ads:</strong> Targeted creative in English and Farsi, specific to each service you offer</li>
+                                <li><strong>In-ad lead forms:</strong> Qualifying questions built into the ad itself — no landing page needed, higher conversion rates on mobile</li>
+                                <li><strong>Smart qualification:</strong> Before submitting, leads answer 3-5 questions specific to their case type. This filters out tire-kickers before they ever reach your team.</li>
+                                <li><strong>Multi-service campaigns:</strong> Separate ad sets for policy extensions, PR, and investor immigration — each with its own creative, targeting, and qualification flow</li>
+                            </ul>
+
+                            <h5>Your two-phase campaign strategy:</h5>
+                            <ul>
+                                <li><strong>Phase 1 (Now → Feb 21):</strong> Iranian policy extension campaign. Urgent deadline, niche audience, your firm is perfectly positioned. Full budget here.</li>
+                                <li><strong>Phase 2 (Feb 22 → ongoing):</strong> PR and immigration core campaigns. Temp residents in Canada who want PR — this is your year-round pipeline at $5,000/retainer.</li>
+                            </ul>
+
+                            <p class="stat-callout">Agile Legal generated <strong>168 immigration leads in December at $4.13 each</strong> — same type of leads you need. On a $1,000/month budget, expect similar volume.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">A CRM built around your team's workflow</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You've worked on CRM for three years. But everything changed — your market, your team, your services. We're not patching an old system. We're building a new one around how your firm operates today.</p>
+                            
+                            <h5>Designed for your team:</h5>
+                            <ul>
+                                <li><strong>Morteza:</strong> Bird's-eye view of all leads, pipeline value, and conversion metrics across the firm</li>
+                                <li><strong>Alireza:</strong> Campaign performance, lead source tracking, and strategic oversight</li>
+                                <li><strong>Dr. Zahra:</strong> Lead follow-up tasks, stage-specific responsibilities, and client communication workflows</li>
+                                <li><strong>Iman:</strong> Technical integration, system admin, and automation management</li>
+                            </ul>
+
+                            <h5>Three pipelines, one system:</h5>
+                            <ul>
+                                <li><strong>Sales pipeline:</strong> New lead → Contacted → Qualified → Booked → Proposal sent → Closed won / Closed lost</li>
+                                <li><strong>Onboarding pipeline:</strong> Contract sent → Signed → Payment received → Documents collected → Case started</li>
+                                <li><strong>Active client pipeline:</strong> Case stages specific to each service type, meeting schedules, document tracking, status updates</li>
+                            </ul>
+
+                            <h5>Automations we build:</h5>
+                            <ul>
+                                <li>Lead enters → instant SMS + email + internal notification to the right team member</li>
+                                <li>Stage changes → automated follow-up sequences (email, SMS, WhatsApp templates)</li>
+                                <li>No response after 48 hours → automatic reminder to your team with escalation</li>
+                                <li>Booking confirmed → calendar invite + confirmation + prep instructions to client</li>
+                            </ul>
+
+                            <h5>All your lead sources, one place:</h5>
+                            <ul>
+                                <li>Paid ads → CRM</li>
+                                <li>Website forms → CRM</li>
+                                <li>Phone calls → CRM</li>
+                                <li>Referrals → CRM</li>
+                                <li>Social media DMs → CRM</li>
+                            </ul>
+                            <p>When you convert a retainer, you'll know exactly which channel brought them in. That's how you make smart investment decisions — not guesses.</p>
+
+                            <h5>Training & support:</h5>
+                            <ul>
+                                <li>Custom training for each team member on their specific role</li>
+                                <li>Video walkthroughs and documentation for every process</li>
+                                <li>Direct access to our backend team for ongoing support</li>
+                            </ul>
+
+                            <p class="stat-callout">Of your 59 inquiries this month, you couldn't tell me how many came from phone, website, social, or referral. <strong>After setup, you'll know exactly — and which source converts best.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">Know your exact cost per signed retainer</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Right now you can't tell me what it costs to acquire a client. That means every dollar spent on marketing is a gamble. We turn it into math.</p>
+                            
+                            <h5>What we track (that most agencies don't):</h5>
+                            <ul>
+                                <li><strong>Cost per lead:</strong> How much to get someone to raise their hand</li>
+                                <li><strong>Cost per contact:</strong> How much to actually reach them</li>
+                                <li><strong>Cost per qualified lead:</strong> How much to find someone worth talking to</li>
+                                <li><strong>Cost per booked consultation:</strong> How much to get them on the calendar</li>
+                                <li><strong>Cost per completed consultation:</strong> How much to get them to show up</li>
+                                <li><strong>Cost per signed retainer:</strong> How much to get a paying client</li>
+                            </ul>
+
+                            <h5>How we do it:</h5>
+                            <ul>
+                                <li><strong>Fresh Meta pixel:</strong> Properly configured with all conversion events — not a recycled one from previous campaigns</li>
+                                <li><strong>UTM tracking:</strong> Every ad, every campaign, every audience tagged so we know exactly where each lead came from</li>
+                                <li><strong>CRM integration:</strong> Connected so we see the full journey from click to client</li>
+                                <li><strong>Closed-loop reporting:</strong> When you mark someone as "retained" in the CRM, we trace it back to the exact ad that brought them in</li>
+                            </ul>
+
+                            <h5>Why this matters for your situation:</h5>
+                            <p>Once you know your CPA is $750 and your average retainer is $5,000, the math is simple:</p>
+                            <ul>
+                                <li>Want 2 more clients? Invest $1,500.</li>
+                                <li>Want 5 more clients? Invest $3,750.</li>
+                                <li>Want 10 more clients? Invest $7,500.</li>
+                            </ul>
+                            <p>That's how you go from surviving to scaling — not by spending more and hoping, but by knowing the numbers and turning the dial.</p>
+
+                            <p class="stat-callout">Agile Legal's December CPA was <strong>$672 per retained client</strong>. At $4,500 average retainer, that's a 6.7:1 return on ad spend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Agile Legal — December 2024</h2>
+                <p>Immigration & Business Law • Richmond Hill, ON</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">168</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">$4.13 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">47</div>
+                    <div class="label">Booked</div>
+                    <div class="rate">28%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">43</div>
+                    <div class="label">Showed</div>
+                    <div class="rate">91%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">6</div>
+                    <div class="label">Retainers</div>
+                    <div class="rate">14% close</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$672</div>
+                    <div class="label">CPA</div>
+                    <div class="rate">per client</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$27K</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">in one month</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">6.7x ROI</div>
+                <div class="label">$4,029 invested → $27,000 revenue</div>
+            </div>
+        </section>
+
+        <!-- Campaign Strategy -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Your Campaign Strategy</h2>
+                <p>Two phases — one urgent, one evergreen.</p>
+            </div>
+
+            <div class="strategy-cards">
+                <div class="strategy-card">
+                    <div class="strategy-card-header">
+                        <span>🔥 PHASE 1 — URGENT</span>
+                        <span>Now → Feb 21</span>
+                    </div>
+                    <div class="strategy-card-body">
+                        <div class="detail"><strong>Service:</strong> Iranian Policy Extension</div>
+                        <div class="detail"><strong>Audience:</strong> Iranians in ON, BC, QC</div>
+                        <div class="detail"><strong>Language:</strong> Farsi + English</div>
+                        <div class="detail"><strong>Retainer:</strong> $300-400 each</div>
+                        <div class="detail"><strong>Deadline:</strong> Must apply by Feb 21</div>
+                        <div class="result">Full budget → maximum leads in minimum time</div>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-card-header">
+                        <span>📈 PHASE 2 — CORE</span>
+                        <span>Feb 22 → Ongoing</span>
+                    </div>
+                    <div class="strategy-card-body">
+                        <div class="detail"><strong>Service:</strong> PR Applications</div>
+                        <div class="detail"><strong>Audience:</strong> Temp residents across Canada</div>
+                        <div class="detail"><strong>Language:</strong> English + Farsi</div>
+                        <div class="detail"><strong>Retainer:</strong> $5,000 each</div>
+                        <div class="detail"><strong>Duration:</strong> Year-round pipeline</div>
+                        <div class="result">✔ Your core revenue engine</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>🎯 Why This Sequence</h4>
+                <p>Phase 1 is a sprint — time-sensitive, niche audience, and your firm is uniquely positioned as an Iranian firm serving Iranians. It won't generate large retainers, but it gets leads flowing, injects cash, and builds your pixel data. Phase 2 uses that momentum. The algorithm has learned who converts, your team has practised the system, and now you're generating $5,000 retainers on repeat.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">Full-Funnel Tracking</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies report "cost per lead" and call it a day. That's like a restaurant measuring how many people walked past the door instead of how many paid for dinner.</p>
+                            
+                            <h5>What most agencies track:</h5>
+                            <ul class="muted-list">
+                                <li>Impressions (how many people saw the ad)</li>
+                                <li>Clicks (how many clicked)</li>
+                                <li>Cost per lead (how much to get a form fill)</li>
+                            </ul>
+                            <p>Then they hand you a PDF with pretty graphs and say "we got you 50 leads this month!" But how many of those became clients? They don't know. They don't track that far.</p>
+
+                            <h5>What we track:</h5>
+                            <ul>
+                                <li><strong>Lead → Contact rate:</strong> Did we actually reach them?</li>
+                                <li><strong>Contact → Qualified rate:</strong> Were they worth talking to?</li>
+                                <li><strong>Qualified → Booked rate:</strong> Did they schedule?</li>
+                                <li><strong>Booked → Show rate:</strong> Did they show up?</li>
+                                <li><strong>Show → Close rate:</strong> Did they sign?</li>
+                            </ul>
+
+                            <h5>Why this changes everything:</h5>
+                            <p>When we see your booking rate is 28% but your show rate is only 60%, we know exactly where to focus. Maybe the confirmation sequence needs work. Maybe we need to add reminder texts. Maybe we're booking too far out.</p>
+                            <p>When we see one ad set converts leads to retainers at 15% and another at 5%, we kill the loser and scale the winner — not based on CPL, but on actual client acquisition.</p>
+
+                            <h5>Your weekly report includes:</h5>
+                            <ul>
+                                <li>Leads generated (by source, by campaign, by ad)</li>
+                                <li>Contact rate and best times to reach</li>
+                                <li>Qualification rate and common disqualifiers</li>
+                                <li>Booking rate and drop-off reasons</li>
+                                <li>Show rate and no-show patterns</li>
+                                <li>Close rate and revenue generated</li>
+                                <li>True CPA and ROI</li>
+                            </ul>
+
+                            <p class="stat-callout">This is how we knew Agile Legal's true CPA was $672 — not the $4.13 cost per lead that would've been the only number most agencies reported.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">You Own Everything</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Some agencies build your campaigns in their ad accounts, use their proprietary software, and hold your data hostage. If you leave, you start from zero. You've already had to start over once — we won't put you in that position.</p>
+                            
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>Ad accounts:</strong> Created in YOUR name. Your business manager, your payment method, your login. We get added as a partner — you remain the owner.</li>
+                                <li><strong>Meta pixel:</strong> Installed on your site, in your account. All the conversion data, all the audience learning, all the retargeting pools — yours.</li>
+                                <li><strong>Landing pages:</strong> Built on your domain or a domain we purchase for you and transfer.</li>
+                                <li><strong>Creative assets:</strong> Ad images, videos, copy — all delivered to you in organized folders. Use them however you want.</li>
+                                <li><strong>CRM configurations:</strong> All the automations, pipelines, and workflows we build stay in your account.</li>
+                                <li><strong>Historical data:</strong> Every lead, every call recording, every conversion — exportable and yours.</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <ul>
+                                <li>You keep running the ads yourself (or hire someone else)</li>
+                                <li>You keep the landing pages live</li>
+                                <li>You keep all the pixel data and audiences</li>
+                                <li>You keep every piece of data we collected</li>
+                            </ul>
+                            <p>We remove ourselves as partners from your accounts. That's it. No transition fee, no data ransom, no starting over.</p>
+
+                            <p class="stat-callout">You've already lost a market once. <strong>We'll never put you in a position where you lose your assets too.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Numbers</h4>
+                    <div class="math-row"><span class="label">Inquiries/month</span><span class="value">~59</span></div>
+                    <div class="math-row"><span class="label">Viable leads</span><span class="value">~7</span></div>
+                    <div class="math-row"><span class="label">Retainers signed</span><span class="value">~1-2</span></div>
+                    <div class="math-row"><span class="label">Average retainer (PR)</span><span class="value">$5,000</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Investment</h4>
+                    <div class="math-row"><span class="label">Management fee</span><span class="value">$2,000 CAD/mo</span></div>
+                    <div class="math-row"><span class="label">Min ad spend</span><span class="value">$1,000 CAD/mo</span></div>
+                    <div class="math-row"><span class="label">Total</span><span class="value">$3,000 CAD/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Break-even</span>
+                        <span class="value" style="color: var(--accent-green);">1 retainer</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>+ Retainers</th>
+                        <th>Revenue</th>
+                        <th>Net</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>+1/mo</td>
+                        <td>$5,000</td>
+                        <td class="gain">+$2,000</td>
+                        <td class="gain">67%</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>+3/mo</td>
+                        <td>$15,000</td>
+                        <td class="gain">+$12,000</td>
+                        <td class="gain">400%</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>+6/mo</td>
+                        <td>$30,000</td>
+                        <td class="gain">+$27,000</td>
+                        <td class="gain">900%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>What If It Doesn't Work?</h4>
+                <p>The system shows exactly where leads drop off. <strong>We'll know within 60 days if it's working — if not, pause with no penalties. You keep everything we built.</strong> I told you on the call: if after one month you need to pause, that's okay. No lock-in.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Growth System — Lead Gen + CRM</div>
+                <div class="waived-badge">✔ $500 SETUP FEE WAIVED</div>
+                <div class="pricing-amount">
+                    <span class="currency">$</span>
+                    <span class="value">2,000</span>
+                    <span class="period">CAD/month</span>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">✔</span> Paid media (Meta campaigns)</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Ad creation + management</div>
+                    <div class="pricing-feature"><span class="check">✔</span> In-ad forms + landing pages</div>
+                    <div class="pricing-feature"><span class="check">✔</span> CRM build + automations</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Full-funnel analytics</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Team training + support</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Weekly optimization</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Nurturing sequences</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Additional:</strong> Ad spend min $1,000 CAD/mo (paid directly to Meta) • Total monthly: $3,000 CAD<br><br>
+                    <strong>Setup fee:</strong> $500 CAD — <strong style="color: #10b981;">waived if you confirm by end of day Tuesday, February 4th</strong><br><br>
+                    <strong>Your time:</strong> 2-3 hrs/week during setup, ~1 hr/week ongoing<br><br>
+                    <strong>Terms:</strong> No long-term contract. No lock-in. Pause anytime. You keep everything.<br><br>
+                    <strong>Future add-on:</strong> Voice AI agent ($1,000/mo) — available when lead volume requires automated intake. Not needed now.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>You said "as soon as possible." Here's how we do it.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Feb 4</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Audit + Setup</h4>
+                    <div class="date">Feb 4-5</div>
+                </div>
+                <div class="timeline-item urgent">
+                    <h4>🔥 Phase 1 Live</h4>
+                    <div class="date">Feb 7</div>
+                </div>
+                <div class="timeline-item urgent">
+                    <h4>Policy Ext. Cutoff</h4>
+                    <div class="date">Feb 21</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>📈 Phase 2 Live</h4>
+                    <div class="date">Feb 22</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Review</h4>
+                    <div class="date">Mar 7</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I need to pause after one month?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            That's okay. I told you on the call — I understand your financial situation. If after month one you need to pause, no penalties. You keep everything we built: ad accounts, CRM, landing pages, automations, all data. We can pick back up whenever you're ready.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about Voice AI?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Not needed right now. You need leads first. Once lead volume grows and your team can't keep up with manual follow-up, we add Voice AI to call and qualify leads automatically. It lives on the same CRM — it's a toggle, not a rebuild. We'll add it when you're ready.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will my results match Agile Legal's?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Maybe. Maybe not. Different market, different services, different close rate. The point isn't identical results — it's knowing your numbers and making decisions based on data instead of guessing. Even at 10% conversion of 150 leads, you're looking at 15 viable prospects and multiple retainers per month.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do I need to provide?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Access to your Facebook Business Manager, your website, input on qualification questions for each service, your team's roles and processes, and feedback on lead quality. We handle everything else. Dr. Zahra asked about a CRM demo — we'll walk the whole team through it during setup week.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can we target Iranians specifically?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes. Meta allows targeting by language (Farsi), location (Ontario, BC, Quebec), and behavioural signals. We'll build ads in both Farsi and English to maximize reach within the Iranian community in Canada. Your firm being Iranian-owned is a genuine competitive advantage here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Tomorrow at 2:00pm ET. The Iranian policy deadline won't wait.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" target="_blank" class="cta-button">Book a Call →</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for IRimmigration Inc • February 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
