@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Kinsey Law</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* ROI Box */
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Voice AI */
+        .voice-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .voice-cards { grid-template-columns: 1fr; }
+        }
+
+        .voice-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .voice-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .voice-card:nth-child(1) .voice-card-header { background: var(--accent-blue); }
+        .voice-card:nth-child(2) .voice-card-header { background: var(--accent-orange); }
+        .voice-card:nth-child(3) .voice-card-header { background: var(--accent-green); }
+
+        .voice-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .voice-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .voice-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; February 2026</div>
+        <h1>From Referrals to a Global E2 Pipeline</h1>
+        <p>A client acquisition system you can see, measure, and scale.</p>
+        <p class="hero-client">Prepared for Kinsey Law</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Kyle,</div>
+                <p>You've got <span class="highlight">30 years of immigration experience</span>, a team that speaks <span class="highlight">English, Spanish, Hindi, Urdu, and Gujarati</span>, and a practice that could serve E2 investors from Canada, Germany, the UK, and India. But right now you're getting <span class="highlight">maybe one E2 inquiry a month</span> &mdash; all word of mouth.</p>
+                <p>Your website is a billboard. You have no lead forms, no CRM, no paid advertising. <span class="highlight">You're not losing clients to better lawyers. You're invisible to people who'd hire you tomorrow.</span></p>
+                <p>The system we'll build changes that. Targeted international ads, a dedicated E2 landing page, Voice AI that qualifies and books &mdash; so when you wake up, you don't see "missed call." You see a fully qualified consultation with case details already loaded.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10004;</span>
+                        <span class="accordion-title">Voice AI calls every lead in 60 seconds, 24/7</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">When a Canadian entrepreneur in Toronto submits an E2 inquiry at 9pm their time, that's 8pm in Austin. Your firm is closed. Without a system, that lead calls three other firms by morning.</p>
+                            
+                            <h5>How it works:</h5>
+                            <ul>
+                                <li><strong>Instant trigger:</strong> The moment a lead submits a form, our system fires. Within 60 seconds, they get a call from your Voice AI assistant.</li>
+                                <li><strong>Smart retry logic:</strong> No answer? The system waits 25 hours and tries again at a different time. Then again 25 hours later. Three attempts across three days, three different times &mdash; maximizing the chance of connection.</li>
+                                <li><strong>Parallel SMS + WhatsApp:</strong> While calling, the AI also sends a text and WhatsApp message. For international leads from India, Canada, and Europe &mdash; WhatsApp is often the primary channel. We cover both.</li>
+                                <li><strong>24/7/365:</strong> Leads come in from different time zones at all hours. They get called immediately. No waiting until you check your email.</li>
+                            </ul>
+
+                            <h5>What happens on the call:</h5>
+                            <ul>
+                                <li>AI introduces itself as calling from your firm</li>
+                                <li>Confirms they submitted an inquiry about E2 investor visas</li>
+                                <li>Asks qualifying questions specific to their situation (investment level, timeline, country of origin)</li>
+                                <li>Explains your consultation process</li>
+                                <li>Books directly into your calendar based on real-time availability</li>
+                                <li>Sends confirmation email + calendar invite</li>
+                            </ul>
+
+                            <h5>The difference from your current setup:</h5>
+                            <p>Right now, an inquiry comes through and sits until you or Kizran sees it. Our system qualifies and books while you sleep. When you open your calendar, the consultation is there with complete case details &mdash; no chasing, no phone tag.</p>
+
+                            <p class="stat-callout">Speed-to-lead studies show that calling within 5 minutes makes you <strong>100x more likely</strong> to connect vs. calling after 30 minutes. We call in under 1 minute.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10004;</span>
+                        <span class="accordion-title">Multi-layered qualification filters only serious E2 investors</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You told me you don't mind free consultations &mdash; but you don't want to spend all day educating people for free. This system makes sure that never happens.</p>
+                            
+                            <h5>Layer 1: Quiz funnel on the landing page</h5>
+                            <ul>
+                                <li><strong>Before they even submit their info,</strong> leads answer 8-12 qualifying questions on the landing page</li>
+                                <li><strong>Investment readiness:</strong> "Are you prepared to invest $200,000+ in a US business within the next 12 months?"</li>
+                                <li><strong>Timeline:</strong> "When are you looking to relocate to the United States?"</li>
+                                <li><strong>Treaty country:</strong> Confirms they're from an E2 treaty nation (Canada, Germany, UK, etc.)</li>
+                                <li><strong>Wrong answers = no submission:</strong> If they don't meet your criteria, the form doesn't submit. No wasted time.</li>
+                            </ul>
+
+                            <h5>Layer 2: Voice AI deepens the qualification</h5>
+                            <ul>
+                                <li><strong>Business concept:</strong> Do they have a business plan or existing business to transfer?</li>
+                                <li><strong>Funding source:</strong> Confirms investment capital is accessible and documented</li>
+                                <li><strong>Previous attempts:</strong> Have they already applied or been denied?</li>
+                                <li><strong>Engagement level:</strong> Are they actively ready to hire an attorney, or just researching?</li>
+                            </ul>
+
+                            <h5>Layer 3: You review the transcript</h5>
+                            <ul>
+                                <li>Every call is recorded and transcribed</li>
+                                <li>Listen to the 90-second call before the consultation</li>
+                                <li>You're the final gatekeeper &mdash; if a lead doesn't feel right, delete the appointment</li>
+                                <li>Go into every consultation with full context already in hand</li>
+                            </ul>
+
+                            <p class="stat-callout">Three layers of filtering means every consultation on your calendar represents a <strong>serious, qualified E2 investor</strong> &mdash; not a tire-kicker looking for free advice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10004;</span>
+                        <span class="accordion-title">Know your exact cost per signed retainer</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Right now you have zero visibility. Word of mouth doesn't come with a dashboard. You can't scale what you can't measure.</p>
+                            
+                            <h5>What we track (that most agencies don't):</h5>
+                            <ul>
+                                <li><strong>Cost per lead:</strong> How much to get someone to raise their hand</li>
+                                <li><strong>Cost per contact:</strong> How much to actually reach them</li>
+                                <li><strong>Cost per qualified lead:</strong> How much to find someone worth talking to</li>
+                                <li><strong>Cost per booked consultation:</strong> How much to get them on the calendar</li>
+                                <li><strong>Cost per completed consultation:</strong> How much to get them to show up</li>
+                                <li><strong>Cost per signed retainer:</strong> How much to get a paying client</li>
+                            </ul>
+
+                            <h5>How we do it:</h5>
+                            <ul>
+                                <li><strong>Fresh Meta pixel:</strong> Properly configured with all conversion events from day one</li>
+                                <li><strong>UTM tracking:</strong> Every ad, every campaign, every audience tagged so we know exactly where each lead came from</li>
+                                <li><strong>CRM built for you:</strong> Since you don't have one, we build it &mdash; custom pipeline for E2 cases from first touch to signed retainer</li>
+                                <li><strong>Closed-loop reporting:</strong> When you mark someone as "retained," we trace it back to the exact ad, in the exact country, that brought them in</li>
+                            </ul>
+
+                            <h5>Why this matters for scaling:</h5>
+                            <p>Once you know your CPA is $800 and your average E2 retainer is $8,000, the math is simple:</p>
+                            <ul>
+                                <li>Want 2 more clients? Invest $1,600.</li>
+                                <li>Want 5 more clients? Invest $4,000.</li>
+                                <li>Want to add EB5 to the mix? We know exactly what that costs too.</li>
+                            </ul>
+                            <p>No guessing. No hoping. Just math.</p>
+
+                            <p class="stat-callout">Agile Legal's December CPA was <strong>$672 per retained client</strong>. At $4,500 average retainer, that's a 6.7:1 return on ad spend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Agile Legal &mdash; December 2024</h2>
+                <p>Immigration & Business Law &bull; Richmond Hill, ON</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">168</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">$4.13 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">47</div>
+                    <div class="label">Booked</div>
+                    <div class="rate">28%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">43</div>
+                    <div class="label">Showed</div>
+                    <div class="rate">91%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">6</div>
+                    <div class="label">Retainers</div>
+                    <div class="rate">14% close</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$672</div>
+                    <div class="label">CPA</div>
+                    <div class="rate">per client</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$27K</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">in one month</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">6.7x ROI</div>
+                <div class="label">$4,029 invested &rarr; $27,000 revenue</div>
+            </div>
+        </section>
+
+        <!-- Voice AI -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Voice AI in Action</h2>
+                <p>Kathleen from the demo &mdash; three attempts, three different times, booked on day three.</p>
+            </div>
+
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 1</span><span>2:46pm</span></div>
+                    <div class="voice-card-body">
+                        Lead submits form. AI calls in 60 seconds.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 2</span><span>3:47pm</span></div>
+                    <div class="voice-card-body">
+                        Different time. AI calls again.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 3</span><span>4:54pm</span></div>
+                    <div class="voice-card-body">
+                        Third attempt. AI connects.
+                        <div class="result">&#10004; Qualified + Booked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>&#127919; Built for International E2 Leads</h4>
+                <p>Voice AI asks different qualifying questions based on the lead's country of origin. Canadian leads get E2-specific treaty questions. Indian leads get EB5 investment readiness checks. Each visa type has its own qualification flow &mdash; and every call transcript is available for you to review before the consultation.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10004;</span>
+                        <span class="accordion-title">Full-Funnel Tracking</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies report "cost per lead" and call it a day. That's like a restaurant measuring how many people walked past the door instead of how many paid for dinner.</p>
+                            
+                            <h5>What most agencies track:</h5>
+                            <ul class="muted-list">
+                                <li>Impressions (how many people saw the ad)</li>
+                                <li>Clicks (how many clicked)</li>
+                                <li>Cost per lead (how much to get a form fill)</li>
+                            </ul>
+                            <p>Then they hand you a PDF with pretty graphs and say "we got you 50 leads this month!" But how many of those became clients? They don't know. They don't track that far.</p>
+
+                            <h5>What we track:</h5>
+                            <ul>
+                                <li><strong>Lead &rarr; Contact rate:</strong> Did we actually reach them?</li>
+                                <li><strong>Contact &rarr; Qualified rate:</strong> Were they worth talking to?</li>
+                                <li><strong>Qualified &rarr; Booked rate:</strong> Did they schedule?</li>
+                                <li><strong>Booked &rarr; Show rate:</strong> Did they show up?</li>
+                                <li><strong>Show &rarr; Close rate:</strong> Did they sign?</li>
+                            </ul>
+
+                            <h5>Why this changes everything:</h5>
+                            <p>When we see your booking rate is 28% but your show rate is only 60%, we know exactly where to focus. Maybe the confirmation sequence needs work. Maybe we need to add reminder texts. Maybe we're booking too far out.</p>
+                            <p>When we see Canada converts leads to retainers at 15% but Germany converts at 5%, we shift budget to Canada &mdash; not based on CPL, but on actual client acquisition.</p>
+
+                            <h5>Your weekly report includes:</h5>
+                            <ul>
+                                <li>Leads generated (by country, by campaign, by ad)</li>
+                                <li>Contact rate and best times to reach</li>
+                                <li>Qualification rate and common disqualifiers</li>
+                                <li>Booking rate and drop-off reasons</li>
+                                <li>Show rate and no-show patterns</li>
+                                <li>Close rate and revenue generated</li>
+                                <li>True CPA and ROI</li>
+                            </ul>
+
+                            <p class="stat-callout">This is how we knew Agile Legal's true CPA was $672 &mdash; not the $4.13 cost per lead that would've been the only number most agencies reported.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10004;</span>
+                        <span class="accordion-title">You Own Everything</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Some agencies build your campaigns in their ad accounts, use their proprietary software, and hold your data hostage. If you leave, you start from zero. We don't operate that way.</p>
+                            
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>Ad accounts:</strong> Created in YOUR name. Your business manager, your payment method, your login. We get added as a partner &mdash; you remain the owner.</li>
+                                <li><strong>Meta pixel:</strong> Installed on your site, in your account. All the conversion data, all the audience learning, all the retargeting pools &mdash; yours.</li>
+                                <li><strong>Website &amp; landing pages:</strong> Built on your new E2 domain and transferred to you. Not hosted on our servers with our branding.</li>
+                                <li><strong>Creative assets:</strong> Ad images, videos, copy &mdash; all delivered to you in organized folders. Use them however you want.</li>
+                                <li><strong>Voice AI scripts:</strong> The exact conversation flows, qualification questions, objection handling &mdash; documented and yours.</li>
+                                <li><strong>CRM configurations:</strong> All the automations, pipelines, and workflows we build stay in your account.</li>
+                                <li><strong>Historical data:</strong> Every lead, every call recording, every conversion &mdash; exportable and yours.</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <ul>
+                                <li>You keep running the ads yourself (or hire someone else)</li>
+                                <li>You keep the website and landing pages live</li>
+                                <li>You keep all the pixel data and audiences</li>
+                                <li>You keep the Voice AI scripts (we'll help you set up with another provider)</li>
+                                <li>You keep every piece of data we collected</li>
+                            </ul>
+                            <p>We remove ourselves as partners from your accounts. That's it. No transition fee, no data ransom, no starting over.</p>
+
+                            <h5>Why we do this:</h5>
+                            <p>Because our job is to make the partnership so valuable you'd never want to leave &mdash; not to trap you. If we're not delivering results, you should be able to walk. And if we are delivering, you'll stay because we're making you money, not because you're locked in.</p>
+
+                            <p class="stat-callout">Ask any agency you're comparing: "If I cancel, what do I keep?" Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Numbers</h4>
+                    <div class="math-row"><span class="label">E2 inquiries/month</span><span class="value">~1</span></div>
+                    <div class="math-row"><span class="label">Source</span><span class="value">Word of mouth</span></div>
+                    <div class="math-row"><span class="label">Close rate</span><span class="value">~10%</span></div>
+                    <div class="math-row"><span class="label">Average E2 retainer</span><span class="value">$8,000</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Investment</h4>
+                    <div class="math-row"><span class="label">Management fee</span><span class="value">$3,000 USD/mo</span></div>
+                    <div class="math-row"><span class="label">Min ad spend</span><span class="value">$1,000 USD/mo</span></div>
+                    <div class="math-row"><span class="label">Total</span><span class="value">$4,000 USD/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Break-even</span>
+                        <span class="value" style="color: var(--accent-green);">1 retainer</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Retainers</th>
+                        <th>Revenue</th>
+                        <th>Net</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>1/mo</td>
+                        <td>$8,000</td>
+                        <td class="gain">+$4,000</td>
+                        <td class="gain">100%</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>2/mo</td>
+                        <td>$16,000</td>
+                        <td class="gain">+$12,000</td>
+                        <td class="gain">300%</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>4/mo</td>
+                        <td>$32,000</td>
+                        <td class="gain">+$28,000</td>
+                        <td class="gain">700%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>The Backend Revenue You're Not Counting</h4>
+                <p>Every E2 retainer generates additional revenue over 3-5 years: renewals, EB3 permanent residence applications, labor certifications. <strong>Your total lifetime value per E2 client is ~$20,000.</strong> The numbers above only count the initial retainer.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Full Growth System</div>
+                <div class="pricing-amount">
+                    <span class="currency">$</span>
+                    <span class="value">3,000</span>
+                    <span class="period">USD/month</span>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&#10004;</span> Paid media (Meta)</div>
+                    <div class="pricing-feature"><span class="check">&#10004;</span> Voice AI intake (1,500 min)</div>
+                    <div class="pricing-feature"><span class="check">&#10004;</span> E2 website + landing pages</div>
+                    <div class="pricing-feature"><span class="check">&#10004;</span> CRM build + pipeline</div>
+                    <div class="pricing-feature"><span class="check">&#10004;</span> Full-funnel analytics</div>
+                    <div class="pricing-feature"><span class="check">&#10004;</span> Weekly optimization</div>
+                    <div class="pricing-feature"><span class="check">&#10004;</span> Google Business Profile setup</div>
+                    <div class="pricing-feature"><span class="check">&#10004;</span> WhatsApp Business integration</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Additional:</strong> Ad spend min $1,000 USD/mo &bull; Voice AI overage $0.12/min &bull; Domain + hosting (your purchase, we'll source the cheapest option)<br><br>
+                    <strong>To get started:</strong> 50% deposit ($1,500) to kick off. Remainder ($1,500) due at end of month one. Flexible billing from month two onward.<br><br>
+                    <strong>Your time:</strong> 2-3 hrs/week during setup, ~1 hr/week ongoing<br><br>
+                    <strong>Terms:</strong> No long-term contract. 30 days notice to cancel. You keep everything.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>Get your Meta assets ready now. We build in parallel.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Feb 10-12</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">Feb 12-14</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">Feb 14-21</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Campaigns</h4>
+                    <div class="date">Feb 21-28</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>&#128640; Live</h4>
+                    <div class="date">Mar 1</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Review</h4>
+                    <div class="date">Mar 15</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties. You keep everything &mdash; ad accounts, website, landing pages, Voice AI scripts, CRM, all data.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>I've been discouraged with Meta before. Why will this be different?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Meta's self-serve tools are complicated and not designed for niche international targeting. We manage everything &mdash; creative, audiences, optimization &mdash; and we track all the way to signed retainers, not just clicks. You tried the tool. We run the system.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will my results match Agile Legal's?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Maybe. Maybe not. Different market, different practice area, different countries. The point isn't identical results &mdash; it's knowing your numbers and making decisions based on data instead of guessing.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I add EB5 or other services later?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. Once E2 is converting consistently, we diversify. Add EB5 targeting India with a separate budget, or expand E2 into new countries. Each service gets its own qualification flow, landing page, and campaign. The system scales with you.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do I need to do before we start?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Three things: (1) Set up your Meta business assets &mdash; Facebook page, Instagram account, business manager, ad account. We'll send step-by-step instructions. (2) Purchase your new E2-focused domain. We'll help you find it. (3) Run a small test spend ($30) on Meta to verify the account is active. That's it &mdash; we handle everything else.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why can't I start with less than $1,000/month on ads?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Below $1,000/month ad spend, there's not enough data for the algorithm to learn &mdash; especially when targeting international audiences across different countries. You get inconclusive results and assume ads don't work, when really the system never had enough fuel.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Get your Meta assets set up. We'll handle the rest.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Book a Call &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Kinsey Law &bull; February 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
