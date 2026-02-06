@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Stoy Law</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* ROI Box */
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Voice AI */
+        .voice-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .voice-cards { grid-template-columns: 1fr; }
+        }
+
+        .voice-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .voice-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .voice-card:nth-child(1) .voice-card-header { background: var(--accent-blue); }
+        .voice-card:nth-child(2) .voice-card-header { background: var(--accent-orange); }
+        .voice-card:nth-child(3) .voice-card-header { background: var(--accent-green); }
+
+        .voice-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .voice-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .voice-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; February 2026</div>
+        <h1>From 15 to 25+ Signed Cases</h1>
+        <p>A client acquisition system you can see, measure, and scale.</p>
+        <p class="hero-client">Prepared for Stoy Law</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Lee,</div>
+                <p>You've built something most PI firms never figure out &mdash; a referral network with doctors and chiropractors that delivers <span class="highlight">10&ndash;15 cases a month</span> purely on Chris's reputation and your relationship building. Taking lunch to Texas Injury Clinic and getting a call the next day with a new client? That's real marketing. And a <span class="highlight">4.8-star rating with 373 reviews</span> proves the service backs it up.</p>
+                <p>But you told me the problem: <span class="highlight">when it's hot, it's hot &mdash; when it's cold, it's cold.</span> You can't control referral volume. You've tried to fill the gap &mdash; $15,000/month with Walker, $8,000/month with Seven Figure &mdash; and walked away with broken promises and garbage leads.</p>
+                <p>The issue wasn't lead generation. It was that <span class="highlight">nobody qualified the leads before they hit your phone</span>, and nobody built a system around the fact that you're one person handling every intake, every doctor lunch, every after-hours call.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Voice AI calls every lead in 60 seconds &mdash; your 24/7 safety net</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You said it yourself: you take calls at all hours, you jump on every lead immediately. That works at 15 cases a month. At 25+, you'll lose your mind &mdash; or lose leads. The Voice AI catches what you can't.</p>
+                            
+                            <h5>How it works:</h5>
+                            <ul>
+                                <li><strong>Instant trigger:</strong> The moment a lead submits a form, the system fires. Within 60 seconds, they get a call from your Voice AI assistant.</li>
+                                <li><strong>Smart retry logic:</strong> No answer? The system waits 25 hours and tries again at a different time. Then again 25 hours later. Three attempts across three days, three different times &mdash; maximizing the chance of connection.</li>
+                                <li><strong>Parallel SMS:</strong> While calling, the AI also sends a text: "Hi, this is Stoy Law. We just tried calling about your inquiry. Reply YES if now is a good time." Covers people who don't answer unknown numbers.</li>
+                                <li><strong>Your rules, your logic:</strong> Want it to ring you first, then forward to AI after 5 rings? Done. Want every Saturday sent straight to Voice AI? Done. Want it to call a lead 10 days in a row? We'll build it.</li>
+                            </ul>
+
+                            <h5>Built around how you actually work:</h5>
+                            <ul>
+                                <li>AI handles the initial qualification &mdash; you step in for the close</li>
+                                <li>If a lead qualifies at midnight, the AI can notify you immediately so you can call them back &mdash; or book them for first thing in the morning</li>
+                                <li>You stay in control. The AI is the safety net under you, not a replacement for you</li>
+                                <li>Every call recorded, transcribed, and logged directly into Litify</li>
+                            </ul>
+
+                            <h5>What happens on the call:</h5>
+                            <ul>
+                                <li>AI introduces itself as calling from Stoy Law</li>
+                                <li>Confirms they submitted an inquiry about their accident</li>
+                                <li>Runs through PI-specific qualification questions (accident timeline, insurance, injuries, existing representation)</li>
+                                <li>Scores the lead based on your criteria</li>
+                                <li>Books qualified leads directly into your calendar</li>
+                                <li>Sends confirmation + calendar invite</li>
+                            </ul>
+
+                            <p class="stat-callout">Speed-to-lead studies show that calling within 5 minutes makes you <strong>100x more likely</strong> to connect vs. calling after 30 minutes. We call in under 1 minute. Your cousin called the first 5&ndash;6 firms &mdash; whoever answered first, won.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Double qualification &mdash; no more garbage leads on your phone</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Seven Figure Law sent you 70 leads in 3 months. You closed 2. Walker promised 10 premier leads a month and never delivered more than 4. The problem was single-layer qualification &mdash; leads met basic criteria at the ad level, then got dumped on you raw.</p>
+                            
+                            <h5>Layer 1: Ad-level qualification</h5>
+                            <ul>
+                                <li><strong>Targeted campaigns:</strong> We collaborate on the exact ICP &mdash; demographics, geography, case types &mdash; so the ads only reach people likely to need your services</li>
+                                <li><strong>Form-level screening:</strong> Landing page forms ask initial qualifying questions before someone can submit</li>
+                                <li><strong>Geographic targeting:</strong> Fort Worth core with expansion across DFW and Texas as you scale</li>
+                            </ul>
+
+                            <h5>Layer 2: Voice AI deep qualification</h5>
+                            <ul>
+                                <li><strong>Accident timeline:</strong> Was the accident within the last 12 months?</li>
+                                <li><strong>Medical treatment:</strong> Have they seen a doctor? Are they currently treating?</li>
+                                <li><strong>Insurance verification:</strong> Does the at-fault party have insurance? If not, does the lead have uninsured motorist coverage?</li>
+                                <li><strong>Existing representation:</strong> Do they already have an attorney?</li>
+                                <li><strong>Injury severity:</strong> What injuries are they dealing with?</li>
+                            </ul>
+
+                            <h5>Lead scoring logic:</h5>
+                            <ul>
+                                <li>Each answer adjusts the lead score in real time</li>
+                                <li>Accident within 3 months + treating + insured at-fault party = high priority &rarr; you get notified immediately</li>
+                                <li>Accident 10 months ago + no treatment + no insurance = low priority &rarr; flagged but not booked</li>
+                                <li><strong>You define the criteria, we build the logic</strong></li>
+                            </ul>
+
+                            <h5>The difference from what you've tried:</h5>
+                            <p>Walker and Seven Figure had one layer of qualification. We have two. The leads that reach your calendar have already been screened twice &mdash; once by the campaign, once by the AI. No more wading through garbage to find the one case worth taking.</p>
+
+                            <p class="stat-callout">With Walker, you paid <strong>$15,000/month</strong> for 4 premier leads. With Seven Figure, you paid <strong>$8,000/month</strong> for 70 leads &mdash; almost all unusable. Our system doesn't promise a number. It promises <strong>every lead on your calendar has already passed two rounds of qualification.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Know your exact cost per signed case</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Walker and Seven Figure gave you lead counts. Did they ever tell you your cost per signed case? If not, they weren't tracking what matters.</p>
+                            
+                            <h5>What we track (that most agencies don't):</h5>
+                            <ul>
+                                <li><strong>Cost per lead:</strong> How much to get someone to raise their hand</li>
+                                <li><strong>Cost per contact:</strong> How much to actually reach them</li>
+                                <li><strong>Cost per qualified lead:</strong> How much to find someone worth talking to</li>
+                                <li><strong>Cost per booked consultation:</strong> How much to get them on your calendar</li>
+                                <li><strong>Cost per completed consultation:</strong> How much to get them to show up</li>
+                                <li><strong>Cost per signed case:</strong> How much to get a client who retains you</li>
+                            </ul>
+
+                            <h5>How we do it:</h5>
+                            <ul>
+                                <li><strong>Fresh Meta pixel:</strong> Properly configured with all conversion events &mdash; not reusing whatever Seven Figure left behind</li>
+                                <li><strong>UTM tracking:</strong> Every ad, every campaign, every audience tagged so we know exactly where each lead came from</li>
+                                <li><strong>Litify integration:</strong> Connected so we see the full journey from click to signed case</li>
+                                <li><strong>Closed-loop reporting:</strong> When you sign a case in Litify, we trace it back to the exact ad that brought them in</li>
+                            </ul>
+
+                            <h5>Why this matters for scaling:</h5>
+                            <p>Once you know your CPA is $800 and your average case is worth $30,000, the math is simple:</p>
+                            <ul>
+                                <li>Want 5 more cases? Invest $4,000.</li>
+                                <li>Want 10 more cases? Invest $8,000.</li>
+                            </ul>
+                            <p>No guessing. No hoping. No promises of "10 premier leads" that never materialize. Just math.</p>
+
+                            <p class="stat-callout">Agile Legal's December CPA was <strong>$806 per retained client</strong>. At $4,500 average retainer, that's a 5.6:1 return on ad spend. Different practice area, different market &mdash; but same system, same approach to full-funnel tracking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Agile Legal &mdash; December 2025</h2>
+                <p>Immigration &amp; Business Law &bull; Richmond Hill, ON</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">168</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">$4.13 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">47</div>
+                    <div class="label">Booked</div>
+                    <div class="rate">28%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">43</div>
+                    <div class="label">Showed</div>
+                    <div class="rate">91%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">5</div>
+                    <div class="label">Retained</div>
+                    <div class="rate">12% close</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$806</div>
+                    <div class="label">CPA</div>
+                    <div class="rate">per client</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$22.5K</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">in one month</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">5.6x ROI</div>
+                <div class="label">$4,029 invested &rarr; $22,500 revenue</div>
+            </div>
+        </section>
+
+        <!-- Voice AI -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Voice AI in Action</h2>
+                <p>Kathleen from the demo &mdash; three attempts, three different times, booked on day three.</p>
+            </div>
+
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 1</span><span>2:46pm</span></div>
+                    <div class="voice-card-body">
+                        Lead submits form. AI calls in 60 seconds.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 2</span><span>3:47pm</span></div>
+                    <div class="voice-card-body">
+                        Different time. AI calls again.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 3</span><span>4:54pm</span></div>
+                    <div class="voice-card-body">
+                        Third attempt. AI connects.
+                        <div class="result">&check; Qualified + Booked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>&#128737; Your Safety Net, Your Rules</h4>
+                <p>Voice AI screens leads with your PI qualification criteria &mdash; accident timeline, insurance, injuries, existing representation. It rings you first if you want, forwards to AI if you're busy. After hours, weekends, whenever you're with a doctor or signing a client &mdash; no lead goes unanswered. Every call logged directly into Litify.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Full-Funnel Tracking</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Seven Figure Law reported "leads generated." Walker reported "premier vs. semi-qualified." Neither could tell you which ad produced the cases you actually signed.</p>
+                            
+                            <h5>What most agencies track:</h5>
+                            <ul class="muted-list">
+                                <li>Impressions (how many people saw the ad)</li>
+                                <li>Clicks (how many clicked)</li>
+                                <li>Cost per lead (how much to get a form fill)</li>
+                            </ul>
+                            <p>Then they hand you a PDF with pretty graphs and say "we got you 50 leads this month!" But how many of those became signed cases? They don't know. They don't track that far.</p>
+
+                            <h5>What we track:</h5>
+                            <ul>
+                                <li><strong>Lead &rarr; Contact rate:</strong> Did we actually reach them?</li>
+                                <li><strong>Contact &rarr; Qualified rate:</strong> Were they worth talking to?</li>
+                                <li><strong>Qualified &rarr; Booked rate:</strong> Did they schedule?</li>
+                                <li><strong>Booked &rarr; Show rate:</strong> Did they show up?</li>
+                                <li><strong>Show &rarr; Sign rate:</strong> Did they retain you?</li>
+                            </ul>
+
+                            <h5>Why this changes everything:</h5>
+                            <p>When we see your booking rate is 28% but your show rate is only 60%, we know exactly where to focus. Maybe the confirmation sequence needs work. Maybe we need to add reminder texts. Maybe we're booking too far out.</p>
+                            <p>When we see one ad set converts leads to signed cases at 15% and another at 5%, we kill the loser and scale the winner &mdash; not based on CPL, but on actual cases signed.</p>
+
+                            <h5>Your weekly report includes:</h5>
+                            <ul>
+                                <li>Leads generated (by source, by campaign, by ad)</li>
+                                <li>Contact rate and best times to reach</li>
+                                <li>Qualification rate and common disqualifiers</li>
+                                <li>Booking rate and drop-off reasons</li>
+                                <li>Show rate and no-show patterns</li>
+                                <li>Close rate and revenue generated</li>
+                                <li>True CPA and ROI</li>
+                            </ul>
+
+                            <p class="stat-callout">This is how we knew Agile Legal's true CPA was <strong>$806</strong> &mdash; not the $4.13 cost per lead that would've been the only number Seven Figure or Walker reported.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">You Own Everything</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Seven Figure Law ran ads through Meta on their accounts. When you left, you kept nothing &mdash; no pixel data, no audiences, no creative. $8,000/month for three months and you walked away empty-handed.</p>
+                            
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>Ad accounts:</strong> Created in YOUR name. Your business manager, your payment method, your login. We get added as a partner &mdash; you remain the owner.</li>
+                                <li><strong>Meta pixel:</strong> Installed on your site, in your account. All the conversion data, all the audience learning, all the retargeting pools &mdash; yours.</li>
+                                <li><strong>Landing pages:</strong> Built on your domain or a domain we purchase for you and transfer. Not hosted on our servers with our branding.</li>
+                                <li><strong>Creative assets:</strong> Ad images, videos, copy &mdash; all delivered to you in organized folders. Use them however you want.</li>
+                                <li><strong>Voice AI scripts:</strong> The exact conversation flows, qualification questions, objection handling &mdash; documented and yours.</li>
+                                <li><strong>CRM configurations:</strong> All the automations, pipelines, and workflows we build in Litify stay in your account.</li>
+                                <li><strong>Historical data:</strong> Every lead, every call recording, every conversion &mdash; exportable and yours.</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <ul>
+                                <li>You keep running the ads yourself (or hire someone else)</li>
+                                <li>You keep the landing pages live</li>
+                                <li>You keep all the pixel data and audiences</li>
+                                <li>You keep the Voice AI scripts (we'll help you set up with another provider)</li>
+                                <li>You keep every piece of data we collected</li>
+                            </ul>
+                            <p>We remove ourselves as partners from your accounts. That's it. No transition fee, no data ransom, no starting over.</p>
+
+                            <h5>Why we do this:</h5>
+                            <p>Because our job is to make the partnership so valuable you'd never want to leave &mdash; not to trap you. You've already been burned by agencies that delivered nothing. If we're not delivering results, you should be able to walk. And if we are delivering, you'll stay because we're making you money, not because you're locked in.</p>
+
+                            <p class="stat-callout">Ask any agency you're comparing: "If I cancel, what do I keep?" Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Numbers</h4>
+                    <div class="math-row"><span class="label">Organic cases/month</span><span class="value">~15</span></div>
+                    <div class="math-row"><span class="label">Target total</span><span class="value">25+</span></div>
+                    <div class="math-row"><span class="label">Gap to fill</span><span class="value">8&ndash;10 cases</span></div>
+                    <div class="math-row"><span class="label">Avg case value</span><span class="value">$30,000+</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Investment</h4>
+                    <div class="math-row"><span class="label">Management fee</span><span class="value">$4,000 USD/mo</span></div>
+                    <div class="math-row"><span class="label">Rec. ad spend</span><span class="value">$2,000 USD/mo</span></div>
+                    <div class="math-row"><span class="label">Total</span><span class="value">$6,000 USD/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Break-even</span>
+                        <span class="value" style="color: var(--accent-green);">1 case</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>+ Cases</th>
+                        <th>Case Value</th>
+                        <th>Net</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>+1/mo</td>
+                        <td>$30,000</td>
+                        <td class="gain">+$24,000</td>
+                        <td class="gain">400%</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>+4/mo</td>
+                        <td>$120,000</td>
+                        <td class="gain">+$114,000</td>
+                        <td class="gain">1,900%</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>+8/mo</td>
+                        <td>$240,000</td>
+                        <td class="gain">+$234,000</td>
+                        <td class="gain">3,900%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>A Note on PI Math</h4>
+                <p>PI cases settle over months, not weeks &mdash; so this revenue isn't day-one cash. <strong>But every case you sign today is $30,000+ in future revenue.</strong> At $6,000/month investment, even one additional signed case per month puts you well in the green. The system shows exactly where leads drop off &mdash; we'll know within 60 days if it's working. If not, cancel with 30 days notice. You keep everything we built.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Full Growth System</div>
+                <div class="pricing-amount">
+                    <span class="currency">$</span>
+                    <span class="value">4,000</span>
+                    <span class="period">USD/month</span>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&check;</span> Paid media (Meta/Google)</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Voice AI intake (1,500 min)</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Landing pages + lead forms</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Litify/Salesforce integration</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Full-funnel analytics</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Weekly optimization</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Additional:</strong> Recommended ad spend $2,000 USD/mo (min $1,000) &bull; Voice AI overage $0.20/min &bull; One-time setup $500 USD<br><br>
+                    <strong>Compare:</strong> Walker Advertising was $15,000/mo. Seven Figure Law was $8,000/mo. This is $6,000/mo total (including recommended ad spend) with double qualification, full tracking, and you own everything.<br><br>
+                    <strong>Your time:</strong> 2&ndash;3 hrs/week during setup, ~1 hr/week ongoing<br><br>
+                    <strong>Terms:</strong> No long-term contract. 30 days notice to cancel. You keep everything.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>Get you live and generating leads fast.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Feb 12</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">Feb 12&ndash;14</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">Feb 14&ndash;21</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Campaigns</h4>
+                    <div class="date">Feb 21&ndash;28</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>&#128640; Live</h4>
+                    <div class="date">Mar 1</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Review</h4>
+                    <div class="date">Mar 15</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How is this different from Walker or Seven Figure?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Three things they didn't do: (1) Double qualification &mdash; leads get screened at the ad level AND by voice AI before they reach you. (2) Full-funnel tracking &mdash; we trace every lead from the ad to the signed case, not just to the form fill. (3) You own everything &mdash; ad accounts, pixel data, creative, AI scripts. If you leave, you keep it all.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties. You keep everything &mdash; ad accounts, landing pages, Voice AI scripts, CRM configs, all data. No transition fee, no data ransom.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will the Voice AI replace me?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No. It's a safety net, not a replacement. It handles first-touch qualification and booking. You still do what you do best &mdash; building rapport, closing cases, maintaining your doctor network. The AI just makes sure no lead slips through when you're at a lunch, in a meeting, or taking a call at midnight.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will my results match Agile Legal's?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Maybe. Maybe not. Different market, different practice area, different competition. The point isn't identical results &mdash; it's knowing your numbers and making decisions based on data instead of hoping Walker delivers this month.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why can't I start with less ad spend?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You can go as low as $1,000/month ($33/day). Below that, there's not enough data for the algorithm to learn. We recommend $2,000/month ($66/day) to give the system enough fuel to optimize quickly and generate meaningful lead volume.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about SEO and my Google Maps ranking?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You've got a 4.8-star rating with 373 reviews but you're not in the top 4 on Maps. That's fixable &mdash; and it's on the roadmap. Let's nail the paid acquisition system first, prove the ROI, then expand to SEO and organic. One thing at a time, each building on the last.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Tuesday, February 11th at 11:00am Central. Bring Chris and your questions.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Book a Call &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Stoy Law &bull; February 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
