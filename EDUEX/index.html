@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | EDUEX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.6; font-size: 15px; }
+        h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; letter-spacing: -0.02em; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.75rem 2rem; background: rgba(8, 8, 12, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.06); display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; }
+        .nav-logo span { color: var(--accent-purple); }
+        .nav-cta { background: var(--accent-green); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; }
+        .nav-cta:hover { background: #0ea572; transform: translateY(-1px); }
+        .hero { padding: 5rem 2rem 2.5rem; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%); }
+        .hero-badge { display: inline-block; background: var(--glass-bg); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem; border: 1px solid var(--glass-border); }
+        .hero h1 { font-size: 3.5rem; line-height: 1.05; margin-bottom: 0.5rem; background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.1rem; color: var(--text-secondary); }
+        .hero-client { color: var(--accent-blue-light); font-weight: 500; margin-top: 0.25rem; }
+        .main { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 2.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .section:last-child { border-bottom: none; }
+        .section-header { margin-bottom: 1.25rem; }
+        .section-header h2 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+        .section-header p { color: var(--text-secondary); font-size: 0.95rem; }
+        .letter { background: var(--glass-bg); border-radius: 16px; padding: 2rem; border: 1px solid var(--glass-border); border-top: 3px solid var(--accent-blue); }
+        .letter-greeting { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; font-style: italic; }
+        .letter p { color: var(--text-secondary); margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .letter .highlight { color: var(--text-primary); font-weight: 600; }
+        .letter-signature { margin-top: 1.25rem; font-family: 'Fraunces', Georgia, serif; font-weight: 500; color: var(--accent-blue-light); font-style: italic; }
+        .funnel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+        @media (max-width: 600px) { .funnel { grid-template-columns: repeat(2, 1fr); } }
+        .funnel-item { background: var(--glass-bg); border-radius: 10px; padding: 1rem; text-align: center; border: 1px solid var(--glass-border); }
+        .funnel-item .number { font-family: 'Fraunces', Georgia, serif; font-size: 1.75rem; font-weight: 700; }
+        .funnel-item:nth-child(1) .number, .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number, .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number, .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+        .funnel-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-top: 0.2rem; }
+        .funnel-item .rate { font-size: 0.75rem; color: var(--text-secondary); }
+        .roi-box { background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 1.25rem; text-align: center; }
+        .roi-box .value { font-family: 'Fraunces', Georgia, serif; font-size: 2.25rem; font-weight: 700; color: var(--accent-green); }
+        .roi-box .label { color: var(--text-secondary); font-size: 0.9rem; }
+        .voice-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+        @media (max-width: 600px) { .voice-cards { grid-template-columns: 1fr; } }
+        .voice-card { background: var(--glass-bg); border-radius: 10px; overflow: hidden; border: 1px solid var(--glass-border); }
+        .voice-card-header { padding: 0.6rem 1rem; display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; }
+        .voice-card:nth-child(1) .voice-card-header { background: var(--accent-blue); }
+        .voice-card:nth-child(2) .voice-card-header { background: var(--accent-orange); }
+        .voice-card:nth-child(3) .voice-card-header { background: var(--accent-green); }
+        .voice-card-body { padding: 0.9rem 1rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .voice-card-body .result { font-weight: 600; margin-top: 0.4rem; color: var(--text-muted); }
+        .voice-card:nth-child(3) .result { color: var(--accent-green); }
+        .info-box { background: var(--glass-bg); border-radius: 10px; padding: 1rem 1.25rem; border: 1px solid var(--glass-border); }
+        .info-box h4 { margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 600; }
+        .info-box p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
+        .math-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+        @media (max-width: 600px) { .math-grid { grid-template-columns: 1fr; } }
+        .math-box { background: var(--glass-bg); border-radius: 10px; padding: 1.25rem; border: 1px solid var(--glass-border); }
+        .math-box h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; color: var(--text-muted); font-weight: 600; }
+        .math-row { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); font-size: 0.88rem; }
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+        .scenarios { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1rem; }
+        .scenarios th, .scenarios td { padding: 0.7rem 0.5rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .scenarios th { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 600; }
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+        .tag { font-size: 0.58rem; padding: 0.15rem 0.4rem; border-radius: 3px; text-transform: uppercase; font-weight: 600; margin-left: 0.4rem; }
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+        .callout { background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 10px; padding: 1rem 1.25rem; }
+        .callout h4 { margin-bottom: 0.3rem; font-size: 0.9rem; }
+        .callout p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.55; }
+        .callout p strong { color: var(--text-primary); }
+        .pricing { background: var(--glass-bg); border-radius: 16px; padding: 2rem; border: 1px solid var(--glass-border); text-align: center; border-top: 3px solid var(--accent-green); }
+        .pricing-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .pricing-amount { display: flex; align-items: baseline; justify-content: center; gap: 0.25rem; margin-bottom: 1.25rem; }
+        .pricing-amount .currency { font-size: 1.25rem; color: var(--text-secondary); }
+        .pricing-amount .value { font-family: 'Fraunces', Georgia, serif; font-size: 3.25rem; font-weight: 700; color: var(--accent-green); line-height: 1; }
+        .pricing-amount .period { font-size: 1rem; color: var(--text-secondary); }
+        .pricing-features { text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem; margin-bottom: 1.25rem; }
+        @media (max-width: 500px) { .pricing-features { grid-template-columns: 1fr; } }
+        .pricing-feature { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .pricing-feature .check { color: var(--accent-green); flex-shrink: 0; }
+        .pricing-note { background: rgba(255, 255, 255, 0.03); padding: 1rem; border-radius: 8px; font-size: 0.8rem; color: var(--text-secondary); text-align: left; line-height: 1.6; }
+        .pricing-note strong { color: var(--text-primary); }
+        .timeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5rem; }
+        @media (max-width: 700px) { .timeline { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 450px) { .timeline { grid-template-columns: repeat(2, 1fr); } }
+        .timeline-item { background: var(--glass-bg); border-radius: 8px; padding: 0.75rem; border: 1px solid var(--glass-border); text-align: center; }
+        .timeline-item h4 { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.15rem; }
+        .timeline-item .date { color: var(--accent-blue-light); font-size: 0.7rem; }
+        .faq-list { display: grid; gap: 0.6rem; }
+        .faq-item { background: var(--glass-bg); border-radius: 10px; border: 1px solid var(--glass-border); overflow: hidden; }
+        .faq-question { padding: 1rem 1.25rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s ease; }
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+        .faq-question .toggle { font-size: 1.25rem; color: var(--accent-blue); transition: transform 0.2s ease; }
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 200px; }
+        .faq-answer-content { padding: 0 1.25rem 1rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.55; }
+        .cta { text-align: center; padding: 2.5rem 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%); border-radius: 16px; margin: 2rem 0; }
+        .cta h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        .cta p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%); color: white; padding: 0.85rem 2.25rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35); }
+        .footer { padding: 2rem; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .footer-company { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.6rem; }
+        .footer-contact { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; font-size: 0.85rem; }
+        .footer-contact a { color: var(--accent-blue-light); text-decoration: none; }
+        .footer-contact a:hover { color: var(--accent-green); }
+        .footer-note { font-size: 0.75rem; color: var(--text-muted); }
+        .accordion-list { display: grid; gap: 0.75rem; }
+        .accordion-item { background: var(--glass-bg); border-radius: 12px; border: 1px solid var(--glass-border); border-left: 3px solid var(--accent-green); overflow: hidden; transition: all 0.3s ease; }
+        .accordion-item:hover { border-color: rgba(255, 255, 255, 0.12); }
+        .accordion-header { padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: background 0.2s ease; }
+        .accordion-header:hover { background: rgba(255, 255, 255, 0.03); }
+        .accordion-icon { color: var(--accent-green); font-size: 1rem; flex-shrink: 0; }
+        .accordion-title { flex: 1; font-weight: 600; font-size: 0.95rem; }
+        .accordion-toggle { font-size: 1.25rem; color: var(--accent-blue); transition: transform 0.3s ease; flex-shrink: 0; }
+        .accordion-item.open .accordion-toggle { transform: rotate(45deg); }
+        .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .accordion-item.open .accordion-body { max-height: 2000px; }
+        .accordion-content { padding: 0 1.25rem 1.5rem 2.75rem; color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
+        .accordion-content h5 { color: var(--text-primary); font-size: 0.85rem; font-weight: 600; margin: 1.25rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .accordion-content h5:first-child { margin-top: 0; }
+        .accordion-content ul { margin: 0.5rem 0; padding-left: 1.25rem; }
+        .accordion-content li { margin-bottom: 0.4rem; }
+        .accordion-content li strong { color: var(--text-primary); }
+        .accordion-content p { margin: 0.5rem 0; }
+        .accordion-content .accent-text { color: var(--accent-blue-light); font-style: italic; margin-bottom: 1rem; padding-left: 0.75rem; border-left: 2px solid var(--accent-blue); }
+        .accordion-content .stat-callout { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 8px; padding: 0.9rem 1rem; margin-top: 1rem; color: var(--text-secondary); }
+        .accordion-content .stat-callout strong { color: var(--accent-green); }
+        .accordion-content .muted-list { opacity: 0.7; }
+        .accordion-content .muted-list li { text-decoration: line-through; text-decoration-color: var(--accent-red); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk →</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal • February 2026</div>
+        <h1>From 20 Files/Day to 35+. Guaranteed 5x ROI.</h1>
+        <p>A student acquisition system you can see, measure, and scale — with a guaranteed 5x return or we work for free.</p>
+        <p class="hero-client">Prepared for EDUEX</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Nazmul &amp; Humayun,</div>
+                <p>Your numbers are better than you think. <span class="highlight">£297K last intake</span>, <span class="highlight">~120 enrolments per intake</span>, a <span class="highlight">£37 CPA</span> — all on a £4,000 monthly budget. That's a 67x return. Most companies in your space would kill for those numbers.</p>
+                <p><span class="highlight">The problem isn't your volume — it's your visibility.</span> You're spending across Meta, TikTok, and Snapchat with no way to tell which platform, which city, or which programme is actually driving the enrolments that stick. Your lead guy left, CPL jumped from £2 to £5-7, and you're making budget decisions without the data to back them up. That's not marketing — that's guessing.</p>
+                <p>You don't need another person running ads. You need a system that tells you <span class="highlight">exactly where every pound goes and what it brings back</span> — by platform, by city, by programme. Then we scale. We've built this exact system for <span class="highlight">over 15 student recruitment companies across the UK and Europe</span> — including EDU4U and Student Partners. The playbook works. Now we tailor it to you.</p>
+                <div class="letter-signature">— Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">Voice AI calls every lead in 60 seconds, 24/7</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Right now your counsellors are calling leads who say "I don't remember submitting that." That's not a lead quality problem — that's a speed problem.</p>
+                            
+                            <h5>How it works:</h5>
+                            <ul>
+                                <li><strong>Instant trigger:</strong> The moment a lead submits a form on any platform — Facebook, TikTok, Snapchat, your website — the system fires. Within 60 seconds, they get a call from your Voice AI assistant.</li>
+                                <li><strong>Smart retry logic:</strong> No answer? The system waits 25 hours and tries again at a different time. Then again 25 hours later. Three attempts across three days, three different times — maximising the chance of connection.</li>
+                                <li><strong>Parallel SMS:</strong> While calling, the AI also sends a text: "Hi, this is EDUEX. We just tried calling about your course inquiry. Reply YES if now is a good time." Covers people who don't answer unknown numbers.</li>
+                                <li><strong>24/7/365:</strong> Leads come in at 11pm on a Saturday? They get called at 11pm on a Saturday. No waiting until Monday morning when they've already enrolled somewhere else.</li>
+                            </ul>
+
+                            <h5>What happens on the call:</h5>
+                            <ul>
+                                <li>AI introduces itself as calling from EDUEX</li>
+                                <li>Confirms they submitted an inquiry about a course</li>
+                                <li>Asks qualifying questions: age group (18-20 vs 21+), preferred city, programme interest</li>
+                                <li>Checks eligibility based on their answers</li>
+                                <li>Books them directly into a counsellor's calendar</li>
+                                <li>Sends confirmation text + reminder</li>
+                            </ul>
+
+                            <h5>The difference from your current process:</h5>
+                            <p>Right now, you require leads to book a time slot before you capture their info. That means every person who fills in their details but doesn't pick a time — you lose them entirely. With Voice AI, you capture the lead <em>and</em> the AI books them in. You get more leads and faster contact.</p>
+
+                            <p class="stat-callout">Speed-to-lead studies show that calling within 5 minutes makes you <strong>21x more likely</strong> to qualify the lead. We call in under 1 minute.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">Capture more leads without lowering quality</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You told me you require booking as a form step. That means every lead who doesn't pick a time slot vanishes — name, number, email, gone.</p>
+                            
+                            <h5>The new flow:</h5>
+                            <ul>
+                                <li><strong>Step 1 — Capture:</strong> Lead submits name, phone, email, course interest, city, age group. This data is captured immediately regardless of what happens next.</li>
+                                <li><strong>Step 2 — Optional booking:</strong> After submitting, they see an optional calendar to book a call. If they book, great — AI confirms. If they don't, no problem.</li>
+                                <li><strong>Step 3 — Voice AI follows up:</strong> Whether they booked or not, Voice AI calls within 60 seconds. Booked leads get a confirmation call. Unbooked leads get qualified and booked by the AI.</li>
+                            </ul>
+
+                            <h5>Why this matters:</h5>
+                            <ul>
+                                <li><strong>More leads captured:</strong> You're currently losing every person who fills in details but abandons at the booking step. That could be 20-30% of your submissions.</li>
+                                <li><strong>Same quality filter:</strong> The AI still qualifies — age group, eligibility, programme fit. Unqualified leads get filtered out before they ever reach a counsellor.</li>
+                                <li><strong>Your counsellors' time protected:</strong> Only qualified, booked students appear on their calendars. No cold calls, no chasing.</li>
+                            </ul>
+
+                            <h5>Platform-specific forms:</h5>
+                            <ul>
+                                <li>Facebook/Instagram lead forms — native integration, no landing page needed</li>
+                                <li>TikTok lead forms — same setup, different creative</li>
+                                <li>Snapchat — connected via webhook</li>
+                                <li>Website — embedded forms with your branding</li>
+                            </ul>
+
+                            <p class="stat-callout">EDU4U saw a <strong>25% increase in captured leads</strong> just by making booking optional and letting Voice AI handle the follow-up.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">Know your exact cost per enrolled student — by platform, city, and programme</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You tracked lead origin once — found TikTok converted better than Facebook — then stopped. That instinct was right. We make it permanent and automatic.</p>
+                            
+                            <h5>What we track (that your current setup doesn't):</h5>
+                            <ul>
+                                <li><strong>Cost per lead:</strong> How much to get someone to raise their hand</li>
+                                <li><strong>Cost per contact:</strong> How much to actually reach them</li>
+                                <li><strong>Cost per qualified lead:</strong> How much to find someone eligible</li>
+                                <li><strong>Cost per booked consultation:</strong> How much to get them on a counsellor's calendar</li>
+                                <li><strong>Cost per file submitted:</strong> How much to get them into document intake</li>
+                                <li><strong>Cost per enrolled student:</strong> How much to get a student who actually starts</li>
+                            </ul>
+
+                            <h5>Broken down by:</h5>
+                            <ul>
+                                <li><strong>Platform:</strong> Is TikTok still outperforming Facebook? By how much?</li>
+                                <li><strong>City:</strong> Is London more expensive than Birmingham? Is Leeds higher quality?</li>
+                                <li><strong>Programme:</strong> Does Health &amp; Social Care convert better than Cybersecurity?</li>
+                                <li><strong>University partner:</strong> Which partner's programmes have the lowest churn?</li>
+                            </ul>
+
+                            <h5>How we do it:</h5>
+                            <ul>
+                                <li><strong>UTM tracking:</strong> Every ad, every campaign, every audience tagged so we know exactly where each lead came from</li>
+                                <li><strong>CRM integration:</strong> Connected to your system so we see the full journey from click to enrolled student</li>
+                                <li><strong>Closed-loop reporting:</strong> When a student enrols, we trace it back to the exact ad that brought them in</li>
+                            </ul>
+
+                            <h5>Why this matters for scaling:</h5>
+                            <p>Once you know your CPA is £37 and your revenue per student is £2,000+, the maths is simple:</p>
+                            <ul>
+                                <li>Want 50 more students? Invest £1,850.</li>
+                                <li>Want 100 more students? Invest £3,700.</li>
+                                <li>Want to double intake? Here's the exact budget.</li>
+                            </ul>
+                            <p>No guessing. No hoping. Just maths.</p>
+
+                            <p class="stat-callout">EDU4U's CPA was <strong>£45 per enrolled student</strong>. On a £9,000/month total investment, they enrolled 200 students per intake generating over <strong>£400K in revenue</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>EDU4U — Average Month</h2>
+                <p>Student Recruitment • London, UK • Also working with Student Partners</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">1,750</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">£2.85 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">1,400</div>
+                    <div class="label">Contacted</div>
+                    <div class="rate">80%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">560</div>
+                    <div class="label">Files Started</div>
+                    <div class="rate">40%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">200</div>
+                    <div class="label">Enrolled</div>
+                    <div class="rate">36% of files</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">£45</div>
+                    <div class="label">CPA</div>
+                    <div class="rate">per student</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">£400K+</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">per intake</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">44x ROI</div>
+                <div class="label">£9,000 invested (£5K ad spend + £4K management) → £400,000+ revenue</div>
+            </div>
+        </section>
+
+        <!-- Voice AI -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Voice AI in Action</h2>
+                <p>Three attempts, three different times, booked on day two.</p>
+            </div>
+
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 1</span><span>2:15pm</span></div>
+                    <div class="voice-card-body">
+                        Lead submits form on TikTok. AI calls in 45 seconds. Qualifies: 21+, Health &amp; Social Care, London.
+                        <div class="result">No answer → SMS sent → Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 2</span><span>11:30am</span></div>
+                    <div class="voice-card-body">
+                        Different time. AI calls again. Student answers.
+                        <div class="result">✔ Qualified + Booked with Counsellor</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 2</span><span>11:31am</span></div>
+                    <div class="voice-card-body">
+                        Confirmation SMS + calendar invite sent. CRM updated automatically.
+                        <div class="result" style="color: var(--accent-green);">✔ Ready for Counsellor</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>🎯 Built for Your Intake Process</h4>
+                <p>Voice AI qualifies based on age group (18-20 vs 21+), checks programme availability by city, and books directly into the right counsellor's calendar. When your counsellors start their day, they see a full schedule of qualified, confirmed students — not a list of numbers to cold call.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">Full-Funnel Tracking</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies report "cost per lead" and call it a day. That's like measuring how many students clicked your ad instead of how many actually enrolled.</p>
+                            
+                            <h5>What most agencies track:</h5>
+                            <ul class="muted-list">
+                                <li>Impressions (how many people saw the ad)</li>
+                                <li>Clicks (how many clicked)</li>
+                                <li>Cost per lead (how much to get a form fill)</li>
+                            </ul>
+                            <p>Then they hand you a PDF with pretty graphs and say "we got you 800 leads this month!" But how many of those enrolled? They don't know. They don't track that far.</p>
+
+                            <h5>What we track:</h5>
+                            <ul>
+                                <li><strong>Lead → Contact rate:</strong> Did we actually reach them?</li>
+                                <li><strong>Contact → Qualified rate:</strong> Were they eligible?</li>
+                                <li><strong>Qualified → Booked rate:</strong> Did they get on a counsellor's calendar?</li>
+                                <li><strong>Booked → Show rate:</strong> Did they show up for the call?</li>
+                                <li><strong>Show → File rate:</strong> Did they submit documents?</li>
+                                <li><strong>File → Enrolled rate:</strong> Did they complete enrolment?</li>
+                            </ul>
+
+                            <h5>Why this changes everything:</h5>
+                            <p>When we see TikTok leads enrol at 15% and Facebook leads enrol at 8%, we shift budget to TikTok. When we see Birmingham converts files to enrolments at 70% but Leeds is at 45%, we investigate why. When Health &amp; Social Care has 5% churn but Cybersecurity has 15%, we adjust targeting.</p>
+
+                            <h5>Your weekly report includes:</h5>
+                            <ul>
+                                <li>Leads generated (by platform, by city, by programme)</li>
+                                <li>Contact rate and best times to reach</li>
+                                <li>Qualification rate and common disqualifiers</li>
+                                <li>Booking rate and drop-off reasons</li>
+                                <li>Show rate and no-show patterns</li>
+                                <li>File submission rate and document delays</li>
+                                <li>Enrolment rate, churn, and true CPA</li>
+                            </ul>
+
+                            <p class="stat-callout">This is how we knew EDU4U's true CPA was £45 per enrolled student — not the £2.85 cost per lead that would've been the only number most agencies reported.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✔</span>
+                        <span class="accordion-title">You Own Everything</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Some agencies build your campaigns in their ad accounts, use their proprietary software, and hold your data hostage. If you leave, you start from zero. We don't operate that way.</p>
+                            
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>Ad accounts:</strong> Created in YOUR name. Your business manager, your payment method, your login. We get added as a partner — you remain the owner.</li>
+                                <li><strong>Meta pixel &amp; TikTok pixel:</strong> Installed on your site, in your accounts. All the conversion data, all the audience learning, all the retargeting pools — yours.</li>
+                                <li><strong>Landing pages:</strong> Built on your domain. Not hosted on our servers with our branding.</li>
+                                <li><strong>Creative assets:</strong> Ad images, videos, copy — all delivered to you in organised folders. Use them however you want.</li>
+                                <li><strong>Voice AI scripts:</strong> The exact conversation flows, qualification questions — documented and yours.</li>
+                                <li><strong>CRM configurations:</strong> All the automations and workflows we build stay in your system.</li>
+                                <li><strong>Historical data:</strong> Every lead, every call recording, every conversion — exportable and yours.</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <ul>
+                                <li>You keep running the ads yourself (or hire someone else)</li>
+                                <li>You keep the landing pages live</li>
+                                <li>You keep all the pixel data and audiences</li>
+                                <li>You keep the Voice AI scripts</li>
+                                <li>You keep every piece of data we collected</li>
+                            </ul>
+                            <p>We remove ourselves as partners from your accounts. That's it. No transition fee, no data ransom, no starting over.</p>
+
+                            <p class="stat-callout">Ask any agency you're comparing: "If I cancel, what do I keep?" Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Maths</h2>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Numbers</h4>
+                    <div class="math-row"><span class="label">Leads/month</span><span class="value">~800</span></div>
+                    <div class="math-row"><span class="label">Files started/day</span><span class="value">~20-25</span></div>
+                    <div class="math-row"><span class="label">Enrolled/intake</span><span class="value">~120</span></div>
+                    <div class="math-row"><span class="label">Revenue/student</span><span class="value">~£2,000</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Investment</h4>
+                    <div class="math-row"><span class="label">Management fee</span><span class="value">£4,000 GBP/mo</span></div>
+                    <div class="math-row"><span class="label">Ad spend (current)</span><span class="value">£3,500 GBP/mo</span></div>
+                    <div class="math-row"><span class="label">Total</span><span class="value">£7,500 GBP/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Break-even</span>
+                        <span class="value" style="color: var(--accent-green);">4 students</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>+ Enrolled</th>
+                        <th>Revenue</th>
+                        <th>Net</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>+5/mo</td>
+                        <td>£10,000</td>
+                        <td class="gain">+£2,500</td>
+                        <td class="gain">33%</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>+20/mo</td>
+                        <td>£40,000</td>
+                        <td class="gain">+£32,500</td>
+                        <td class="gain">433%</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>+40/mo</td>
+                        <td>£80,000</td>
+                        <td class="gain">+£72,500</td>
+                        <td class="gain">967%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>What If It Doesn't Work?</h4>
+                <p>The system shows exactly where leads drop off — by platform, by city, by programme. <strong>We'll know within 60 days if it's working — if not, cancel with 30 days notice. You keep everything we built.</strong></p>
+            </div>
+        </section>
+
+        <!-- Guarantee -->
+        <section class="section">
+            <div class="roi-box" style="border: 1px solid rgba(16, 185, 129, 0.25); padding: 2rem;">
+                <div class="value" style="font-size: 1.75rem; margin-bottom: 0.5rem;">Our Guarantee</div>
+                <div class="label" style="font-size: 0.95rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                    If your enrolment revenue doesn't hit <strong style="color: var(--accent-green);">5x your total investment</strong> within the first 5 months, we continue working at no management fee until it does. No fine print. No cap. We don't get paid again until you've made your money back.
+                </div>
+            </div>
+            <div class="info-box" style="margin-top: 1rem;">
+                <h4>How we make sure you hit it</h4>
+                <p>Our system doesn't just work your paid leads. We tap into every acquisition channel you have to drive that return:</p>
+                <ul style="margin-top: 0.75rem; padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.65;">
+                    <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Dead lead reactivation:</strong> You have thousands of leads sitting in your CRM from previous intakes that never converted. Our Voice AI re-engages them with fresh outreach — different timing, different messaging. These are people who already raised their hand once. Many just need a second touch at the right moment.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Website &amp; landing page revamp:</strong> We rebuild your landing pages and optimise your website for conversion — faster load times, clearer calls to action, mobile-first design. Every visitor who lands on your site has a higher chance of becoming a lead.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Organic lead conversion:</strong> Word-of-mouth referrals, website visitors, social media followers — any lead that comes in through any channel gets the same Voice AI speed-to-lead treatment. Not just paid traffic.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Cross-platform optimisation:</strong> We don't just run your ads — we continuously shift budget to whichever platform, city, and programme combination is converting best. Every pound works harder month over month.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Webinar funnel system:</strong> We build and run webinar funnels that educate prospective students at scale — programme overviews, student finance guidance, campus previews. Attendees convert at a significantly higher rate because they show up informed and ready to move. It's another engine running alongside your paid campaigns.</li>
+                </ul>
+                <p style="margin-top: 0.75rem; color: var(--accent-blue-light); font-style: italic;">The guarantee isn't a gamble on our end. It's a commitment to work every angle of your business until the numbers speak for themselves.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Full Growth System</div>
+                <div class="pricing-amount">
+                    <span class="currency">£</span>
+                    <span class="value">4,000</span>
+                    <span class="period">GBP/month</span>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">✔</span> Paid media (Meta, TikTok, Snapchat)</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Voice AI intake (1,500 min)</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Landing pages + lead forms</div>
+                    <div class="pricing-feature"><span class="check">✔</span> CRM integration</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Full-funnel analytics</div>
+                    <div class="pricing-feature"><span class="check">✔</span> Weekly optimisation + strategy</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Additional:</strong> Ad spend ~£3,500 GBP/mo (your current budget) • Voice AI overage £0.15/min • One-time setup £500 GBP<br><br>
+                    <strong>Your time:</strong> 2-3 hrs/week during setup, ~1 hr/week ongoing<br><br>
+                    <strong>Terms:</strong> No long-term contract. 30 days notice to cancel. You keep everything.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>You said it's urgent. Here's how we move.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Feb 12</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">Feb 12-14</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">Feb 14-21</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Campaigns</h4>
+                    <div class="date">Feb 21-26</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>🚀 Live</h4>
+                    <div class="date">Mar 1</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Review</h4>
+                    <div class="date">Mar 15</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties. You keep everything — ad accounts, landing pages, Voice AI scripts, CRM configs, all data.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about our existing CRM?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We integrate with your in-house CRM. We'll work with your dev team to connect lead capture, qualification status, and enrolment tracking via API or webhooks. Your team keeps using the system they know — we just make it smarter.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will my results match EDU4U's?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Maybe. Maybe not. Different programmes, different cities, different competition. The point isn't identical results — it's knowing your numbers and making decisions based on data instead of guessing.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do we need to provide?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Access to your CRM (or your dev for API integration), input on qualification criteria by programme and city, your university partner details, and feedback on lead quality. That's it.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why can't I start smaller?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Below £1,000/month ad spend, there's not enough data for the algorithm to learn. You're already spending £3-4K. We're not asking you to spend more on ads — we're asking you to spend it smarter.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>We lost £15-18K this month from issues. Is this the right time?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            That's exactly why it's the right time. Your lead person left, your CPL doubled, and you're flying blind on which channels work. Every month without proper tracking and speed-to-lead is money left on the table. The £4,000 management fee pays for itself with 2 enrolled students.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Tuesday at 4:00pm (your time). Bring your questions.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Book the Call →</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for EDUEX • February 2026</div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) { item.classList.remove('open'); } else { item.classList.add('open'); }
+            });
+        });
+    </script>
+</body>
+</html>
