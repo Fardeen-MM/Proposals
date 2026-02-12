@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criminal Defense AI Voice Agent — Inbound & Outbound Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0f14;
+    --surface: #151921;
+    --surface-2: #1c2230;
+    --surface-3: #232b3b;
+    --border: #262d3d;
+    --border-light: #313a50;
+    --text: #e4e8f1;
+    --text-dim: #8891a5;
+    --text-faint: #5a6378;
+    --accent: #4f8cff;
+    --accent-glow: rgba(79,140,255,0.15);
+    --accent-border: rgba(79,140,255,0.3);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.12);
+    --green-border: rgba(52,211,153,0.25);
+    --red: #f87171;
+    --red-dim: rgba(248,113,113,0.12);
+    --red-border: rgba(248,113,113,0.25);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.12);
+    --amber-border: rgba(251,191,36,0.25);
+    --purple: #a78bfa;
+    --purple-dim: rgba(167,139,250,0.12);
+    --purple-border: rgba(167,139,250,0.25);
+    --teal: #2dd4bf;
+    --teal-dim: rgba(45,212,191,0.12);
+    --teal-border: rgba(45,212,191,0.25);
+    --inbound-color: #4f8cff;
+    --outbound-color: #34d399;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; overflow-x:hidden; }
+
+  /* ─── HEADER ─── */
+  .header {
+    padding:40px 48px 0;
+    background:linear-gradient(180deg, rgba(79,140,255,0.04) 0%, transparent 100%);
+  }
+  .header-badge {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--accent-glow); border:1px solid var(--accent-border);
+    border-radius:100px; padding:6px 16px; font-size:11px; font-weight:700;
+    color:var(--accent); text-transform:uppercase; letter-spacing:1.2px; margin-bottom:20px;
+  }
+  .header-badge .dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .header h1 {
+    font-family:'Playfair Display',serif; font-size:36px; font-weight:800;
+    line-height:1.15; margin-bottom:10px;
+    background:linear-gradient(135deg, #fff 40%, var(--accent) 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .header p { color:var(--text-dim); font-size:14px; max-width:640px; line-height:1.65; }
+
+  /* ─── MODE TOGGLE ─── */
+  .mode-toggle {
+    display:flex; gap:0; margin:28px 48px 0; position:relative;
+  }
+  .mode-btn {
+    flex:1; max-width:280px; padding:16px 24px; font-size:14px; font-weight:700;
+    border:1px solid var(--border); background:var(--surface); color:var(--text-dim);
+    cursor:pointer; transition:all 0.25s; position:relative; text-align:center;
+    font-family:'DM Sans',sans-serif;
+  }
+  .mode-btn:first-child { border-radius:10px 0 0 10px; border-right:none; }
+  .mode-btn:last-child { border-radius:0 10px 10px 0; }
+  .mode-btn.active-inbound {
+    background:rgba(79,140,255,0.08); border-color:var(--accent-border);
+    color:var(--accent);
+  }
+  .mode-btn.active-outbound {
+    background:rgba(52,211,153,0.08); border-color:var(--green-border);
+    color:var(--green);
+  }
+  .mode-btn .mode-sub { display:block; font-size:11px; font-weight:500; margin-top:3px; opacity:0.7; }
+
+  /* ─── TABS ─── */
+  .tabs {
+    display:flex; gap:4px; padding:20px 48px 0;
+    border-bottom:1px solid var(--border); overflow-x:auto;
+  }
+  .tab {
+    padding:12px 20px; font-size:13px; font-weight:600;
+    color:var(--text-dim); cursor:pointer; border:none; background:none;
+    border-bottom:2px solid transparent; transition:all 0.2s;
+    white-space:nowrap; font-family:'DM Sans',sans-serif;
+  }
+  .tab:hover { color:var(--text); }
+  .tab.active { border-bottom-color:var(--accent); color:var(--accent); }
+  .tab.active-green { border-bottom-color:var(--green); color:var(--green); }
+
+  /* ─── CONTENT ─── */
+  .content { padding:32px 48px 80px; }
+  .panel { display:none; }
+  .panel.active { display:block; animation:fadeUp 0.3s ease; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ─── FLOW STEPS ─── */
+  .flow-container { display:flex; flex-direction:column; gap:0; align-items:center; }
+  .flow-step {
+    width:100%; max-width:740px;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; padding:28px 32px; position:relative;
+  }
+  .flow-connector { width:2px; height:28px; background:var(--border); position:relative; }
+  .flow-connector::after {
+    content:'▼'; position:absolute; bottom:-5px; left:50%; transform:translateX(-50%);
+    font-size:8px; color:var(--text-faint);
+  }
+  .step-num {
+    position:absolute; top:-12px; left:28px;
+    font-size:10px; font-weight:800; padding:3px 12px; border-radius:100px;
+    letter-spacing:0.8px; text-transform:uppercase;
+  }
+  .step-num.blue { background:var(--accent); color:#fff; }
+  .step-num.green { background:var(--green); color:#0c0f14; }
+  .flow-step h3 { font-size:16px; font-weight:700; margin-bottom:4px; }
+  .flow-step .desc { font-size:13px; color:var(--text-dim); line-height:1.55; margin-bottom:12px; }
+  .agent-line {
+    background:var(--surface-2); border-radius:0 8px 8px 0; padding:12px 16px;
+    margin:10px 0 8px; font-size:13.5px; line-height:1.6; color:var(--text); font-style:italic;
+  }
+  .agent-line.inbound-border { border-left:3px solid var(--accent); }
+  .agent-line.outbound-border { border-left:3px solid var(--green); }
+  .note {
+    font-size:12px; color:var(--text-dim); margin-top:8px;
+    padding-left:14px; border-left:2px solid var(--border); line-height:1.5;
+  }
+  .tag-row { margin-top:14px; display:flex; flex-wrap:wrap; gap:6px; }
+  .branch-label {
+    display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.8px; padding:3px 10px; border-radius:6px;
+  }
+  .branch-label.hot { background:var(--red-dim); color:var(--red); }
+  .branch-label.warm { background:var(--amber-dim); color:var(--amber); }
+  .branch-label.cool { background:var(--purple-dim); color:var(--purple); }
+
+  /* ─── PPC DATA CARD ─── */
+  .ppc-card {
+    background:var(--surface-2); border:1px dashed var(--green-border);
+    border-radius:10px; padding:18px 20px; margin:12px 0;
+  }
+  .ppc-card h4 { font-size:11px; color:var(--green); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; font-weight:700; }
+  .ppc-fields { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .ppc-field {
+    background:var(--surface-3); border-radius:6px; padding:8px 12px;
+    font-size:12px;
+  }
+  .ppc-field .label { color:var(--text-faint); font-size:10px; text-transform:uppercase; letter-spacing:0.6px; margin-bottom:2px; }
+  .ppc-field .val { color:var(--green); font-weight:600; font-family:monospace; font-size:12px; }
+
+  /* ─── OUTPUT BOX ─── */
+  .output-step {
+    border-color:var(--green-border) !important; background:rgba(52,211,153,0.02) !important;
+  }
+  .output-grid { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+  .output-card {
+    flex:1; min-width:200px; background:var(--surface-2); border-radius:10px; padding:14px;
+  }
+  .output-card .oc-label {
+    font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:6px; font-weight:700;
+  }
+  .output-card .oc-text { font-size:13px; line-height:1.5; }
+
+  /* ─── CASE TYPE CARDS ─── */
+  .case-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:18px; }
+  .case-card {
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; padding:24px 28px; cursor:pointer;
+    transition:all 0.25s; position:relative; overflow:hidden;
+  }
+  .case-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    opacity:0; transition:opacity 0.25s;
+  }
+  .case-card.ib::before { background:var(--accent); }
+  .case-card.ob::before { background:var(--green); }
+  .case-card:hover { transform:translateY(-2px); }
+  .case-card.ib:hover { border-color:var(--accent-border); }
+  .case-card.ob:hover { border-color:var(--green-border); }
+  .case-card:hover::before, .case-card.expanded::before { opacity:1; }
+  .case-card.expanded.ib { border-color:var(--accent-border); }
+  .case-card.expanded.ob { border-color:var(--green-border); }
+  .case-card-header { display:flex; align-items:center; gap:14px; margin-bottom:4px; }
+  .case-icon {
+    width:40px; height:40px; border-radius:10px; display:flex;
+    align-items:center; justify-content:center; font-size:19px; flex-shrink:0;
+  }
+  .case-card h3 { font-size:15px; font-weight:700; }
+  .case-card .subtitle { font-size:12px; color:var(--text-dim); margin-top:1px; }
+  .case-details { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+  .case-card.expanded .case-details { max-height:1200px; }
+  .case-q-section { margin-top:18px; padding-top:14px; border-top:1px solid var(--border); }
+  .case-q-section h4 {
+    font-size:10px; font-weight:800; text-transform:uppercase;
+    letter-spacing:1.2px; margin-bottom:12px;
+  }
+  .case-q-section h4.ib-color { color:var(--accent); }
+  .case-q-section h4.ob-color { color:var(--green); }
+  .q-item { display:flex; gap:10px; margin-bottom:10px; font-size:13px; line-height:1.5; }
+  .q-num {
+    flex-shrink:0; width:22px; height:22px; border-radius:50%;
+    background:var(--surface-2); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-size:10px; font-weight:700; color:var(--text-dim); margin-top:1px;
+  }
+  .q-text { color:var(--text); }
+  .q-text em { color:var(--text-dim); font-style:normal; font-size:11.5px; display:block; margin-top:2px; }
+  .urgency-tag {
+    display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.8px; padding:3px 8px; border-radius:4px; margin-top:10px;
+  }
+  .urgency-tag.high { background:var(--red-dim); color:var(--red); }
+  .urgency-tag.med { background:var(--amber-dim); color:var(--amber); }
+  .urgency-tag.low { background:var(--green-dim); color:var(--green); }
+  .expand-hint { text-align:center; margin-top:10px; font-size:11px; color:var(--text-faint); }
+
+  /* ─── KNOWN DATA BADGE ─── */
+  .known-badge {
+    display:inline-flex; align-items:center; gap:5px;
+    background:var(--green-dim); border:1px solid var(--green-border);
+    border-radius:6px; padding:2px 8px; font-size:10px; font-weight:700;
+    color:var(--green); text-transform:uppercase; letter-spacing:0.6px;
+    margin-left:8px;
+  }
+
+  /* ─── SCORING TABLE ─── */
+  .score-section { max-width:840px; }
+  .score-section h2 { font-family:'Playfair Display',serif; font-size:24px; margin-bottom:8px; }
+  .score-section > p { color:var(--text-dim); font-size:13.5px; margin-bottom:24px; line-height:1.6; }
+  .score-table {
+    width:100%; border-collapse:separate; border-spacing:0;
+    background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden;
+  }
+  .score-table th {
+    text-align:left; padding:13px 18px; font-size:10px; font-weight:800;
+    text-transform:uppercase; letter-spacing:1px; color:var(--text-dim);
+    background:var(--surface-2); border-bottom:1px solid var(--border);
+  }
+  .score-table td { padding:13px 18px; font-size:13px; border-bottom:1px solid var(--border); }
+  .score-table tr:last-child td { border-bottom:none; }
+  .pts { font-weight:700; color:var(--accent); }
+  .pts.neg { color:var(--red); }
+  .score-tiers { margin-top:24px; display:flex; gap:14px; flex-wrap:wrap; }
+  .tier {
+    flex:1; min-width:200px; border-radius:12px; padding:20px;
+  }
+  .tier.hot { background:var(--red-dim); border:1px solid var(--red-border); }
+  .tier.warm { background:var(--amber-dim); border:1px solid var(--amber-border); }
+  .tier.nurture { background:var(--purple-dim); border:1px solid var(--purple-border); }
+  .tier-score { font-size:28px; font-weight:800; }
+  .tier.hot .tier-score { color:var(--red); }
+  .tier.warm .tier-score { color:var(--amber); }
+  .tier.nurture .tier-score { color:var(--purple); }
+  .tier-label { font-size:13px; font-weight:600; margin-top:4px; }
+  .tier.hot .tier-label { color:var(--red); }
+  .tier.warm .tier-label { color:var(--amber); }
+  .tier.nurture .tier-label { color:var(--purple); }
+  .tier-desc { font-size:12px; color:var(--text-dim); margin-top:6px; line-height:1.5; }
+
+  /* ─── SCRIPT BLOCK ─── */
+  .script-block {
+    max-width:780px; background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; padding:36px; line-height:1.8; font-size:14px;
+  }
+  .script-block h2 { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:6px; }
+  .script-block .script-subtitle { font-size:13px; color:var(--text-dim); margin-bottom:24px; }
+  .s-label {
+    display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase;
+    letter-spacing:1px; padding:3px 10px; border-radius:6px; margin-bottom:6px;
+  }
+  .s-label.agent-ib { background:var(--accent-glow); color:var(--accent); }
+  .s-label.agent-ob { background:var(--green-dim); color:var(--green); }
+  .s-label.system { background:var(--purple-dim); color:var(--purple); }
+  .s-label.branch { background:var(--amber-dim); color:var(--amber); }
+  .s-label.disposition { background:var(--red-dim); color:var(--red); }
+  .script-line { margin-bottom:18px; }
+  .script-line p { color:var(--text); font-size:13.5px; }
+  .script-line .dim { color:var(--text-dim); font-size:12.5px; }
+  .divider { height:1px; background:var(--border); margin:22px 0; }
+
+  /* ─── COMPARISON TABLE ─── */
+  .compare-table {
+    width:100%; max-width:840px; border-collapse:separate; border-spacing:0;
+    background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden;
+    margin-top:24px;
+  }
+  .compare-table th {
+    text-align:left; padding:14px 20px; font-size:10px; font-weight:800;
+    text-transform:uppercase; letter-spacing:1px; color:var(--text-dim);
+    background:var(--surface-2); border-bottom:1px solid var(--border);
+  }
+  .compare-table th.ib-head { color:var(--accent); }
+  .compare-table th.ob-head { color:var(--green); }
+  .compare-table td { padding:13px 20px; font-size:13px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .compare-table tr:last-child td { border-bottom:none; }
+  .compare-table td:first-child { font-weight:600; color:var(--text); }
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width:768px) {
+    .header,.tabs,.content,.mode-toggle { padding-left:18px; padding-right:18px; }
+    .header h1 { font-size:26px; }
+    .case-grid { grid-template-columns:1fr; }
+    .tabs { gap:0; }
+    .tab { padding:10px 12px; font-size:12px; }
+    .mode-btn { padding:12px 16px; font-size:13px; }
+    .ppc-fields { grid-template-columns:1fr; }
+    .flow-step { padding:22px 20px; }
+    .score-tiers { flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge"><span class="dot"></span> Live Demo</div>
+  <h1>AI Voice Agent for<br>Criminal Defense</h1>
+  <p>Automated intake, qualification, and case-type routing — for both inbound calls and outbound PPC lead follow-up. Every call answered in under 2 rings, 24/7.</p>
+</div>
+
+<!-- MODE TOGGLE -->
+<div class="mode-toggle">
+  <button class="mode-btn active-inbound" id="modeInbound" onclick="setMode('inbound')">
+    📞 Inbound
+    <span class="mode-sub">Caller dials the firm — no prior data</span>
+  </button>
+  <button class="mode-btn" id="modeOutbound" onclick="setMode('outbound')">
+    📲 Outbound
+    <span class="mode-sub">Agent calls PPC lead — pre-filled data</span>
+  </button>
+</div>
+
+<!-- TABS -->
+<div class="tabs" id="tabs">
+  <button class="tab active" data-panel="flow">Call Flow</button>
+  <button class="tab" data-panel="cases">Case-Type Scripts</button>
+  <button class="tab" data-panel="scoring">Lead Scoring</button>
+  <button class="tab" data-panel="script">Full Script</button>
+  <button class="tab" data-panel="compare">Inbound vs Outbound</button>
+</div>
+
+<div class="content">
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- PANEL: CALL FLOW                                -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="panel active" id="panel-flow">
+
+  <!-- INBOUND FLOW -->
+  <div class="flow-mode" id="flow-inbound">
+    <div class="flow-container">
+
+      <div class="flow-step">
+        <span class="step-num blue">Step 1</span>
+        <h3>Greeting & Empathy</h3>
+        <div class="agent-line inbound-border">"Thank you for calling [Firm Name]. I understand you may be going through a difficult time — I'm here to help connect you with the right attorney as quickly as possible. Can I get your first name?"</div>
+        <div class="note">Caller has no prior touchpoint. Sets a calm, professional tone and collects first name for personalization throughout the call.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num blue">Step 2</span>
+        <h3>Case Type Identification</h3>
+        <div class="agent-line inbound-border">"[Name], to make sure I connect you with the right person — can you tell me a little about what's going on? What kind of legal matter are you dealing with?"</div>
+        <div class="note">Open-ended question lets the caller describe their situation naturally. The AI classifies into one of 8+ categories using keyword detection and routes to the appropriate case-specific qualification branch.</div>
+        <div class="tag-row">
+          <span class="branch-label hot">DUI</span>
+          <span class="branch-label hot">Domestic Violence</span>
+          <span class="branch-label hot">Drug Possession</span>
+          <span class="branch-label warm">Assault</span>
+          <span class="branch-label warm">Theft / Fraud</span>
+          <span class="branch-label warm">Probation Violation</span>
+          <span class="branch-label cool">License / DMV</span>
+          <span class="branch-label cool">Expungement</span>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num blue">Step 3</span>
+        <h3>Urgency Assessment</h3>
+        <div class="agent-line inbound-border">"Have you or the person involved already been arrested or charged? And is there an upcoming court date?"</div>
+        <div class="note">Determines timeline pressure. Court date within 7 days or currently in custody = EMERGENCY flag for immediate attorney callback. Court date within 30 days = HIGH PRIORITY.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num blue">Step 4</span>
+        <h3>Case-Specific Qualification</h3>
+        <div class="agent-line inbound-border">→ Routes to tailored question set based on case type identified in Step 2</div>
+        <div class="note">Each case type has 4–5 targeted questions that capture details the attorney needs before consultation. See "Case-Type Scripts" tab for full breakdowns per category.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num blue">Step 5</span>
+        <h3>Decision-Maker & Representation Check</h3>
+        <div class="agent-line inbound-border">"Are you the person facing the charge, or are you calling on behalf of someone? And do you currently have an attorney or public defender on this case?"</div>
+        <div class="note">Identifies if caller is the defendant, spouse, parent, or friend. Checks for existing representation — switching from a public defender is a strong buying signal (+15 pts).</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num blue">Step 6</span>
+        <h3>Financial Qualification</h3>
+        <div class="agent-line inbound-border">"Our attorneys offer a free initial consultation to review your situation. If we're the right fit, representation for cases like yours typically ranges from $X–$Y. Is that within the range of what you'd be prepared for?"</div>
+        <div class="note">Soft financial qualifier — provides a range so the caller can self-select. Avoids the blunt "what's your budget?" while still filtering for ability to retain.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num blue">Step 7</span>
+        <h3>Contact Capture & Consultation Booking</h3>
+        <div class="agent-line inbound-border">"Let me get you scheduled for a consultation. What day and time works best for you? I'll also need your phone number and email to send confirmation."</div>
+        <div class="note">Captures full name, phone, email, preferred time. Books directly into the firm's calendar. Free consultations via Zoom only.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step output-step">
+        <span class="step-num green">Output</span>
+        <h3>Lead Delivered to Firm</h3>
+        <div class="output-grid">
+          <div class="output-card">
+            <div class="oc-label">Instant Notification</div>
+            <div class="oc-text">SMS + Slack alert with caller name, case type, urgency level, and lead score</div>
+          </div>
+          <div class="output-card">
+            <div class="oc-label">CRM Entry</div>
+            <div class="oc-text">Full intake summary auto-logged with call transcript, qualification answers, and lead score</div>
+          </div>
+          <div class="output-card">
+            <div class="oc-label">Calendar Booking</div>
+            <div class="oc-text">Zoom consultation scheduled with confirmation sent via SMS + email</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OUTBOUND FLOW -->
+  <div class="flow-mode" id="flow-outbound" style="display:none;">
+    <div class="flow-container">
+
+      <div class="flow-step">
+        <span class="step-num green">Step 1</span>
+        <h3>Opening & Identity Verification</h3>
+        <div class="desc">Agent already has lead data from PPC form submission. Goal is to confirm identity and remind them why we're calling.</div>
+        <div class="ppc-card">
+          <h4>📋 Pre-Filled from PPC / CRM</h4>
+          <div class="ppc-fields">
+            <div class="ppc-field"><div class="label">Name</div><div class="val">{{contact_name}}</div></div>
+            <div class="ppc-field"><div class="label">Phone</div><div class="val">{{phone}}</div></div>
+            <div class="ppc-field"><div class="label">Email</div><div class="val">{{email}}</div></div>
+            <div class="ppc-field"><div class="label">Case Type</div><div class="val">{{service_type}}</div></div>
+          </div>
+        </div>
+        <div class="agent-line outbound-border">"Hi, this is [Agent] calling from [Firm Name]. Is this {{contact_name}}?"</div>
+        <div class="note">If confirmed → "Thanks [Name]. I see you reached out regarding {{service_type}}. Is that correct?" — validates the PPC form data before proceeding. If wrong number → disposition as Wrong Number and end call.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num green">Step 2</span>
+        <h3>Consultation Offer & Permission to Qualify</h3>
+        <div class="agent-line outbound-border">"We'd be happy to book you for a free 30-minute Zoom consultation with one of our attorneys. Before scheduling, may I ask you a few quick questions?"</div>
+        <div class="note">Unlike inbound, we need explicit permission to proceed since we initiated the call. If YES → continue. If NO / busy → disposition as Callback Requested, note preferred callback time, end politely.</div>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <div style="background:var(--green-dim); border:1px solid var(--green-border); border-radius:8px; padding:10px 14px; font-size:12px; flex:1; min-width:140px;">
+            <strong style="color:var(--green);">YES →</strong><br><span style="color:var(--text-dim);">Proceed to Step 3</span>
+          </div>
+          <div style="background:var(--amber-dim); border:1px solid var(--amber-border); border-radius:8px; padding:10px 14px; font-size:12px; flex:1; min-width:140px;">
+            <strong style="color:var(--amber);">BUSY →</strong><br><span style="color:var(--text-dim);">Schedule callback</span>
+          </div>
+          <div style="background:var(--red-dim); border:1px solid var(--red-border); border-radius:8px; padding:10px 14px; font-size:12px; flex:1; min-width:140px;">
+            <strong style="color:var(--red);">NO →</strong><br><span style="color:var(--text-dim);">Disposition: Not Interested</span>
+          </div>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num green">Step 3</span>
+        <h3>Skip Known Data → Urgency Assessment</h3>
+        <div class="desc">Since case type is already known from PPC form, skip the identification step. Go straight to urgency and case-specific questions — but <strong>skip any questions already answered on the form</strong>.</div>
+        <div class="agent-line outbound-border">"Since you mentioned {{service_type}} — have you already been arrested or charged? And do you have a court date coming up?"</div>
+        <div class="note">Key outbound advantage: we already know the case type, so the agent can reference it naturally and skip directly to the details the attorney needs. If the PPC form captured additional fields (arrest status, court date, etc.), those are acknowledged, not re-asked.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num green">Step 4</span>
+        <h3>Case-Specific Qualification (Reduced Set)</h3>
+        <div class="agent-line outbound-border">→ Routes to tailored questions for {{service_type}} — minus anything already captured from PPC form</div>
+        <div class="note">Outbound calls should feel shorter and more efficient since we have a head start. The agent dynamically skips questions where answers are already in the CRM. Typically 2–4 questions instead of the full 4–5 on inbound.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num green">Step 5</span>
+        <h3>Representation & Decision-Maker Check</h3>
+        <div class="agent-line outbound-border">"Do you currently have an attorney or public defender on this case? And are you the person facing the charge, or calling for someone else?"</div>
+        <div class="note">Same qualification logic as inbound. Switching from public defender = strong signal. If calling for someone else, identify the decision-maker.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num green">Step 6</span>
+        <h3>Financial Soft-Qualify & Booking</h3>
+        <div class="agent-line outbound-border">"Our consultations are completely free via Zoom. If [Firm] is the right fit, representation for this type of case typically falls in the $X–$Y range. Let's get you scheduled — what day and time works best?"</div>
+        <div class="note">Combines financial qualifier with booking in one step to keep momentum. Contact info is already in CRM — agent confirms email spelling for the Zoom invite rather than re-capturing.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <span class="step-num green">Step 7</span>
+        <h3>Email Verification & Close</h3>
+        <div class="agent-line outbound-border">"I'll send the Zoom link to {{email}} — can I just confirm the spelling on that? ... Perfect. You're all set, [Name]. You'll get a confirmation shortly. We look forward to helping you."</div>
+        <div class="note">Only verifies — doesn't re-collect. Warm, confident close. No recap of all details.</div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step output-step">
+        <span class="step-num green">Output</span>
+        <h3>Lead Delivered to Firm</h3>
+        <div class="output-grid">
+          <div class="output-card">
+            <div class="oc-label">CRM Update</div>
+            <div class="oc-text">Existing PPC lead record enriched with qualification answers, urgency flag, and lead score</div>
+          </div>
+          <div class="output-card">
+            <div class="oc-label">Instant Alert</div>
+            <div class="oc-text">SMS + Slack notification to assigned attorney with updated lead details</div>
+          </div>
+          <div class="output-card">
+            <div class="oc-label">Zoom Booked</div>
+            <div class="oc-text">Consultation auto-scheduled, confirmation sent. If no-show, auto-trigger follow-up sequence.</div>
+          </div>
+          <div class="output-card">
+            <div class="oc-label">Dispositions</div>
+            <div class="oc-text">No Answer → voicemail + SMS. Callback Requested → note time. Not Interested → tag. Wrong Number → update record.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- PANEL: CASE TYPE SCRIPTS                        -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="panel" id="panel-cases">
+  <div style="margin-bottom:20px;">
+    <div style="font-size:13px; color:var(--text-dim); line-height:1.6; max-width:700px;" id="caseIntro"></div>
+  </div>
+  <div class="case-grid" id="caseGrid"></div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- PANEL: LEAD SCORING                             -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="panel" id="panel-scoring">
+  <div class="score-section">
+    <h2>Lead Scoring Model</h2>
+    <p>Every call — inbound or outbound — is scored in real-time. This model applies identically to both flows. Leads scoring 70+ trigger immediate attorney callback.</p>
+
+    <table class="score-table">
+      <thead><tr><th>Signal</th><th>Points</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>Court date within 7 days</td><td class="pts">+25</td><td>Maximum urgency — must retain immediately</td></tr>
+        <tr><td>Currently in custody</td><td class="pts">+20</td><td>Extreme urgency — family usually calling, willing to pay</td></tr>
+        <tr><td>Felony charge</td><td class="pts">+20</td><td>Higher stakes = higher case value and willingness to invest</td></tr>
+        <tr><td>Court date within 30 days</td><td class="pts">+15</td><td>High urgency — short decision window</td></tr>
+        <tr><td>Family member calling</td><td class="pts">+15</td><td>Emotionally motivated, often willing to pay premium</td></tr>
+        <tr><td>Switching from public defender</td><td class="pts">+15</td><td>Active buyer — unhappy with current option</td></tr>
+        <tr><td>Confirmed financial readiness</td><td class="pts">+15</td><td>Eliminates the #1 disqualification factor</td></tr>
+        <tr><td>No current representation</td><td class="pts">+10</td><td>Open to hiring — no switching friction</td></tr>
+        <tr><td>Repeat offense / prior record</td><td class="pts">+10</td><td>Higher complexity = higher case value</td></tr>
+        <tr><td>PPC lead responded to outbound call</td><td class="pts">+10</td><td>Engaged with ad AND answered follow-up = high intent</td></tr>
+        <tr><td>Misdemeanor only</td><td class="pts">+5</td><td>Lower value but still viable</td></tr>
+        <tr><td>Already has private attorney</td><td class="pts neg">−20</td><td>Low likelihood to switch — usually price shopping</td></tr>
+        <tr><td>Out of jurisdiction</td><td class="pts neg">−25</td><td>Cannot serve — refer out or disqualify</td></tr>
+        <tr><td>Unwilling to discuss finances</td><td class="pts neg">−15</td><td>Likely unable or unwilling to retain</td></tr>
+        <tr><td>No court date, no arrest, no charges</td><td class="pts neg">−10</td><td>May be premature — move to nurture sequence</td></tr>
+        <tr><td>Outbound: no answer after 3 attempts</td><td class="pts neg">−15</td><td>Low engagement — deprioritize</td></tr>
+      </tbody>
+    </table>
+
+    <div class="score-tiers">
+      <div class="tier hot">
+        <div class="tier-score">70–100</div>
+        <div class="tier-label">🔥 Hot Lead</div>
+        <div class="tier-desc">Immediate attorney callback within 5 minutes. SMS + Slack alert to managing partner.</div>
+      </div>
+      <div class="tier warm">
+        <div class="tier-score">40–69</div>
+        <div class="tier-label">⚡ Warm Lead</div>
+        <div class="tier-desc">Consultation scheduled within 24 hours. Automated confirmation + reminder sequence.</div>
+      </div>
+      <div class="tier nurture">
+        <div class="tier-score">0–39</div>
+        <div class="tier-label">📋 Nurture</div>
+        <div class="tier-desc">Added to email/SMS drip sequence. Follow-up in 48–72 hours. May convert later.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- PANEL: FULL SCRIPT                              -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="panel" id="panel-script">
+
+  <!-- INBOUND SCRIPT -->
+  <div class="flow-mode" id="script-inbound">
+    <div class="script-block">
+      <h2>Inbound Call Script</h2>
+      <div class="script-subtitle">Caller dials the firm directly — no prior data available.</div>
+
+      <div class="script-line"><span class="s-label agent-ib">Agent — Greeting</span>
+        <p>"Thank you for calling [Firm Name], this is [Agent Name]. I understand you may be dealing with a stressful situation — I'm here to help get you connected with the right attorney. Can I get your first name?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ Store first name. Use throughout call for personalization.</p></div>
+
+      <div class="script-line"><span class="s-label agent-ib">Agent — Case Identification</span>
+        <p>"Thanks, [Name]. To point you in the right direction — can you give me a brief overview of what's going on? What kind of legal matter is this about?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ AI classifies into: DUI, Domestic Violence, Drug Possession, Assault, Theft/Fraud, Probation Violation, License/DMV, Expungement, or Other. If unclear, follow up: "Is this related to an arrest, a traffic matter, clearing a record, or something else?"</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ib">Agent — Urgency</span>
+        <p>"Have you or the person involved already been arrested or charged? And do you have a court date coming up?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ Court date ≤ 7 days OR in custody: flag EMERGENCY. Court date ≤ 30 days: flag HIGH PRIORITY. No court date/no arrest: standard priority.</p></div>
+
+      <div class="script-line"><span class="s-label branch">Branch → Case-Specific Questions</span>
+        <p class="dim">→ Route to the appropriate case-type question set (see Case-Type Scripts tab). Each branch asks 4–5 targeted questions before continuing to the universal close.</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ib">Agent — Representation</span>
+        <p>"Do you currently have an attorney or a public defender working on this case?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ If "public defender" → ask: "What's making you consider a private attorney?" — captures pain points, strong buying signal. If private attorney → likely price shopping, score accordingly.</p></div>
+
+      <div class="script-line"><span class="s-label agent-ib">Agent — Decision Maker</span>
+        <p>"And are you the person facing the charge, or are you calling for a family member or someone you know?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ If family member: "That's really caring of you to reach out. Who will be involved in deciding on an attorney?" — identifies the actual decision-maker.</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ib">Agent — Financial Qualification</span>
+        <p>"Our attorneys offer a free initial consultation so you can understand your options. If we're the right fit, fees for this type of case typically range from $[X] to $[Y] depending on complexity. Is that within the range of what you'd be prepared for?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ Affirmative = +15 points. "I need to think about it" = neutral. Avoids/deflects = −15 points. If asks about payment plans: "Yes, [Firm] offers flexible options — the attorney can discuss specifics during your consultation."</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ib">Agent — Booking</span>
+        <p>"Let's get you scheduled for a consultation. What day and time works best for you?"</p></div>
+      <div class="script-line"><span class="s-label agent-ib">Agent — Contact Capture</span>
+        <p>"Can I get your best phone number and email so we can send you the Zoom link and confirmation?"</p></div>
+      <div class="script-line"><span class="s-label agent-ib">Agent — Close</span>
+        <p>"You're all set, [Name]. You'll receive a confirmation shortly. If anything changes before your consultation, don't hesitate to call us back. We look forward to helping you."</p></div>
+
+      <div class="script-line"><span class="s-label system">System — Post-Call</span>
+        <p class="dim">→ Calculate lead score. Generate intake summary. Push to CRM. Send instant notification to assigned attorney. Trigger confirmation SMS + email. If score ≥ 70, Slack alert to managing partner.</p></div>
+    </div>
+  </div>
+
+  <!-- OUTBOUND SCRIPT -->
+  <div class="flow-mode" id="script-outbound" style="display:none;">
+    <div class="script-block">
+      <h2>Outbound PPC Follow-Up Script</h2>
+      <div class="script-subtitle">Agent calls a lead generated from paid advertising. Name, phone, email, and case type are pre-filled from PPC form.</div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Opening</span>
+        <p>"Hi, this is [Agent] calling from [Firm Name]. Is this {{contact_name}}?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ If confirmed, proceed. If wrong number → disposition: Wrong Number, end call politely. If voicemail → leave message + trigger SMS follow-up.</p></div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Context Reminder</span>
+        <p>"Thanks, [Name]. I see you reached out regarding {{service_type}}. Is that correct?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ If confirmed → continue. If not correct or unclear → "No problem — can you tell me briefly what you're dealing with?" and re-classify the case type.</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Consultation Offer</span>
+        <p>"We'd be happy to book you for a free 30-minute Zoom consultation with one of our attorneys. Before scheduling, may I ask you a few quick questions?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ YES = proceed to qualification. NO / busy = "No problem at all. Is there a better time I can call you back?" → disposition: Callback Requested. Firm no = "No problem. We're always here if you change your mind." → disposition: Not Interested.</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Urgency (Skip if Known)</span>
+        <p>"Since you mentioned {{service_type}} — have you already been arrested or charged? And do you have a court date coming up?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ If PPC form already captured arrest status or court date, acknowledge it: "I see you mentioned you've already been charged — I just want to confirm, do you have a court date set?" Skip fully answered fields.</p></div>
+
+      <div class="script-line"><span class="s-label branch">Branch → Case-Specific Questions (Reduced Set)</span>
+        <p class="dim">→ Route to {{service_type}} question set, but dynamically skip any questions already answered on the PPC form. Typically 2–4 questions instead of the full 4–5. Goal: keep the call short and efficient — the lead already expressed interest by filling out the form.</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Representation Check</span>
+        <p>"Do you currently have an attorney or public defender on this case?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ Same scoring logic as inbound. Public defender switch = +15. Private attorney = −20.</p></div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Decision Maker</span>
+        <p>"Are you the person facing the charge, or are you calling on behalf of someone?"</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Financial Qualify + Book</span>
+        <p>"The consultation is completely free — it's a Zoom call with one of our attorneys. If [Firm] is the right fit, representation for {{service_type}} cases typically falls in the $[X]–$[Y] range. Let's get you scheduled — what day and time works best?"</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ Combines financial qualifier + booking in one step to maintain momentum. Don't pause and wait for financial confirmation separately — roll right into scheduling.</p></div>
+
+      <div class="script-line"><span class="s-label agent-ob">Agent — Verify Email + Close</span>
+        <p>"I'll send the Zoom link to {{email}} — can I just confirm the spelling on that? ... Perfect. You're all set, [Name]. You'll get a confirmation shortly. Thank you — we look forward to assisting you."</p></div>
+      <div class="script-line"><span class="s-label system">System</span>
+        <p class="dim">→ Only verify email spelling — don't re-collect. No full recap. Warm, confident close.</p></div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label disposition">Dispositions</span>
+        <p class="dim">
+          <strong>No Answer</strong> → Leave voicemail: "Hi [Name], this is [Agent] from [Firm]. We received your inquiry about {{service_type}} and wanted to connect you with one of our attorneys for a free consultation. Please call us back at [number] or we'll try again shortly." + trigger SMS.<br>
+          <strong>Callback Requested</strong> → Note preferred time, schedule re-attempt.<br>
+          <strong>Not Interested</strong> → Tag in CRM, move to low-priority nurture.<br>
+          <strong>Wrong Number</strong> → Update record, end call.<br>
+          <strong>Abusive / Spam</strong> → End call, tag as Spam-End.
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="script-line"><span class="s-label system">System — Post-Call</span>
+        <p class="dim">→ Update existing CRM record with qualification data + lead score. If booked: trigger Zoom confirmation + reminder sequence (24hr + 1hr before). If no-show: auto-trigger follow-up call + SMS. If not interested: tag and exclude from outbound queue.</p></div>
+
+      <div style="margin-top:20px; background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:18px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--green); margin-bottom:10px;">⚡ Agent Boundaries — Same for Both Flows</div>
+        <div style="font-size:12.5px; color:var(--text-dim); line-height:1.7;">
+          • Never provide legal advice or opinions — "I'm not able to provide legal advice, but the attorney will review your situation during the consultation."<br>
+          • Never use: guaranteed, innocent, guilty, win, lose, eligible, strong case, should be approved.<br>
+          • If pressed for legal detail: "A licensed attorney will address that during your consultation."<br>
+          • Max 2 sentences per response. Max 20 words per sentence. Never repeat confirmed information.<br>
+          • If multiple case types arise: complete intake for primary, note secondary in CRM.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- PANEL: INBOUND VS OUTBOUND COMPARISON           -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="panel" id="panel-compare">
+  <div style="max-width:860px;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:8px;">Inbound vs. Outbound — Key Differences</h2>
+    <p style="color:var(--text-dim); font-size:13.5px; margin-bottom:8px; line-height:1.6;">Same AI agent, same qualification logic, same lead scoring — but the call structure adapts to how much data we have upfront and who initiated the contact.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Dimension</th>
+          <th class="ib-head" style="width:39%">📞 Inbound</th>
+          <th class="ob-head" style="width:39%">📲 Outbound (PPC)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Who initiates</td>
+          <td>Caller dials the firm</td>
+          <td>AI agent calls the lead</td>
+        </tr>
+        <tr>
+          <td>Data available at start</td>
+          <td>None — caller is unknown until they provide details</td>
+          <td>Name, phone, email, case type pre-filled from PPC form; possibly additional qualifying answers</td>
+        </tr>
+        <tr>
+          <td>Opening approach</td>
+          <td>Empathy-first greeting → collect name → ask what's going on</td>
+          <td>Identity verification → remind them they inquired → ask permission to qualify</td>
+        </tr>
+        <tr>
+          <td>Case type identification</td>
+          <td>Open-ended: "Tell me about your situation" → AI classifies from natural language</td>
+          <td>Already known: "I see you reached out about {{service_type}}" → confirm or correct</td>
+        </tr>
+        <tr>
+          <td>Permission to qualify</td>
+          <td>Implied — they called us, so they expect questions</td>
+          <td>Explicit — we called them, so we ask: "May I ask you a few quick questions?"</td>
+        </tr>
+        <tr>
+          <td>Qualification depth</td>
+          <td>Full 4–5 case-specific questions + urgency + decision-maker + financials</td>
+          <td>Reduced set — skip questions already answered on form. Typically 2–4 questions.</td>
+        </tr>
+        <tr>
+          <td>Contact capture</td>
+          <td>Must collect: name, phone, email from scratch</td>
+          <td>Already in CRM — only verify email spelling for Zoom invite</td>
+        </tr>
+        <tr>
+          <td>Call duration target</td>
+          <td>4–6 minutes (full intake)</td>
+          <td>2–4 minutes (faster with pre-filled data)</td>
+        </tr>
+        <tr>
+          <td>No-answer handling</td>
+          <td>N/A — caller is on the line</td>
+          <td>Voicemail + SMS auto-trigger. Retry up to 3 attempts over 48 hours.</td>
+        </tr>
+        <tr>
+          <td>Dispositions</td>
+          <td>Booked, Not Qualified, Follow-Up</td>
+          <td>Booked, Callback Requested, Not Interested, No Answer, Wrong Number, Spam-End</td>
+        </tr>
+        <tr>
+          <td>CRM behavior</td>
+          <td>Creates new lead record</td>
+          <td>Updates existing PPC lead record with qualification data</td>
+        </tr>
+        <tr>
+          <td>Follow-up if not booked</td>
+          <td>SMS/email nurture sequence triggered post-call</td>
+          <td>Auto-retry call sequence + SMS + email drip</td>
+        </tr>
+        <tr>
+          <td>Lead scoring</td>
+          <td colspan="2" style="text-align:center; color:var(--text-dim);">Identical scoring model applies to both flows. Outbound adds +10 for "responded to follow-up call."</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<script>
+// ─── CASE TYPE DATA ───
+const caseTypes = [
+  {
+    id:'dui', icon:'🚗', iconBg:'rgba(248,113,113,0.12)',
+    title:'DUI / DWI', subtitle:'Driving under the influence of alcohol or drugs',
+    urgency:'high', urgencyLabel:'High Urgency — License suspension timelines',
+    inboundQs: [
+      { q:"When were you pulled over or arrested?", why:"Establishes timeline — some states have 10-day windows to challenge license suspension" },
+      { q:"Was this for alcohol, marijuana, prescription medication, or another substance?", why:"Different substances require different defense strategies and carry different penalties" },
+      { q:"Did you take a breathalyzer or blood test? Do you remember the result?", why:"BAC level determines charge severity — over 0.15 often triggers enhanced penalties" },
+      { q:"Is this your first DUI or have you had prior offenses?", why:"Repeat DUI dramatically escalates penalties — often felony territory" },
+      { q:"Was there an accident involved, and was anyone injured?", why:"DUI with injury = felony in most jurisdictions, significantly higher case value" }
+    ],
+    outboundQs: [
+      { q:"I see you reached out about a DUI — when did the stop or arrest happen?", why:"Confirms case type and establishes timeline" },
+      { q:"Did they take a breath or blood test, and do you know the result?", why:"BAC level drives defense strategy and charge severity" },
+      { q:"Is this your first DUI or have you had one before?", why:"Prior offenses escalate penalties significantly" },
+      { q:"Do you already have a court date or DMV hearing scheduled?", why:"DMV hearings often have tight deadlines — critical urgency indicator" }
+    ],
+    ppcKnown: "Case type (DUI) — skip identification"
+  },
+  {
+    id:'domestic', icon:'🛡️', iconBg:'rgba(251,191,36,0.12)',
+    title:'Domestic Violence', subtitle:'Charges involving household or intimate partner disputes',
+    urgency:'high', urgencyLabel:'High Urgency — Often involves protective orders',
+    inboundQs: [
+      { q:"Has an arrest already been made, and is the person currently in custody?", why:"Bail/bond hearing may be imminent — attorney needed ASAP" },
+      { q:"What is the relationship between the parties involved?", why:"Spouse, partner, cohabitant, family member — affects charge classification" },
+      { q:"Has a protective or restraining order been issued?", why:"Violating a protective order is a separate charge — needs immediate guidance" },
+      { q:"Were there any injuries, and were police called to the scene?", why:"Police report details and injury severity shape the defense approach" },
+      { q:"Is this the first incident, or have there been prior charges or orders?", why:"Prior history elevates charges and complicates defense" }
+    ],
+    outboundQs: [
+      { q:"I see you reached out about a domestic matter — have you been arrested or formally charged yet?", why:"Establishes where the case stands legally" },
+      { q:"Is there currently a restraining or protective order against you?", why:"Separate legal issue that requires immediate attorney awareness" },
+      { q:"When is your next court date, if one has been set?", why:"Timeline urgency — drives scheduling priority" },
+      { q:"Are you looking for representation for the criminal case, the restraining order, or both?", why:"Scopes the engagement so the attorney can prepare" }
+    ],
+    ppcKnown: "Case type (Domestic Violence) — skip identification"
+  },
+  {
+    id:'drugs', icon:'⚖️', iconBg:'rgba(167,139,250,0.12)',
+    title:'Drug Possession', subtitle:'Possession, paraphernalia, or intent to distribute',
+    urgency:'high', urgencyLabel:'High Urgency — Potential mandatory minimums',
+    inboundQs: [
+      { q:"What substance was involved?", why:"Schedule classification determines severity — marijuana vs. fentanyl are very different" },
+      { q:"What was the approximate quantity found?", why:"Quantity thresholds determine simple possession vs. intent to distribute" },
+      { q:"How was the substance found — traffic stop, search warrant, or another way?", why:"Unlawful search = potential Fourth Amendment defense" },
+      { q:"Were there other charges alongside possession?", why:"Stacked charges increase complexity and case value" },
+      { q:"Is this a first offense, and are you aware of any diversion programs?", why:"First-time offenders may qualify for diversion — still need attorney" }
+    ],
+    outboundQs: [
+      { q:"What were you charged with — possession, intent to sell, or something else?", why:"Determines severity and defense approach" },
+      { q:"Do you know which substance was involved?", why:"Schedule classification drives penalties" },
+      { q:"Have you already been to court or is this the first stage?", why:"Case stage determines urgency" },
+      { q:"Is this your first offense or have you had prior drug charges?", why:"Prior history affects sentencing exposure" }
+    ],
+    ppcKnown: "Case type (Drug Charges) — skip identification"
+  },
+  {
+    id:'assault', icon:'⚡', iconBg:'rgba(251,191,36,0.12)',
+    title:'Assault / Battery', subtitle:'Simple assault, aggravated assault, battery charges',
+    urgency:'med', urgencyLabel:'Medium-High Urgency — Depends on severity',
+    inboundQs: [
+      { q:"Can you describe what happened — were you defending yourself?", why:"Self-defense is the #1 defense strategy — need to assess early" },
+      { q:"Was a weapon involved in the incident?", why:"Weapon involvement typically elevates to aggravated assault — felony" },
+      { q:"Were there injuries, and how serious?", why:"Severity of injury directly impacts charge level" },
+      { q:"Were there witnesses or video of the incident?", why:"Evidence availability shapes the defense" },
+      { q:"What is your relationship to the other person involved?", why:"May overlap with domestic violence charges" }
+    ],
+    outboundQs: [
+      { q:"Were you arrested or contacted by police about this?", why:"Establishes case status" },
+      { q:"Do you know the specific charge — simple assault, felony assault, etc.?", why:"Charge level determines severity and approach" },
+      { q:"When did the incident happen?", why:"Timeline for evidence and witnesses" },
+      { q:"Do you have a court date scheduled yet?", why:"Urgency indicator" }
+    ],
+    ppcKnown: "Case type (Assault) — skip identification"
+  },
+  {
+    id:'theft', icon:'📋', iconBg:'rgba(79,140,255,0.12)',
+    title:'Theft / Fraud', subtitle:'Shoplifting, grand theft, identity theft, forgery, embezzlement',
+    urgency:'med', urgencyLabel:'Medium Urgency — Value-dependent severity',
+    inboundQs: [
+      { q:"What type of theft or fraud is this — shoplifting, financial fraud, identity theft?", why:"Each type has different legal frameworks and penalty structures" },
+      { q:"Do you know the approximate dollar value involved?", why:"Dollar thresholds determine misdemeanor vs. felony" },
+      { q:"Has a formal charge been filed, or are you under investigation?", why:"Investigation stage = opportunity for proactive defense" },
+      { q:"Is this related to your employment or a business situation?", why:"Embezzlement / white-collar requires specialized defense" },
+      { q:"Have you been contacted by law enforcement?", why:"Detective contact = charges likely coming — urgency increases" }
+    ],
+    outboundQs: [
+      { q:"What type of charge are you facing — shoplifting, theft, fraud, or something else?", why:"Narrows the legal framework" },
+      { q:"Do you know the alleged amount or level of the charge?", why:"Value determines misdemeanor vs. felony" },
+      { q:"Have you already been cited or arrested?", why:"Case stage affects urgency" },
+      { q:"When is your next court date?", why:"Timeline pressure" }
+    ],
+    ppcKnown: "Case type (Theft/Fraud) — skip identification"
+  },
+  {
+    id:'probation', icon:'🔒', iconBg:'rgba(248,113,113,0.12)',
+    title:'Probation Violation', subtitle:'Technical violations, new charges while on probation',
+    urgency:'high', urgencyLabel:'High Urgency — Risk of immediate incarceration',
+    inboundQs: [
+      { q:"What was the original offense you were placed on probation for?", why:"Original charge severity determines stakes of a violation" },
+      { q:"What is the nature of the violation — missed check-in, failed test, new arrest?", why:"Technical vs. substantive violations have very different outcomes" },
+      { q:"Has a violation hearing been scheduled?", why:"Judges can revoke and sentence immediately at a hearing" },
+      { q:"Who is your probation officer, and have they filed the violation yet?", why:"Pre-filing = possible intervention. Post-filing = defense mode" },
+      { q:"How much time is remaining on your probation?", why:"Close to completion may allow for leniency arguments" }
+    ],
+    outboundQs: [
+      { q:"Were you notified that you violated probation or missed a court date?", why:"Confirms the violation is official" },
+      { q:"Has a warrant been issued for your arrest?", why:"Warrant = extreme urgency" },
+      { q:"When did this situation occur?", why:"Timeline for response" },
+      { q:"Are you currently out of custody?", why:"Custody status drives immediate next steps" }
+    ],
+    ppcKnown: "Case type (Probation Violation) — skip identification"
+  },
+  {
+    id:'license', icon:'🚙', iconBg:'rgba(52,211,153,0.12)',
+    title:'License / DMV / Driving', subtitle:'Suspended license, reckless driving, hit and run',
+    urgency:'low', urgencyLabel:'Lower Urgency — But can escalate quickly',
+    inboundQs: [
+      { q:"What specific issue — suspended license, reckless driving, hit and run?", why:"Wide severity range — hit and run can be a felony" },
+      { q:"Were you aware of the suspension, if applicable?", why:"Knowingly driving on a suspended license carries harsher penalties" },
+      { q:"Is this related to a DUI suspension or another reason?", why:"DUI-related suspensions have specific reinstatement processes" },
+      { q:"Have you accumulated points, or is this an isolated incident?", why:"Pattern may trigger habitual offender status" },
+      { q:"Do you need your license for work?", why:"Occupational/hardship license option — adds urgency to retain" }
+    ],
+    outboundQs: [
+      { q:"Is your license currently suspended or at risk of suspension?", why:"Establishes current status" },
+      { q:"Were you cited, arrested, or notified by the DMV?", why:"Determines which legal process is in play" },
+      { q:"Do you have a DMV hearing or court date scheduled?", why:"Timeline urgency" },
+      { q:"Is this related to a DUI or a separate driving charge?", why:"May need to cross-reference with DUI defense" }
+    ],
+    ppcKnown: "Case type (License/DMV) — skip identification"
+  },
+  {
+    id:'expungement', icon:'✨', iconBg:'rgba(52,211,153,0.12)',
+    title:'Expungement / Record Clearing', subtitle:'Sealing or clearing prior convictions from record',
+    urgency:'low', urgencyLabel:'Lower Urgency — Proactive, not reactive',
+    inboundQs: [
+      { q:"What conviction or charge are you looking to have cleared?", why:"Not all charges are eligible — need to assess upfront" },
+      { q:"When was the conviction, and have you completed all terms?", why:"Most states require completion of sentence + waiting period" },
+      { q:"Have you had any other convictions since?", why:"Subsequent offenses can disqualify eligibility" },
+      { q:"Why are you looking to clear your record now — employment, housing?", why:"Motivation helps the attorney prioritize and frame the petition" },
+      { q:"Do you know if your charge is eligible for expungement?", why:"Some offenses are typically ineligible — manages expectations" }
+    ],
+    outboundQs: [
+      { q:"What type of charge are you looking to clear from your record?", why:"Eligibility varies by charge type" },
+      { q:"Has the case been fully closed and completed?", why:"Must be fully resolved to qualify" },
+      { q:"Approximately when did the conviction occur?", why:"Waiting period requirements" },
+      { q:"Are you looking to clear this for employment, housing, or another reason?", why:"Helps attorney understand urgency and framing" }
+    ],
+    ppcKnown: "Case type (Expungement) — skip identification"
+  }
+];
+
+// ─── STATE ───
+let currentMode = 'inbound';
+
+function setMode(mode) {
+  currentMode = mode;
+  // Toggle mode buttons
+  document.getElementById('modeInbound').className = 'mode-btn' + (mode==='inbound' ? ' active-inbound' : '');
+  document.getElementById('modeOutbound').className = 'mode-btn' + (mode==='outbound' ? ' active-outbound' : '');
+  // Toggle tab colors
+  document.querySelectorAll('.tab').forEach(t => {
+    t.classList.remove('active-green');
+    if (mode === 'outbound' && t.classList.contains('active')) t.classList.add('active-green');
+  });
+  // Toggle flow panels
+  document.querySelectorAll('.flow-mode').forEach(f => f.style.display = 'none');
+  const flowId = 'flow-' + mode;
+  const scriptId = 'script-' + mode;
+  if (document.getElementById(flowId)) document.getElementById(flowId).style.display = '';
+  if (document.getElementById(scriptId)) document.getElementById(scriptId).style.display = '';
+  // Re-render case cards
+  renderCaseCards();
+}
+
+function renderCaseCards() {
+  const grid = document.getElementById('caseGrid');
+  const intro = document.getElementById('caseIntro');
+  const isOB = currentMode === 'outbound';
+  const cardClass = isOB ? 'ob' : 'ib';
+  const colorClass = isOB ? 'ob-color' : 'ib-color';
+
+  intro.innerHTML = isOB
+    ? 'Outbound calls already have the case type from the PPC form. The agent <strong>skips identification</strong> and goes straight to case-specific qualification — with a <strong>reduced question set</strong> that excludes anything already captured on the form.'
+    : 'Inbound calls require full identification and qualification. The AI classifies the case type from natural language, then routes to the appropriate question set below. Click any card to expand.';
+
+  grid.innerHTML = '';
+  caseTypes.forEach(c => {
+    const qs = isOB ? c.outboundQs : c.inboundQs;
+    const urgClass = c.urgency==='high'?'high':c.urgency==='med'?'med':'low';
+    const questionsHTML = qs.map((q,i) => `
+      <div class="q-item">
+        <div class="q-num">${i+1}</div>
+        <div class="q-text">${q.q}<em>→ ${q.why}</em></div>
+      </div>
+    `).join('');
+
+    const knownBadge = isOB ? `<span class="known-badge">✓ Pre-filled</span>` : '';
+
+    grid.innerHTML += `
+      <div class="case-card ${cardClass}" onclick="this.classList.toggle('expanded')">
+        <div class="case-card-header">
+          <div class="case-icon" style="background:${c.iconBg}">${c.icon}</div>
+          <div>
+            <h3>${c.title} ${knownBadge}</h3>
+            <div class="subtitle">${c.subtitle}</div>
+          </div>
+        </div>
+        <div class="case-details">
+          <div class="case-q-section">
+            <div class="urgency-tag ${urgClass}">${c.urgencyLabel}</div>
+            ${isOB ? `<div style="margin-top:10px; font-size:11px; color:var(--green); font-weight:600;">⚡ ${c.ppcKnown}</div>` : ''}
+            <h4 class="${colorClass}" style="margin-top:14px;">${isOB ? 'Outbound Questions (Reduced Set)' : 'Inbound Qualification Questions'}</h4>
+            ${questionsHTML}
+          </div>
+        </div>
+        <div class="expand-hint">Click to expand</div>
+      </div>
+    `;
+  });
+}
+
+// ─── TAB NAVIGATION ───
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.classList.remove('active-green'); });
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    if (currentMode === 'outbound') tab.classList.add('active-green');
+    document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+  });
+});
+
+// ─── INIT ───
+renderCaseCards();
+</script>
+</body>
+</html>
