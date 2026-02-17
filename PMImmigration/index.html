@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | PM Immigration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Voice AI */
+        .voice-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .voice-cards { grid-template-columns: 1fr; }
+        }
+
+        .voice-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .voice-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .voice-card:nth-child(1) .voice-card-header { background: var(--accent-blue); }
+        .voice-card:nth-child(2) .voice-card-header { background: var(--accent-orange); }
+        .voice-card:nth-child(3) .voice-card-header { background: var(--accent-green); }
+
+        .voice-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .voice-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .voice-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Operations Partnership Proposal &bull; February 2026</div>
+        <h1>From 30 Hours of Admin to 3</h1>
+        <p>Same team. Same capacity. Half the manual work.</p>
+        <p class="hero-client">Prepared for PM Immigration</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Silvana & Chrys,</div>
+                <p>You don't have a lead problem. You have <span class="highlight">30 consultations per week</span>, <span class="highlight">15 years of referrals</span>, and a team that clients genuinely love. Jenny is booked solid. That's the good news.</p>
+                <p>The bad news: <span class="highlight">Chrys is doing the work of three people manually.</span> Social media inquiries answered by hand. Payment confirmations chased over text. Clients booking slots without paying. E-transfers that only Jenny can see. Every hour Chrys spends on back-and-forth emails is an hour she can't spend closing the next consultation.</p>
+                <p><span class="highlight">You don't need more leads. You need a system that handles the 80% of intake work that doesn't require a human touch</span> &mdash; so that when a human touch matters, Chrys actually has time to give it.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Nobody books without paying first</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You told us people are taking calendar slots without completing payment. Then Chrys has to chase them &mdash; and meanwhile a paying client can't get that time.</p>
+                            
+                            <h5>How we fix it:</h5>
+                            <ul>
+                                <li><strong>Payment-gated booking:</strong> The calendar slot literally cannot be reserved until payment clears. Credit card or e-transfer &mdash; doesn't matter. No payment, no booking. Not "pay later," not "hold my spot." The system won't allow it. No confirmation email, no calendar hold, no Zoom link until funds are confirmed.</li>
+                                <li><strong>Unified payment visibility:</strong> Right now, e-transfers go to Jenny and nobody else knows. We connect your payment systems to the CRM so Chrys, Silvana, and Jenny all see the same thing &mdash; in real time.</li>
+                                <li><strong>Zero ghost bookings:</strong> No more people taking slots they haven't paid for. No more Chrys chasing payment screenshots. No more wondering if someone actually completed checkout. If they're on Jenny's calendar, they've paid. Period.</li>
+                                <li><strong>Multi-currency support:</strong> $299 CAD for in-Canada, different pricing for international &mdash; the system handles it based on the client's location.</li>
+                            </ul>
+
+                            <h5>What Chrys stops doing:</h5>
+                            <ul>
+                                <li>Checking with Jenny if e-transfers came through</li>
+                                <li>Chasing clients who booked but didn't pay</li>
+                                <li>Manually cancelling unpaid appointments</li>
+                                <li>Asking clients for payment screenshots</li>
+                            </ul>
+
+                            <p class="stat-callout">At $299/consultation &times; 120 consultations/month = <strong>$35,880/month in consultation revenue</strong>. Every unpaid slot-holder is blocking a paying client from that calendar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Higher show rates, higher close rates &mdash; without more leads</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You're already generating 120+ consultations per month. You don't need more leads &mdash; you need more of the people who book to actually show up, and more of the people who show up to sign.</p>
+
+                            <h5>How payment-gating improves show rates:</h5>
+                            <ul>
+                                <li><strong>Skin in the game:</strong> Someone who paid $299 shows up. Across our clients, paid consultations see 85-95% show rates vs. 50-60% for free ones. Even compared to "pay later" setups, pay-first eliminates the people who were never serious.</li>
+                                <li><strong>No more ghost bookings:</strong> Right now, unpaid bookings dilute your calendar. Every no-show is a slot a paying client could have taken. Payment-gating means every person on Jenny's calendar has already committed with their wallet.</li>
+                                <li><strong>Automated reminders:</strong> 48 hours before, 24 hours before, and morning-of &mdash; via email, text, and WhatsApp. Clients get the Zoom link, what to prepare, and what to expect. No surprises, no forgetting.</li>
+                            </ul>
+
+                            <h5>How the system improves close rates:</h5>
+                            <ul>
+                                <li><strong>Pre-consultation prep:</strong> By the time someone sits with Jenny, the Voice AI has already captured their current status, service needed, and urgency. Jenny walks in prepared &mdash; not spending the first 15 minutes on basics.</li>
+                                <li><strong>Post-consultation follow-up:</strong> AI-generated summaries sent to the client within hours of the consult, not days. Includes next steps, document requirements, and a clear path to retainer. While the conversation is still fresh.</li>
+                                <li><strong>Automated nurture for "not yet" clients:</strong> Some people need the consultation to educate themselves &mdash; you said that's common. Instead of losing them, the system sends a follow-up sequence: helpful information about their specific pathway, reminders of what was discussed, and a clear call to action when they're ready.</li>
+                                <li><strong>Service-specific retainer templates:</strong> When someone is ready to sign, the agreement is already drafted based on their consultation. No delay, no manual drafting. Strike while the iron is hot.</li>
+                            </ul>
+
+                            <h5>The math on this:</h5>
+                            <p>You're closing ~10% of consultations into retainers. If we move that to 13-15% through better show rates, faster follow-up, and proper nurture sequences &mdash; that's 3-6 additional retainers per month at $5,000 each. <strong>$15,000 to $30,000 in new revenue without a single additional lead.</strong></p>
+
+                            <p class="stat-callout">Agile Legal's show rate went from ~70% to <strong>91%</strong> after implementing payment-gated booking and automated reminders. Their close rate improved from 10% to <strong>14%</strong> with structured post-consultation follow-up.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Voice AI handles after-hours intake &mdash; in English and Spanish</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Five real inquiries per day, and you said the back-and-forth "dancing" with each one eats hours. What happens when someone calls at 8pm from Colombia? They wait until tomorrow &mdash; if they don't call another firm first.</p>
+                            
+                            <h5>How it works:</h5>
+                            <ul>
+                                <li><strong>After-hours coverage:</strong> When Chrys leaves for the day, the Voice AI picks up. It introduces itself as calling from PM Immigration, answers in English or Spanish based on the caller's language preference.</li>
+                                <li><strong>Qualification on the call:</strong> AI asks what service they need (PR, spousal, visa extension, work permit), captures their current status, and determines urgency.</li>
+                                <li><strong>Payment + booking:</strong> AI communicates the $299 consultation fee, sends the payment link via text during the call, and only books into Jenny's calendar after payment confirms.</li>
+                                <li><strong>Smart retry:</strong> If someone submits an inquiry via the website and doesn't pick up, the system retries at a different time the next day. Three attempts across three days.</li>
+                                <li><strong>Parallel SMS:</strong> Every call attempt is paired with a text: "Hi, this is PM Immigration. We just tried calling about your inquiry. Reply YES if now is a good time."</li>
+                            </ul>
+
+                            <h5>What Chrys sees the next morning:</h5>
+                            <ul>
+                                <li>A list of who called overnight</li>
+                                <li>Full transcripts and recordings of each conversation</li>
+                                <li>Who paid and is already booked</li>
+                                <li>Who needs follow-up (and why)</li>
+                            </ul>
+
+                            <h5>The human touch stays:</h5>
+                            <p>This doesn't replace Chrys. Chrys is the reason people love your firm &mdash; Silvana said it herself. The AI handles the repetitive first contact so Chrys can spend her time on the people who actually need her warmth and expertise.</p>
+
+                            <p class="stat-callout">Your clients come from Australia, New Zealand, UK, India, and Latin America &mdash; that's <strong>every timezone</strong>. A 24/7 system means you never lose a lead because of when they called.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">A CRM that runs your pipeline &mdash; not just stores files</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Clio Pro tracks cases and stores documents. But it doesn't automate intake, doesn't connect to your payment systems, and doesn't tell you who's stuck in the pipeline or why.</p>
+                            
+                            <h5>What we build for you:</h5>
+                            <ul>
+                                <li><strong>Three pipelines, three roles:</strong> Chrys manages intake. Silvana manages onboarding. Jenny sees the bird's-eye view of active clients. Each person sees what matters to them &mdash; nothing more, nothing less.</li>
+                                <li><strong>Every entry point feeds the CRM:</strong> Website form, phone call, Instagram DM, email, WhatsApp &mdash; all captured automatically. No more manually entering leads from social media or phone calls.</li>
+                                <li><strong>Service-specific automations:</strong> PR spousal leads get one template, one set of follow-ups, one document checklist. Visa refusals get a completely different flow. Work permits get another. Each pathway is built for that service.</li>
+                                <li><strong>Document intake portals:</strong> Instead of emailing back and forth asking for passports and visa letters, send the client a link. They upload directly to their file in the CRM. No attachments, no searching through inboxes.</li>
+                                <li><strong>Retainer agreement automation:</strong> Templates customized by service type, auto-filled with client details, sent for e-signature. No manual drafting.</li>
+                                <li><strong>Task automation:</strong> When a lead moves to a new stage, tasks are created automatically for the right person. Chrys doesn't need to remember &mdash; the system tells her.</li>
+                            </ul>
+
+                            <h5>What about Clio?</h5>
+                            <p>You can keep Clio for active case management if it's working for that. We'd handle everything <em>before</em> someone becomes an active client &mdash; the intake, qualification, booking, payment, onboarding, and document collection. Or, if you prefer, we can build all of that into the new CRM and you drop Clio entirely. Your call.</p>
+
+                            <h5>WhatsApp integration:</h5>
+                            <p>Your Latin American clients already prefer WhatsApp. We connect it directly to the CRM so messages, payment confirmations, and appointment reminders all flow through one place &mdash; not Chrys's personal phone.</p>
+
+                            <p class="stat-callout">Every manual step you eliminate is <strong>time Chrys gets back</strong>. If we save her 15 minutes per lead across 100+ inquiries per month, that's <strong>25+ hours returned to the team</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">AI consultation summaries built for Jenny</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You said Zoom's built-in AI notes aren't precise enough. Jenny still writes her own summaries. On 30 consultations per week, that's hours of extra work.</p>
+
+                            <h5>What we build:</h5>
+                            <ul>
+                                <li><strong>Custom note-taker:</strong> Trained on what Jenny actually cares about &mdash; not generic meeting notes. It captures immigration-specific details: current status, pathway options discussed, document requirements, timelines, and recommended next steps.</li>
+                                <li><strong>Auto-generated client summary:</strong> After each consultation, the system produces a personalized summary that can be sent directly to the client &mdash; formatted the way Jenny wants, with the level of detail she approves.</li>
+                                <li><strong>Proposal generation:</strong> For clients who are ready to move forward, the system can auto-draft a service proposal based on what was discussed &mdash; pricing, scope, timeline &mdash; customized to that specific case.</li>
+                                <li><strong>No more second person in the room:</strong> Silvana mentioned that complex consultations require two people. With proper AI summarization, Jenny can handle those solo and still capture everything.</li>
+                            </ul>
+
+                            <h5>How it's different from Zoom AI:</h5>
+                            <ul>
+                                <li>Zoom gives you a generic transcript summary</li>
+                                <li>We build a system that knows your services, your pricing, your document requirements, and your preferred language &mdash; and structures the output accordingly</li>
+                                <li>Jenny reviews and approves before anything goes to the client</li>
+                            </ul>
+
+                            <p class="stat-callout">If each consultation summary takes Jenny 20 minutes manually, that's <strong>10 hours per week</strong>. Cut that to a 2-minute review and you've given Jenny back an entire workday.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Agile Legal &mdash; December 2025</h2>
+                <p>Immigration & Business Law &bull; Richmond Hill, ON</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">168</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">$4.13 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">47</div>
+                    <div class="label">Booked</div>
+                    <div class="rate">28%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">43</div>
+                    <div class="label">Showed</div>
+                    <div class="rate">91%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">6</div>
+                    <div class="label">Retainers</div>
+                    <div class="rate">14% close</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$833</div>
+                    <div class="label">CPA</div>
+                    <div class="rate">per client</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$27K</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">in one month</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">5.4x ROI</div>
+                <div class="label">$5,000 invested &rarr; $27,000 revenue</div>
+            </div>
+        </section>
+
+        <!-- Voice AI -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Voice AI in Action</h2>
+                <p>Kathleen from the demo &mdash; three attempts, three different times, booked on day three.</p>
+            </div>
+
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 1</span><span>2:46pm</span></div>
+                    <div class="voice-card-body">
+                        Lead submits form. AI calls in 60 seconds.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 2</span><span>3:47pm</span></div>
+                    <div class="voice-card-body">
+                        Different time. AI calls again.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 3</span><span>4:54pm</span></div>
+                    <div class="voice-card-body">
+                        Third attempt. AI connects.
+                        <div class="result">&check; Qualified + Booked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>&#127760; Built for International Firms</h4>
+                <p>Voice AI speaks English and Spanish. It qualifies based on the service they need &mdash; PR, spousal, visa extension, work permit &mdash; communicates the $299 consultation fee, sends the payment link, and only books after payment confirms. Clients from Sydney to Bogot&aacute; get the same experience, regardless of timezone.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">25+ Immigration & Law Firms Across Canada, US, and UK</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You asked how many immigration firms we work with. Over 25 law firms and immigration consultancies &mdash; we understand the journey because we've built it that many times.</p>
+                            
+                            <h5>We know your space:</h5>
+                            <ul>
+                                <li><strong>Government dependency:</strong> When provincial nominee programs freeze, when policy shifts happen, when a Trump announcement creates a wave &mdash; we've helped firms handle surge demand and quiet periods.</li>
+                                <li><strong>Service-specific flows:</strong> PR spousal is not the same as a work permit extension. We don't build one generic funnel &mdash; we build pathways for each service.</li>
+                                <li><strong>Multilingual needs:</strong> Many of our firms serve Spanish, Portuguese, Mandarin, and Hindi-speaking clients. We've built bilingual Voice AI and CRM systems for exactly this.</li>
+                                <li><strong>Personal experience:</strong> Yaseer went through the immigration process himself &mdash; sponsoring his wife from the UK. He called 10 firms before one captured him properly. That gap is what we fix.</li>
+                            </ul>
+
+                            <p class="stat-callout">Every firm we work with has a unique NDA. <strong>Your strategies, client data, and systems stay completely private.</strong> We'll sign whatever additional compliance you require.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">You Own Everything</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Some agencies build your systems on their platforms, using their tools. If you leave, you start from zero. We don't operate that way.</p>
+                            
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>CRM and all data:</strong> Built in your name. Every lead, every conversation, every document &mdash; yours.</li>
+                                <li><strong>Voice AI scripts:</strong> The exact conversation flows, qualification questions, Spanish translations &mdash; documented and yours.</li>
+                                <li><strong>Automation workflows:</strong> Every pipeline, every template, every task sequence we build stays in your account.</li>
+                                <li><strong>Consultation summary templates:</strong> The AI prompts, formatting preferences, and output structures &mdash; all transferable.</li>
+                                <li><strong>Historical data:</strong> Every call recording, every interaction, every metric &mdash; exportable and yours.</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <ul>
+                                <li>You keep the CRM running</li>
+                                <li>You keep all automation workflows active</li>
+                                <li>You keep the Voice AI scripts (we'll help transition to another provider)</li>
+                                <li>You keep every piece of data we collected</li>
+                            </ul>
+                            <p>We remove ourselves as partners from your accounts. That's it. No transition fee, no data ransom, no starting over.</p>
+
+                            <p class="stat-callout">Ask any vendor you're comparing: <strong>"If I cancel, what do I keep?"</strong> Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Numbers</h4>
+                    <div class="math-row"><span class="label">Consults/week (Jenny)</span><span class="value">~30</span></div>
+                    <div class="math-row"><span class="label">Retainers signed/month</span><span class="value">~10</span></div>
+                    <div class="math-row"><span class="label">Close rate</span><span class="value">~10%</span></div>
+                    <div class="math-row"><span class="label">Avg retainer value</span><span class="value">$5,000</span></div>
+                    <div class="math-row"><span class="label">Consultation revenue</span><span class="value">~$35,880/mo</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Investment</h4>
+                    <div class="math-row"><span class="label">Management fee</span><span class="value">$3,000 CAD/mo</span></div>
+                    <div class="math-row"><span class="label">Ad spend</span><span class="value">$0 (organic)</span></div>
+                    <div class="math-row"><span class="label">Total</span><span class="value">$3,000 CAD/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Break-even</span>
+                        <span class="value" style="color: var(--accent-green);">1 retainer</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Impact</th>
+                        <th>Value</th>
+                        <th>Net</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Efficiency only<span class="tag worst">Floor</span></td>
+                        <td>15 hrs/week saved</td>
+                        <td>~$3,000</td>
+                        <td class="even">$0</td>
+                        <td class="even">Break-even</td>
+                    </tr>
+                    <tr>
+                        <td>+ Better show &amp; close rates<span class="tag expected">Expected</span></td>
+                        <td>+3 retainers/mo</td>
+                        <td>$15,000</td>
+                        <td class="gain">+$12,000</td>
+                        <td class="gain">400%</td>
+                    </tr>
+                    <tr>
+                        <td>+ Capacity unlocked<span class="tag strong">Upside</span></td>
+                        <td>+6 retainers/mo</td>
+                        <td>$30,000</td>
+                        <td class="gain">+$27,000</td>
+                        <td class="gain">900%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>The Real ROI Is Compounding</h4>
+                <p>Efficiency savings give Chrys 15-20 hours back per week. Payment-gating eliminates ghost bookings and raises show rates. Faster follow-up and proper nurture sequences improve close rates. <strong>Each fix multiplies the others &mdash; and none of them require a single additional lead.</strong> If it's not working within 60 days, cancel with 30 days notice. You keep everything we built.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Full Operations System</div>
+                <div class="pricing-amount">
+                    <span class="currency">$</span>
+                    <span class="value">3,000</span>
+                    <span class="period">CAD/month</span>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&check;</span> Voice AI intake (English + Spanish)</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> CRM build + management</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Payment-gated booking</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Document intake portals</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> AI consultation summaries</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> WhatsApp integration</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Service-specific automations</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Retainer agreement templates</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Additional:</strong> Voice AI overage $0.20/min (1,500 min included) &bull; One-time setup $500 CAD<br><br>
+                    <strong>Your time:</strong> 2-3 hrs/week during setup (we need to learn your workflows), ~1 hr/week ongoing<br><br>
+                    <strong>Clio:</strong> Keep it for case management or transition fully &mdash; your call. Either way, the new system handles everything before someone becomes an active client.<br><br>
+                    <strong>Terms:</strong> No long-term contract. 30 days notice to cancel. You keep everything.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>Two weeks from sign to live. Here's how.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Week 1</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Workflow Audit</h4>
+                    <div class="date">Week 1</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>CRM Build</h4>
+                    <div class="date">Week 1-2</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Voice AI + Automations</h4>
+                    <div class="date">Week 2</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>&#128640; Live</h4>
+                    <div class="date">Week 3</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Review</h4>
+                    <div class="date">Week 5</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Jenny wants everything personalized, not robotic. How do you handle that?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            So do we. The Voice AI doesn't replace the human connection &mdash; it handles the repetitive first contact (name, service needed, payment) so Chrys can spend her time on the people who need warmth and nuance. Every automation is built around your language, your tone, your way of doing things. Jenny approves everything before it goes live.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about confidentiality? You work with our competitors.</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Every firm has a unique NDA with us. Your strategies, client data, and systems are completely private. We'll sign whatever additional compliance you require. We don't even put client names on our website &mdash; look for yourself.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about Clio? Do we have to switch?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No. If Clio works for active case management, keep it. We handle everything <em>before</em> someone becomes an active client &mdash; intake, qualification, booking, payment, onboarding. Or, if you'd rather consolidate, we can build all of that plus case management into one system. Your decision.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties. You keep everything &mdash; the CRM, the Voice AI scripts, the automations, the templates, all data. We remove ourselves as partners. That's it.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Does the Voice AI work in Spanish?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes. It detects language preference and responds accordingly. For your Latin American clients, the entire intake flow &mdash; qualification questions, payment instructions, booking confirmation &mdash; can happen in Spanish. Same for text and WhatsApp follow-ups.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Let's get Jenny on the next call. Her questions matter most.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Book the Call &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for PM Immigration &bull; February 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
