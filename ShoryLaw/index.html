@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Shory Law</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Voice AI */
+        .voice-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .voice-cards { grid-template-columns: 1fr; }
+        }
+
+        .voice-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .voice-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .voice-card:nth-child(1) .voice-card-header { background: var(--accent-blue); }
+        .voice-card:nth-child(2) .voice-card-header { background: var(--accent-orange); }
+        .voice-card:nth-child(3) .voice-card-header { background: var(--accent-green); }
+
+        .voice-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .voice-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .voice-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Bleed box — after-hours loss highlight */
+        .bleed-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.03) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .bleed-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+
+        .bleed-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.15rem;
+        }
+
+        .bleed-box .sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Pricing — two tiers */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 580px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 1.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .pricing.featured {
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing.secondary {
+            border-top: 3px solid var(--accent-blue);
+            opacity: 0.85;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .featured .pricing-badge { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+        .secondary .pricing-badge { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue-light); }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .featured .pricing-amount .value { color: var(--accent-green); }
+        .secondary .pricing-amount .value { color: var(--accent-blue-light); }
+
+        .pricing-amount .period {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            gap: 0.35rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check { flex-shrink: 0; }
+        .featured .pricing-feature .check { color: var(--accent-green); }
+        .secondary .pricing-feature .check { color: var(--accent-blue-light); }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.85rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child { margin-top: 0; }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li { margin-bottom: 0.4rem; }
+        .accordion-content li strong { color: var(--text-primary); }
+        .accordion-content p { margin: 0.5rem 0; }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong { color: var(--accent-green); }
+
+        .accordion-content .muted-list { opacity: 0.7; }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk →</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal • March 2026</div>
+        <h1>Stop Leaving $52K/Month on the Table</h1>
+        <p>A client capture system built for litigation, not lead volume.</p>
+        <p class="hero-client">Prepared for Shory Law</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Jatin & Andy,</div>
+                <p>We did the math live on our call. <span class="highlight">~40 missed calls per month. 10% close rate. $13K average retainer.</span> That's $52,000 a month walking out the door — not because your marketing is broken, but because no one picks up after 5pm.</p>
+                <p>Jatin, you said it yourself: phone calls are a huge time drain. Your receptionist is one person. They step away, go to lunch, get tied up on a call. Every missed ring during the day — and every call that hits voicemail at night — is a potential retained client calling someone else. <span class="highlight">You already have the leads. The system just isn't capturing them.</span></p>
+                <p>Andy, this is what full-funnel accountability looks like in practice — every lead tracked from first touch to signed retainer, every ad dollar tied to an outcome. No more guessing which half of the $2,000/month is working.</p>
+                <p>Here's exactly how we build it.</p>
+                <div class="letter-signature">— Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✓</span>
+                        <span class="accordion-title">Voice AI answers every call — even at 11pm on a Friday</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You've heard about AI agents from three other companies. Here's the difference: we don't just route calls — we qualify, score, and book. When you wake up Monday, there are booked consultations in the calendar, not a list of missed calls to return.</p>
+                            
+                            <h5>How the inbound coverage works:</h5>
+                            <ul>
+                                <li><strong>Overflow during hours:</strong> Receptionist already on a call or stepped away? After 10 rings, Voice AI picks up instantly — no caller waits, no caller drops.</li>
+                                <li><strong>Full after-hours coverage:</strong> 5pm to 9am, weekends, holidays — every call gets answered. No voicemail, no waiting until Monday.</li>
+                                <li><strong>Instant outbound for form submissions:</strong> Lead fills out a contact form on your website or Google ad? Within 60 seconds they get a call back, before they've clicked to the next firm.</li>
+                                <li><strong>Smart retry logic:</strong> Lead doesn't pick up? The system calls again 25 hours later at a different time. Three attempts across three days — maximum chance of connection.</li>
+                                <li><strong>Parallel SMS:</strong> While calling, AI texts: "Hi, this is Shory Law. We just tried reaching you. Reply YES if now's a good time." Covers people who don't answer unknown numbers.</li>
+                            </ul>
+
+                            <h5>What happens on the call:</h5>
+                            <ul>
+                                <li>AI introduces itself as calling from Shory Law</li>
+                                <li>Identifies what the inquiry is about (refusal, deportation, spousal sponsorship, corporate, etc.)</li>
+                                <li>Runs through the qualification questions you give us — specific to each practice area</li>
+                                <li>Scores the lead internally and routes accordingly</li>
+                                <li>Books directly into the right calendar in real time</li>
+                                <li>Sends confirmation + calendar invite automatically</li>
+                                <li>Pushes all lead data into your GoHighLevel CRM — no manual entry</li>
+                            </ul>
+
+                            <h5>The difference from what you have now:</h5>
+                            <p>Your current setup means a missed call is a dead lead. With this, a missed call becomes a booked consultation — automatically, while you're in federal court, at dinner, or asleep.</p>
+
+                            <p class="stat-callout">Studies show calling within 5 minutes makes you <strong>100x more likely to connect</strong> vs. calling after 30 minutes. We call in under 60 seconds.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✓</span>
+                        <span class="accordion-title">Litigation-grade qualification — not a volume funnel</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You're not looking for 500 low-quality leads. You're looking for the right refusals, the right deportation matters, the right corporate mandates. The Voice AI learns your criteria and filters accordingly.</p>
+                            
+                            <h5>For immigration refusals & appeals:</h5>
+                            <ul>
+                                <li><strong>Urgency detection:</strong> Is there a deadline? Court date approaching? Minister review pending? Urgent matters get flagged and fast-tracked.</li>
+                                <li><strong>Case type identification:</strong> Spousal sponsorship refusal, work permit refusal, study permit, PR refusal, deportation order — each has a different talk track and qualification standard.</li>
+                                <li><strong>Prior representation:</strong> Have they been through another firm? That context matters for your team.</li>
+                                <li><strong>Timeline of events:</strong> How long ago was the refusal? Are they still within appeal windows?</li>
+                            </ul>
+
+                            <h5>For corporate matters:</h5>
+                            <ul>
+                                <li><strong>Business type & stage:</strong> Startup, established company, international entity looking to enter Canada?</li>
+                                <li><strong>Matter type:</strong> M&A, JV, foreign direct investment, trade — routes to the right person.</li>
+                                <li><strong>Urgency and scope:</strong> Quick question vs. complex mandate.</li>
+                            </ul>
+
+                            <h5>Lead scoring logic:</h5>
+                            <p>You define what a high-quality lead looks like. We build that into the AI. Every answer is scored — and at the end of the call, the system knows whether to book immediately, route to intake for review, or move the lead to nurture.</p>
+                            <p>Hot lead? Goes straight to your calendar. Not quite there? Goes into the appropriate GoHighLevel pipeline stage for follow-up.</p>
+
+                            <p class="stat-callout"><strong>You tell us the criteria. We build the conversation.</strong> And we iterate the talk track as many times as needed — that's included.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✓</span>
+                        <span class="accordion-title">Finally know your cost per retained client</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You're spending $2,000/month across Google and Meta. You know you get calls. But what's your cost per retained client? Right now, you don't know — and that means you can't make confident decisions about where to scale.</p>
+                            
+                            <h5>What we track from day one:</h5>
+                            <ul>
+                                <li><strong>Leads by source and type:</strong> Inbound calls, form submissions, and social inquiries — broken out by Google, Meta, organic, and referral so you know which channel and which CTA is actually driving retained clients</li>
+                                <li><strong>Contact rate:</strong> What % of inquiries do we actually reach?</li>
+                                <li><strong>Qualification rate:</strong> What % passed your criteria?</li>
+                                <li><strong>Booking rate:</strong> What % booked a consultation?</li>
+                                <li><strong>Show rate:</strong> What % showed up?</li>
+                                <li><strong>Cost per lead by campaign:</strong> Which Google campaigns are efficient, which are bleeding spend?</li>
+                                <li><strong>Cost per consultation booked:</strong> Actual calendar bookings, not form fills</li>
+                                <li><strong>Cost per retained client:</strong> The only number that actually matters</li>
+                                <li><strong>Closed-loop reporting:</strong> Mark someone as retained in GoHighLevel, we trace it back to the exact ad or source that brought them in</li>
+                            </ul>
+
+                            <h5>Why this matters for you:</h5>
+                            <p>You're already spending $2,000/month on Google and Meta. We take over that spend on day one, audit what's working, and rebuild the campaigns with proper tracking in place. From week one, you'll know your cost per retained client — broken out by campaign, by source, by service type.</p>
+                            <p>If your CPA comes out to $1,500 and your average retainer is $13,000, the math is straightforward:</p>
+                            <ul>
+                                <li>Want 3 more clients/month? Add $4,500 in budget.</li>
+                                <li>Want 5 more? Add $7,500.</li>
+                            </ul>
+                            <p>Right now you're guessing. Once you have this data, you're making decisions.</p>
+
+                            <p class="stat-callout">Agile Legal's December CPA was <strong>$672 per retained client</strong>. At $4,500 average retainer, that's a 6.7x return on ad spend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The After-Hours Leak -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Leak We Calculated Live</h2>
+                <p>Conservative numbers from our call — this is before we touch your marketing.</p>
+            </div>
+
+            <div class="bleed-box">
+                <div class="value">$52,000/month</div>
+                <div class="label">Walking out the door from after-hours missed calls alone</div>
+                <div class="sub">~40 missed calls × 10% close rate × $13,000 avg retainer</div>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>The Conservative Math</h4>
+                    <div class="math-row"><span class="label">Missed calls/week</span><span class="value">~10</span></div>
+                    <div class="math-row"><span class="label">Per month</span><span class="value">~40</span></div>
+                    <div class="math-row"><span class="label">Close rate</span><span class="value">10%</span></div>
+                    <div class="math-row"><span class="label">Lost retainers/month</span><span class="value">~4</span></div>
+                    <div class="math-row"><span class="label">Avg retainer</span><span class="value">$13,000</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Monthly revenue lost</span>
+                        <span class="value" style="color: var(--accent-red);">$52,000</span>
+                    </div>
+                </div>
+                <div class="math-box">
+                    <h4>The Investment</h4>
+                    <div class="math-row"><span class="label">Management fee</span><span class="value">$5,000 CAD/mo + tax</span></div>
+                    <div class="math-row"><span class="label">Ad spend (existing)</span><span class="value">$2,000 CAD/mo</span></div>
+                    <div class="math-row"><span class="label">Total investment</span><span class="value">$7,000 CAD/mo + tax</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Break-even</span>
+                        <span class="value" style="color: var(--accent-green);">1 retainer</span>
+                    </div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.75rem; padding-top: 0.75rem;">
+                        <span class="label" style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.5px; color: var(--text-muted);">Scenario</span>
+                        <span class="label" style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.5px; color: var(--text-muted);">Net/month</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Break-even <span style="font-size:0.65rem; background:rgba(239,68,68,0.15); color:#ef4444; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; text-transform:uppercase; margin-left:0.3rem;">1 retainer</span></span>
+                        <span class="value" style="color: var(--accent-orange);">+$6,000</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Conservative <span style="font-size:0.65rem; background:rgba(99,102,241,0.15); color:#818cf8; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; text-transform:uppercase; margin-left:0.3rem;">3 retainers</span></span>
+                        <span class="value" style="color: var(--accent-green);">+$32,000</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Strong <span style="font-size:0.65rem; background:rgba(16,185,129,0.15); color:#10b981; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; text-transform:uppercase; margin-left:0.3rem;">5 retainers</span></span>
+                        <span class="value" style="color: var(--accent-green);">+$58,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <h4>Before We Even Touch Your Advertising</h4>
+                <p>Plugging the after-hours leak is the fastest win. We improve capture on the leads you're already generating — <strong>no extra ad spend, no new campaigns.</strong> Just capturing what's already coming in.</p>
+            </div>
+        </section>
+
+        <!-- Proof: Agile Legal -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Agile Legal — December 2025</h2>
+                <p>Immigration & Business Law • Richmond Hill, ON — what full-funnel tracking looks like in practice</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">168</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">$4.13 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">47</div>
+                    <div class="label">Booked</div>
+                    <div class="rate">28%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">43</div>
+                    <div class="label">Showed</div>
+                    <div class="rate">91%</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">6</div>
+                    <div class="label">Retainers</div>
+                    <div class="rate">14% close</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$672</div>
+                    <div class="label">CPA</div>
+                    <div class="rate">per client</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$27K</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">in one month</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">6.7x ROI</div>
+                <div class="label">$4,029 invested → $27,000 revenue — and we knew the CPA down to the dollar</div>
+            </div>
+        </section>
+
+        <!-- Voice AI In Action -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Voice AI in Action</h2>
+                <p>Three attempts, three different times — booked on day three. This is the retry logic that catches the leads your team can't.</p>
+            </div>
+
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 1</span><span>2:46pm</span></div>
+                    <div class="voice-card-body">
+                        Lead submits form. AI calls in 60 seconds.
+                        <div class="result">No answer → Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 2</span><span>3:47pm</span></div>
+                    <div class="voice-card-body">
+                        Different time. AI calls again.
+                        <div class="result">No answer → Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 3</span><span>4:54pm</span></div>
+                    <div class="voice-card-body">
+                        Third attempt. AI connects.
+                        <div class="result">✓ Qualified + Booked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>🔗 Already Plugs Into Your GoHighLevel</h4>
+                <p>You're already on GoHighLevel — we add ourselves, build the pipelines, connect the Voice AI, and set up the automations. No platform migration, no new logins to manage. Everything flows into the system you already have.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✓</span>
+                        <span class="accordion-title">Full-Funnel Tracking</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies report "cost per lead" and call it a day. That's like a law firm measuring how many people called their office instead of how many signed retainers.</p>
+                            
+                            <h5>What most agencies track:</h5>
+                            <ul class="muted-list">
+                                <li>Impressions (how many people saw the ad)</li>
+                                <li>Clicks (how many clicked)</li>
+                                <li>Cost per lead (how much to get a form fill)</li>
+                            </ul>
+                            <p>Then they hand you a PDF with pretty graphs and say "we got you 50 leads this month!" But how many became clients? They don't know. They don't track that far.</p>
+
+                            <h5>What we track:</h5>
+                            <ul>
+                                <li><strong>Lead → Contact rate:</strong> Did we actually reach them?</li>
+                                <li><strong>Contact → Qualified rate:</strong> Did they meet your criteria?</li>
+                                <li><strong>Qualified → Booked rate:</strong> Did they schedule?</li>
+                                <li><strong>Booked → Show rate:</strong> Did they show up?</li>
+                                <li><strong>Show → Close rate:</strong> Did they sign?</li>
+                            </ul>
+
+                            <h5>Why this changes everything:</h5>
+                            <p>When we see your booking rate is 28% but show rate is 60%, we know exactly where to focus. When we see one campaign source converts at 15% to retained clients and another at 5%, we cut the loser and scale the winner — not based on CPL, but on actual acquisition cost.</p>
+
+                            <p class="stat-callout">Right now you're spending $2,000/month on ads. <strong>You have no idea which $1,000 is working.</strong> We fix that in month one.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">✓</span>
+                        <span class="accordion-title">You Own Everything</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">We build inside your GoHighLevel account. Your data, your pipelines, your automations. If we ever part ways, nothing moves — we just remove ourselves.</p>
+                            
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>GoHighLevel builds:</strong> All pipelines, automations, workflows built inside your existing account</li>
+                                <li><strong>Voice AI scripts:</strong> The exact conversation flows, qualification logic, lead scoring criteria — documented and yours</li>
+                                <li><strong>Ad accounts:</strong> Created in YOUR name. We get added as a partner — you remain the owner</li>
+                                <li><strong>Landing pages:</strong> Built on your domain, not our servers</li>
+                                <li><strong>Historical data:</strong> Every call recording, every lead, every conversion — exportable and yours</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <p>We remove ourselves from your GoHighLevel. The Voice AI scripts stay documented. Every piece of data stays with you. No transition fee, no data ransom, no starting over.</p>
+
+                            <p class="stat-callout">Ask any vendor you're comparing: "If I cancel, what do I keep?" Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenarios -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Scenarios</h2>
+                <p>Based on your numbers. Using conservative assumptions.</p>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Extra Retainers</th>
+                        <th>Revenue</th>
+                        <th>Investment</th>
+                        <th>Net</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Break-even<span class="tag worst">Worst</span></td>
+                        <td>+1/mo</td>
+                        <td>$13,000</td>
+                        <td>$7,000</td>
+                        <td class="gain">+$6,000</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>+3/mo</td>
+                        <td>$39,000</td>
+                        <td>$7,000</td>
+                        <td class="gain">+$32,000</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>+5/mo</td>
+                        <td>$65,000</td>
+                        <td>$7,000</td>
+                        <td class="gain">+$58,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>The Worst Case Is Still a Win</h4>
+                <p>Even if we only close 1 extra retainer a month — that's $13,000 in revenue on a $7,000 investment. <strong>Every scenario above break-even is pure upside.</strong> And break-even is just 1 retained client.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Investment</h2>
+                <p>Start with what makes sense. Scale when you're ready.</p>
+            </div>
+
+            <div class="pricing featured" style="max-width: 480px; margin: 0 auto;">
+                    <div class="pricing-badge">Full Growth System</div>
+                    <div class="pricing-title">Voice AI + Ads + CRM — Everything, Day One</div>
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="value">5,000</span>
+                        <span class="period">CAD/month + tax</span>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><span class="check">✓</span> Voice AI inbound overflow + after-hours</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Outbound speed-to-lead (60 sec call-back)</div>
+                        <div class="pricing-feature"><span class="check">✓</span> 1,500 minutes/month included</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Litigation-specific qualification flows</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Lead scoring + smart routing logic</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Paid media management (Google + Meta)</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Full ad creative (video + static)</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Landing pages + lead forms</div>
+                        <div class="pricing-feature"><span class="check">✓</span> GoHighLevel CRM build + automations</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Full-funnel analytics + weekly reports</div>
+                        <div class="pricing-feature"><span class="check">✓</span> True CPA tracking to retained client</div>
+                        <div class="pricing-feature"><span class="check">✓</span> Social inbox chatbot (FB/IG)</div>
+                    </div>
+                    <div class="pricing-note">
+                        <strong>Additional:</strong> Ad spend min $2,000 CAD/mo (your existing budget) • Voice AI overage $0.20 USD/min • One-time setup $500 CAD + tax<br><br>
+                        <strong>Your time:</strong> 2–3 hrs/week during setup, ~1 hr/week ongoing<br><br>
+                        <strong>Terms:</strong> No long-term contract. 30 days notice to cancel. You keep everything.
+                    </div>
+                </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>From Wednesday's call to fully live in under two weeks.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Call</h4>
+                    <div class="date">Wed Mar 11</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Mar 12-14</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">Mar 14-17</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">Mar 17-21</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Testing</h4>
+                    <div class="date">Mar 21-24</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>🚀 Live</h4>
+                    <div class="date">Mar 24</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>We already have GoHighLevel — do we start fresh?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No. We add ourselves to your existing account and build inside it. Your current setup stays untouched until we've built and tested the new pipelines. We do all the configuration, training, and enablement — you just add us as a team member.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this only for after-hours calls?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No — it handles overflow during business hours too. If your receptionist is already on a call or steps away, any call that rings more than 10 times rolls over to the Voice AI automatically. The same system also reaches out to inbound form submissions and social DMs within 60 seconds.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What languages can the Voice AI handle?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The system handles Hindi confidently. For Punjabi and Urdu, we'll confirm exact capability before build — but given your client base, we'll prioritize getting that right before we go live.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties. You keep everything — the GoHighLevel builds, the Voice AI scripts, all the call data, all the qualification flows. We remove ourselves from your account and that's it.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do you need from us to get started?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Access to your GoHighLevel account, your current phone setup so we can configure overflow routing, input on what qualifies as a strong lead for each practice area, and Andy as our main day-to-day contact. That's it on your end.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Wednesday, March 11th at 2:00pm Calgary time. Bring your questions — and your brother's too if he can make it.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Book a Time →</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="/cdn-cgi/l/email-protection#a9d0c8daccccdbe9c4c6dbddc8dbc4ccdddbc0cada87cac6c4"><span class="__cf_email__" data-cfemail="f980988a9c9c8bb994968b8d988b949c8d8b909a8ad79a9694">[email&#160;protected]</span></a>
+        </div>
+        <div class="footer-note">Prepared for Shory Law • March 2026</div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classL
