@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Levitt Law — Revenue Impact Model | Mortar Metrics</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --mm-purple: #32123E;
+    --mm-navy: #33407B;
+    --mm-teal: #58BBD3;
+    --mm-magenta: #962D84;
+    --mm-purple-mid: #4a1f5c;
+    --mm-purple-light: #6b3480;
+    --text-primary: #f5f0fa;
+    --text-secondary: #c4b8d4;
+    --text-muted: #8a7a9e;
+    --surface: rgba(255,255,255,0.04);
+    --surface-hover: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(88,187,211,0.25);
+    --teal-glow: rgba(88,187,211,0.12);
+    --success: #4ecb8d;
+    --warning: #f5a623;
+    --danger: #e05252;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--mm-purple);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* Background texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(150,45,132,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(51,64,123,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 50% 50%, rgba(88,187,211,0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* Header */
+  header {
+    padding: 48px 0 40px;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .logo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--mm-teal);
+  }
+
+  .logo-text {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mm-teal);
+  }
+
+  .header-title h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .header-title h1 em {
+    font-style: italic;
+    color: var(--mm-teal);
+  }
+
+  .header-meta {
+    text-align: right;
+  }
+
+  .header-meta p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .header-meta strong {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  /* Section labels */
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-teal { background: rgba(88,187,211,0.12); color: var(--mm-teal); border: 0.5px solid rgba(88,187,211,0.3); }
+  .tag-magenta { background: rgba(150,45,132,0.15); color: #d47acb; border: 0.5px solid rgba(150,45,132,0.3); }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  .card-teal {
+    background: var(--teal-glow);
+    border: 0.5px solid var(--border-strong);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  /* Grid layouts */
+  .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+
+  @media (max-width: 600px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+    header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+  }
+
+  /* Metric cards */
+  .metric { }
+  .metric .m-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  .metric .m-val { font-size: 20px; font-weight: 500; color: var(--text-primary); line-height: 1.2; }
+  .metric .m-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Funnel */
+  .funnel-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+  .funnel-track { flex: 1; height: 8px; background: var(--surface); border-radius: 4px; overflow: hidden; }
+  .funnel-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+  .funnel-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); min-width: 170px; }
+
+  /* Sliders */
+  .slider-section { margin-bottom: 0; }
+
+  .slider-block {
+    padding: 18px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .slider-block:last-child { border-bottom: none; }
+
+  .slider-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+  .slider-name { font-size: 14px; color: var(--text-primary); font-weight: 400; }
+  .slider-readout { font-size: 14px; font-weight: 500; color: var(--mm-teal); min-width: 80px; text-align: right; }
+  .slider-hint { font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--mm-teal);
+    border: 2px solid var(--mm-purple);
+    box-shadow: 0 0 0 3px rgba(88,187,211,0.2);
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+  }
+
+  input[type=range]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 5px rgba(88,187,211,0.25);
+  }
+
+  input[type=range]::-moz-range-thumb {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--mm-teal);
+    border: 2px solid var(--mm-purple);
+    cursor: pointer;
+  }
+
+  /* Big impact numbers */
+  .impact-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 600px) { .impact-row { grid-template-columns: 1fr 1fr; } }
+
+  .impact-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+
+  .impact-card.highlight {
+    background: rgba(88,187,211,0.06);
+    border-color: rgba(88,187,211,0.2);
+  }
+
+  .impact-card .i-label { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+  .impact-card .i-val { font-size: 24px; font-weight: 500; line-height: 1.1; }
+  .impact-card .i-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+  /* Delay banner */
+  .delay-banner {
+    background: linear-gradient(135deg, rgba(150,45,132,0.15) 0%, rgba(51,64,123,0.2) 100%);
+    border: 0.5px solid rgba(150,45,132,0.35);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .delay-banner .d-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #d47acb;
+    margin-bottom: 10px;
+  }
+
+  .delay-banner .d-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(44px, 8vw, 72px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #d47acb;
+    line-height: 1;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .delay-banner .d-sub {
+    font-size: 13px;
+    color: rgba(212,122,203,0.7);
+    max-width: 380px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* Divider */
+  hr { border: none; border-top: 0.5px solid var(--border); margin: 36px 0; }
+
+  /* Team performance */
+  .perf-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .perf-row:last-child { border-bottom: none; }
+  .perf-icon { width: 20px; font-size: 13px; flex-shrink: 0; }
+  .perf-text { flex: 1; font-size: 13px; color: var(--text-secondary); }
+  .perf-text strong { color: var(--text-primary); font-weight: 500; }
+  .perf-badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .perf-badge.good { background: rgba(78,203,141,0.12); color: #4ecb8d; }
+  .perf-badge.gap { background: rgba(224,82,82,0.12); color: #e05252; }
+
+  /* Chart */
+  .chart-wrap { position: relative; width: 100%; height: 280px; }
+
+  /* Summary box */
+  .summary-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-left: 2px solid var(--mm-teal);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer p { font-size: 11px; color: var(--text-muted); }
+  footer strong { color: var(--text-secondary); font-weight: 500; }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up { animation: fadeUp 0.5s ease forwards; }
+  .fade-up:nth-child(2) { animation-delay: 0.05s; opacity: 0; }
+  .fade-up:nth-child(3) { animation-delay: 0.1s; opacity: 0; }
+  .fade-up:nth-child(4) { animation-delay: 0.15s; opacity: 0; }
+
+  .section { margin-bottom: 36px; }
+  .mt-12 { margin-top: 12px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+
+  /* Tooltip */
+  .chart-legend { display: flex; gap: 20px; margin-bottom: 12px; }
+  .chart-legend span { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
+  .chart-legend .dot { width: 10px; height: 10px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="header-title">
+      <div class="logo-mark">
+        <div class="logo-dot"></div>
+        <span class="logo-text">Mortar Metrics</span>
+      </div>
+      <h1>Levitt Law<br><em>Revenue Impact Model</em></h1>
+    </div>
+    <div class="header-meta">
+      <p><strong>Prepared for</strong><br>Jackie Levitt, Managing Partner<br>Darryl (COO) · Nila (Office Manager)</p>
+      <p style="margin-top:10px;"><strong>Data source</strong><br>Pre-meeting questionnaire<br>completed by Nila</p>
+    </div>
+  </header>
+
+  <!-- Baseline -->
+  <div class="section fade-up">
+    <div class="section-label">Verified baseline <span class="tag tag-teal">from Nila's questionnaire</span></div>
+    <div class="card">
+      <div class="grid-4">
+        <div class="metric"><div class="m-label">Calls per day</div><div class="m-val">80–100</div></div>
+        <div class="metric"><div class="m-label">New inquiries</div><div class="m-val">50–60%</div></div>
+        <div class="metric"><div class="m-label">Morning voicemails</div><div class="m-val">5–10/day</div></div>
+        <div class="metric"><div class="m-label">After-hours</div><div class="m-val">VM only</div></div>
+      </div>
+      <div class="grid-4 mt-12">
+        <div class="metric"><div class="m-label">Intake team</div><div class="m-val">2 people</div></div>
+        <div class="metric"><div class="m-label">Coverage hours</div><div class="m-val">8:30–5:30</div></div>
+        <div class="metric"><div class="m-label">Lawyers</div><div class="m-val">14</div></div>
+        <div class="metric"><div class="m-label">Retainer range</div><div class="m-val">$2.5k–$10k</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Funnel -->
+  <div class="section fade-up">
+    <div class="section-label">Confirmed conversion funnel <span class="tag tag-teal">Nila's exact numbers</span></div>
+    <div class="card">
+      <div id="funnel-container"></div>
+      <p style="font-size:11px;color:var(--text-muted);margin-top:14px;padding-top:14px;border-top:0.5px solid var(--border);">
+        Overall lead-to-retainer rate: <strong style="color:var(--mm-teal);" id="overall-rate">~37.7%</strong> — an exceptionally high-performing team. The gap is <em>coverage</em>, not quality.
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Sliders -->
+  <div class="section fade-up">
+    <div class="section-label">Adjust the three verified gaps <span class="tag tag-magenta">interactive</span></div>
+    <div class="card">
+      <div class="slider-section">
+
+        <div class="slider-block">
+          <div class="slider-top">
+            <span class="slider-name">After-hours voicemails per day</span>
+            <span class="slider-readout" id="vv1">7.5 / day</span>
+          </div>
+          <input type="range" min="5" max="10" value="7.5" step="0.5" id="s1" oninput="calc()">
+          <p class="slider-hint">Verified: VM only after 5:30pm. 100% are called back by morning — but 50% won't book because they've found another firm or balk at the paid consult. An AI agent handles this at 11pm, not 9am the next day.</p>
+        </div>
+
+        <div class="slider-block">
+          <div class="slider-top">
+            <span class="slider-name">Overflow calls missed per day</span>
+            <span class="slider-readout" id="vv2">10 / day</span>
+          </div>
+          <input type="range" min="5" max="25" value="10" step="1" id="s2" oninput="calc()">
+          <p class="slider-hint">80–100 calls/day against 2 reps at 10–20 min each = max ~24 calls/day capacity. Set conservatively — this is your most visible daily loss.</p>
+        </div>
+
+        <div class="slider-block">
+          <div class="slider-top">
+            <span class="slider-name">Capture rate with immediate AI response</span>
+            <span class="slider-readout" id="vv3">30%</span>
+          </div>
+          <input type="range" min="10" max="60" value="30" step="5" id="s3" oninput="calc()">
+          <p class="slider-hint">Industry benchmark: 21× more likely to close within 5 minutes vs 30 minutes. The firm's own 70% book rate proves the quality is there — timing is the only variable.</p>
+        </div>
+
+        <div class="slider-block">
+          <div class="slider-top">
+            <span class="slider-name">Average retainer value</span>
+            <span class="slider-readout" id="vv4">$5,000</span>
+          </div>
+          <input type="range" min="2500" max="10000" value="5000" step="500" id="s4" oninput="calc()">
+          <p class="slider-hint">Verified range: $2,500–$10,000. Default set at $5,000 — the conservative floor, not the average. Slide right to reflect actual case mix.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Impact Numbers -->
+  <div class="section fade-up">
+    <div class="section-label">Monthly revenue impact</div>
+
+    <div class="impact-row">
+      <div class="impact-card">
+        <div class="i-label">After-hours gap / month</div>
+        <div class="i-val" id="r1" style="color:var(--text-primary);">165</div>
+        <div class="i-sub">unserved voicemails</div>
+      </div>
+      <div class="impact-card">
+        <div class="i-label">Overflow gap / month</div>
+        <div class="i-val" id="r2" style="color:var(--text-primary);">220</div>
+        <div class="i-sub">calls that ring out</div>
+      </div>
+      <div class="impact-card">
+        <div class="i-label">Capturable leads / month</div>
+        <div class="i-val" id="r3" style="color:var(--mm-teal);">115</div>
+        <div class="i-sub">at selected capture rate</div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-12">
+      <div class="impact-card highlight">
+        <div class="i-label">Additional retainers / month</div>
+        <div class="i-val" id="r4" style="color:var(--success);">24</div>
+        <div class="i-sub">new retained clients</div>
+      </div>
+      <div class="impact-card highlight">
+        <div class="i-label">Additional gross revenue / month</div>
+        <div class="i-val" id="r5" style="color:var(--success);">$120,000</div>
+        <div class="i-sub">before system fee</div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-12">
+      <div class="impact-card">
+        <div class="i-label">Net after $5,000/month fee</div>
+        <div class="i-val" id="r6" style="color:var(--success);">$115,000</div>
+        <div class="i-sub">monthly net gain</div>
+      </div>
+      <div class="impact-card">
+        <div class="i-label">System pays for itself in</div>
+        <div class="i-val" id="r7" style="color:var(--mm-teal);">1.3 days</div>
+        <div class="i-sub">of additional revenue</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delay Banner -->
+  <div class="delay-banner">
+    <div class="d-label">Revenue left on the table — 6-month delay</div>
+    <div class="d-val" id="delay6">$690,000</div>
+    <div class="d-sub">Net of the $5,000/month fee. This is the cost of the delay — not the cost of the system.</div>
+  </div>
+
+  <hr>
+
+  <!-- Team performance -->
+  <div class="section">
+    <div class="section-label">Why the team is not the problem</div>
+    <div class="card">
+      <div class="perf-row">
+        <div class="perf-icon" style="color:var(--success);">✓</div>
+        <div class="perf-text"><strong>99.9%</strong> contact rate — virtually no lead goes uncontacted during business hours</div>
+        <div class="perf-badge good">Excellent</div>
+      </div>
+      <div class="perf-row">
+        <div class="perf-icon" style="color:var(--success);">✓</div>
+        <div class="perf-text"><strong>90%</strong> intake completion rate — exceptional qualification discipline</div>
+        <div class="perf-badge good">Excellent</div>
+      </div>
+      <div class="perf-row">
+        <div class="perf-icon" style="color:var(--success);">✓</div>
+        <div class="perf-text"><strong>70%</strong> book a paid consultation — industry-leading conversion</div>
+        <div class="perf-badge good">Excellent</div>
+      </div>
+      <div class="perf-row">
+        <div class="perf-icon" style="color:var(--success);">✓</div>
+        <div class="perf-text"><strong>100%</strong> of morning voicemails called back — zero dropped follow-ups</div>
+        <div class="perf-badge good">Excellent</div>
+      </div>
+      <div class="perf-row">
+        <div class="perf-icon" style="color:var(--danger);">✗</div>
+        <div class="perf-text"><strong>0%</strong> coverage from 5:30pm–8:30am — 15 hours of dead air every single day</div>
+        <div class="perf-badge gap">Gap</div>
+      </div>
+      <div class="perf-row">
+        <div class="perf-icon" style="color:var(--danger);">✗</div>
+        <div class="perf-text"><strong>Unknown</strong> overflow calls ring out while both intake lines are occupied</div>
+        <div class="perf-badge gap">Gap</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Chart -->
+  <div class="section">
+    <div class="section-label">Projected revenue — current vs with Mortar Metrics</div>
+    <div class="chart-legend">
+      <span><span class="dot" style="background:#4a3a5e;"></span>Current trajectory</span>
+      <span><span class="dot" style="background:#58BBD3;"></span>With Mortar Metrics</span>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="roiChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section">
+    <div class="section-label">The case in one paragraph</div>
+    <div class="summary-box" id="summary-text">
+      Loading...
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <p><strong>Mortar Metrics</strong></p>
+      <p>Toronto · Canada +1 416-892-8796</p>
+    </div>
+    <div style="text-align:right;">
+      <p>All assumptions adjustable via sliders above.</p>
+      <p>Baseline data verified from Levitt Law intake questionnaire.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+var roiChart = null;
+
+var FUNNEL_DATA = [
+  { label: 'Leads received', pct: 100, color: '#4a3a5e' },
+  { label: 'Contacted', pct: 99.9, color: '#33407B' },
+  { label: 'Intake completed', pct: 90, color: '#58BBD3' },
+  { label: 'Booked (paid consultation)', pct: 70, color: '#4ecb8d' }
+];
+
+function buildFunnel() {
+  var container = document.getElementById('funnel-container');
+  var html = '';
+  FUNNEL_DATA.forEach(function(f) {
+    html += '<div class="funnel-row">';
+    html += '<div class="funnel-track"><div class="funnel-fill" style="width:' + f.pct + '%;background:' + f.color + ';"></div></div>';
+    html += '<div class="funnel-meta"><span>' + f.label + '</span><span style="color:var(--mm-teal);font-weight:500;">' + f.pct + '%</span></div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+  var overall = (0.999 * 0.90 * 0.70 * 0.60 * 100).toFixed(1);
+  var el = document.getElementById('overall-rate');
+  if (el) el.textContent = '~' + overall + '%';
+}
+
+function fmt(n) {
+  return '$' + Math.abs(Math.round(n)).toLocaleString();
+}
+
+function fmtN(n) {
+  return Math.round(n).toLocaleString();
+}
+
+function calc() {
+  var ahPerDay = parseFloat(document.getElementById('s1').value);
+  var overflowPerDay = parseFloat(document.getElementById('s2').value);
+  var convRate = parseFloat(document.getElementById('s3').value) / 100;
+  var retainer = parseFloat(document.getElementById('s4').value);
+
+  document.getElementById('vv1').textContent = ahPerDay + ' / day';
+  document.getElementById('vv2').textContent = overflowPerDay + ' / day';
+  document.getElementById('vv3').textContent = Math.round(convRate * 100) + '%';
+  document.getElementById('vv4').textContent = fmt(retainer);
+
+  var DAYS = 22, BOOK = 0.70, CLOSE = 0.60, FEE = 5000;
+
+  var ahMonth = ahPerDay * DAYS;
+  var ovMonth = overflowPerDay * DAYS;
+  var capturable = (ahMonth + ovMonth) * convRate;
+  var addlRetainers = Math.round(capturable * BOOK * CLOSE);
+  var addlRev = addlRetainers * retainer;
+  var netGain = addlRev - FEE;
+  var delaySix = Math.max(0, netGain * 6);
+  var dailyRev = addlRev / 30;
+  var bedays = dailyRev > 0 ? Math.max(0.5, FEE / dailyRev) : 0;
+
+  var BASE_RETAINERS = 116;
+  var baseRev = BASE_RETAINERS * 5000;
+  var projRev = baseRev + addlRev;
+
+  document.getElementById('r1').textContent = fmtN(ahMonth);
+  document.getElementById('r2').textContent = fmtN(ovMonth);
+  document.getElementById('r3').textContent = fmtN(capturable);
+  document.getElementById('r4').textContent = addlRetainers;
+  document.getElementById('r5').textContent = fmt(addlRev);
+
+  var ngEl = document.getElementById('r6');
+  ngEl.textContent = (netGain >= 0 ? '' : '-') + fmt(netGain);
+  ngEl.style.color = netGain >= 0 ? 'var(--success)' : 'var(--danger)';
+
+  var be = bedays < 1 ? (bedays * 24).toFixed(0) + ' hrs' : bedays.toFixed(1) + ' days';
+  document.getElementById('r7').textContent = be;
+  document.getElementById('delay6').textContent = fmt(delaySix);
+
+  document.getElementById('summary-text').textContent =
+    'Levitt Law has ' + fmtN(ahMonth) + ' unserved after-hours contacts and ' + fmtN(ovMonth) +
+    ' overflow calls per month — ' + fmtN(ahMonth + ovMonth) + ' total opportunities the current team structure cannot physically reach. ' +
+    'At a conservative ' + Math.round(convRate * 100) + '% capture rate applied against the firm\'s own verified 70% book / 60% close funnel, ' +
+    'that represents ' + addlRetainers + ' additional retainers per month at ' + fmt(retainer) + ' average — ' +
+    fmt(addlRev) + ' in gross revenue. Net of the $5,000/month system fee: ' + fmt(netGain) + ' per month. ' +
+    'The system pays for itself in ' + be + '. ' +
+    'A 6-month delay is a ' + fmt(delaySix) + ' decision, not a $5,000 one.';
+
+  if (roiChart) {
+    var months = ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'];
+    roiChart.data.datasets[0].data = months.map(function() { return baseRev; });
+    roiChart.data.datasets[1].data = months.map(function() { return projRev; });
+    roiChart.update('none');
+  }
+}
+
+window.addEventListener('load', function() {
+  buildFunnel();
+
+  var ctx = document.getElementById('roiChart').getContext('2d');
+  roiChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+      datasets: [
+        {
+          label: 'Current',
+          data: [580000, 580000, 580000, 580000, 580000, 580000],
+          backgroundColor: '#4a3a5e',
+          borderRadius: 4,
+          borderSkipped: false
+        },
+        {
+          label: 'Projected',
+          data: [700000, 700000, 700000, 700000, 700000, 700000],
+          backgroundColor: '#58BBD3',
+          borderRadius: 4,
+          borderSkipped: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#32123E',
+          borderColor: 'rgba(88,187,211,0.3)',
+          borderWidth: 1,
+          titleColor: '#c4b8d4',
+          bodyColor: '#58BBD3',
+          padding: 12,
+          callbacks: {
+            label: function(ctx) {
+              return ' $' + Math.round(ctx.raw).toLocaleString();
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { color: 'rgba(255,255,255,0.06)' },
+          ticks: { font: { size: 11, family: 'DM Sans' }, color: '#8a7a9e' }
+        },
+        y: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          border: { color: 'rgba(255,255,255,0.06)' },
+          ticks: {
+            font: { size: 11, family: 'DM Sans' },
+            color: '#8a7a9e',
+            callback: function(v) {
+              return '$' + (v >= 1000000 ? (v / 1000000).toFixed(1) + 'M' : (v / 1000).toFixed(0) + 'k');
+            }
+          }
+        }
+      }
+    }
+  });
+
+  calc();
+});
+</script>
+</body>
+</html>
