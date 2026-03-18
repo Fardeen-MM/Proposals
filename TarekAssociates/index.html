@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Tarek Associates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Voice AI */
+        .voice-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .voice-cards { grid-template-columns: 1fr; }
+        }
+
+        .voice-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .voice-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .voice-card:nth-child(1) .voice-card-header { background: var(--accent-blue); }
+        .voice-card:nth-child(2) .voice-card-header { background: var(--accent-orange); }
+        .voice-card:nth-child(3) .voice-card-header { background: var(--accent-green); }
+
+        .voice-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .voice-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .voice-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; March 2026</div>
+        <h1>From 200 to 400+ Enrolments</h1>
+        <p>Stop chasing 1,200 leads manually. Let the system qualify them for you.</p>
+        <p class="hero-client">Prepared for Tarek Associates</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Lakshit,</div>
+                <p>You told me the situation clearly: <span class="highlight">1,200 leads per month</span>, <span class="highlight">200 enrolments</span>, and 15 consultants spending most of their day calling people who don't pick up, already claimed SFE, or were never going to convert.</p>
+                <p>The leads aren't the problem. <span class="highlight">Your system is calling them the next day, during work hours, from a number they don't recognise.</span> By the time your team reaches them, those students have already called three other consultancies. The ones that do pick up aren't being pre-qualified &mdash; so your consultants burn time on people who have no intention of enrolling.</p>
+                <p>You also said your CRM has been "under development" for the better part of a year. <span class="highlight">You're managing 1,200 leads a month on Google Sheets and trusting 15 consultants to self-report their effort.</span> You can't see what's working, who's working, or what this whole operation is actually costing you per enrolled student. Here's how we fix that.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Voice AI calls every lead within 30 seconds, 24/7</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Your consultants call the next day, 9 to 5. By then, that student has already spoken to three other agencies &mdash; or simply forgotten they filled in a form.</p>
+
+                            <h5>How it works:</h5>
+                            <ul>
+                                <li><strong>Instant trigger:</strong> The moment a lead submits a form, our system fires. Within 30 seconds, they receive a call from your Voice AI assistant calling on behalf of Tarek Associates.</li>
+                                <li><strong>Staggered retry logic:</strong> No answer at 5pm? The system calls again at 6pm the next day. Then 7pm the day after. Different times because people have schedules &mdash; night shifts, commutes, putting the kids to bed.</li>
+                                <li><strong>Parallel SMS and WhatsApp:</strong> Every call attempt fires a simultaneous message: "Hi, this is Tarek Associates. We just tried calling about your enquiry. Reply YES if now is a good time." Covers the people who don't answer unknown numbers.</li>
+                                <li><strong>Until 9pm, 7 days a week:</strong> Your students are often working during the day. They submit forms on their lunch break or in the evening. We call them when they're actually free.</li>
+                            </ul>
+
+                            <h5>What changes for your consultants:</h5>
+                            <p>Right now your team starts every day with a cold list. They spend the first four hours of their day chasing people at the top of the funnel. With Voice AI handling all of that, your consultants arrive to a calendar with qualified, confirmed appointments already booked. They focus on closing &mdash; not chasing.</p>
+
+                            <h5>What happens on the call:</h5>
+                            <ul>
+                                <li>AI introduces itself as calling from Tarek Associates</li>
+                                <li>Confirms they submitted an enquiry and asks when they're free to talk briefly</li>
+                                <li>Walks through 4&ndash;5 qualification questions (customised to your criteria)</li>
+                                <li>If qualified: books directly into the appropriate consultant's calendar</li>
+                                <li>Sends confirmation via SMS, email, and WhatsApp</li>
+                                <li>If not qualified: routes into a separate nurture pipeline for manual follow-up</li>
+                            </ul>
+
+                            <p class="stat-callout">Speed-to-lead studies show calling within 5 minutes makes you <strong>100x more likely</strong> to connect vs. calling after 30 minutes. Right now you're calling after 1,440 minutes. We call in under 1.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Only SFE-eligible, course-matched students reach your consultants</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Of your 1,200 monthly leads, roughly 1,000 won't enrol. Your consultants are currently calling all 1,200 to find the 200 who will. That's expensive, demoralising, and completely fixable.</p>
+
+                            <h5>The qualification checks:</h5>
+                            <ul>
+                                <li><strong>SFE claimed before:</strong> The most important disqualifier. AI confirms this directly and immediately. Those who have already claimed go into a separate pipeline &mdash; they don't reach your consultants.</li>
+                                <li><strong>Course match:</strong> AI confirms the course they expressed interest in is one you offer, and that they meet basic eligibility criteria.</li>
+                                <li><strong>Location verification:</strong> Confirms they're in London, Birmingham, Ilford, or another area you serve &mdash; not just someone who accidentally landed on your ad from Manchester.</li>
+                                <li><strong>Enquiry intent:</strong> AI distinguishes between "just looking" and "ready to enrol" &mdash; flags urgency so consultants can prioritise.</li>
+                            </ul>
+
+                            <h5>What happens after qualification:</h5>
+                            <ul>
+                                <li><strong>Passes all checks:</strong> Booked directly into a consultant's calendar with full case notes pre-populated. Consultant sees name, course interest, location, SFE status, and any other answers before the call.</li>
+                                <li><strong>Fails one check:</strong> Moves into a nurture sequence. Gets added to the manual follow-up pipeline for your consultants to revisit. Not lost &mdash; just not prioritised.</li>
+                                <li><strong>Uncontactable after 4 attempts:</strong> Moved to a "cold" pipeline. Your consultants can still work it, but it's clearly labelled and doesn't clog the main funnel.</li>
+                            </ul>
+
+                            <h5>The net effect:</h5>
+                            <p>Your consultants stop spending 80% of their time on the wrong leads. They see a calendar of pre-qualified students who confirmed eligibility, confirmed course interest, and actually picked up the phone. Their close rate improves because they're only talking to the right people.</p>
+
+                            <p class="stat-callout">You told me your qualification question on the form is "Have you claimed SFE before &mdash; Yes/No." <strong>About half of people who answer "No" on a form will say something different when a human (or Voice AI) asks them directly.</strong> Real-time qualification catches this before your consultants waste their time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">A CRM live in 2 weeks &mdash; not 5 more months</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You've been paying for a custom CRM for almost a year. It's still not ready. You're managing 1,200 leads a month on Google Sheets. Every day that continues is a day you can't see what your 15 consultants are actually doing with those leads.</p>
+
+                            <h5>What we build in 2&ndash;3 weeks:</h5>
+                            <ul>
+                                <li><strong>Full pipeline view:</strong> Every lead visible at every stage &mdash; new, AI contacted, qualified, booked, consulted, enrolled, rejected. No more spreadsheet guesswork.</li>
+                                <li><strong>Voice AI lives here:</strong> Every call the AI makes is logged. Every transcript is readable. Every recording is accessible. You can listen to exactly what was said to any lead.</li>
+                                <li><strong>One inbox:</strong> SMS, email, and WhatsApp conversations from every lead in one place, assigned to the consultant handling that lead.</li>
+                                <li><strong>Consultant-level visibility:</strong> See exactly which consultants are booking, which are dragging their feet, and which leads are being neglected.</li>
+                                <li><strong>Automated reminders:</strong> Appointment confirmations, day-before reminders, document request follow-ups &mdash; all firing automatically without your team lifting a finger.</li>
+                            </ul>
+
+                            <h5>Full-funnel tracking included:</h5>
+                            <ul>
+                                <li>Cost per lead (from our managed ad spend)</li>
+                                <li>Cost per qualified lead (after Voice AI filters)</li>
+                                <li>Cost per booked consultation</li>
+                                <li>Cost per enrolled student</li>
+                            </ul>
+                            <p>When you know your cost per enrolled student is &pound;X and your commission per student is &pound;1,800, the maths becomes simple. Scale what works. Cut what doesn't.</p>
+
+                            <h5>What happens when your custom CRM is ready:</h5>
+                            <p>We do a seamless migration. The top-of-funnel automation &mdash; Voice AI, lead qualification, booking &mdash; can stay in our system and feed directly into your application-tracking CRM. Or you fully transition. Your call, no pressure, no lock-in.</p>
+
+                            <p class="stat-callout">You mentioned the developer has been at it for nearly a year and there are still 5 months to go. I built this for 20+ clients. <strong>We'll have you live in 2&ndash;3 weeks.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Student Partners &mdash; February 2025 Intake</h2>
+                <p>Student Finance Recruitment &bull; UK &bull; &pound;1,000/mo ad spend &bull; Higher-quality leads at &pound;5 CPL</p>
+            </div>
+
+            <div style="font-size:0.78rem;color:var(--text-secondary);margin-bottom:1rem;line-height:1.6;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:10px;padding:0.9rem 1.1rem;">
+                Campaigns ran <strong style="color:var(--text-primary);">November, December &amp; January</strong> to feed the February intake. 3 months of lead generation, all qualifying into a single intake window.
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">600</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">&pound;5.00 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">300</div>
+                    <div class="label">Consultations</div>
+                    <div class="rate">50% booked</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">195</div>
+                    <div class="label">Applications</div>
+                    <div class="rate">65% of booked</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">146</div>
+                    <div class="label">Enrolled</div>
+                    <div class="rate">75% of apps</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">&pound;103</div>
+                    <div class="label">True CPA</div>
+                    <div class="rate">per enrolment</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">&pound;219K</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">per intake</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">14.6x ROI</div>
+                <div class="label">&pound;15,000 total invested (ad spend + management) &rarr; &pound;219,000 commission revenue</div>
+            </div>
+
+            <div style="margin-top:1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;">
+                <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:10px;padding:1rem;text-align:center;">
+                    <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:0.4rem;">Campaign window</div>
+                    <div style="font-weight:600;font-size:0.88rem;">Nov &rarr; Jan</div>
+                    <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.2rem;">3 months</div>
+                </div>
+                <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:10px;padding:1rem;text-align:center;">
+                    <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:0.4rem;">Total invested</div>
+                    <div style="font-weight:600;font-size:0.88rem;color:var(--text-primary);">&pound;15,000</div>
+                    <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.2rem;">ad spend + management</div>
+                </div>
+                <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:10px;padding:1rem;text-align:center;">
+                    <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:0.4rem;">Intake deadline</div>
+                    <div style="font-weight:600;font-size:0.88rem;">February 2025</div>
+                    <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.2rem;">146 students enrolled</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voice AI -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Voice AI in Action</h2>
+                <p>Kathleen from the demo &mdash; three attempts, three different times, booked on day three.</p>
+            </div>
+
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 1</span><span>5:00pm</span></div>
+                    <div class="voice-card-body">
+                        Lead submits form after work. AI calls in 30 seconds.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 2</span><span>6:00pm</span></div>
+                    <div class="voice-card-body">
+                        Different time. AI calls again.
+                        <div class="result">No answer &rarr; Retry</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>DAY 3</span><span>7:15pm</span></div>
+                    <div class="voice-card-body">
+                        Third attempt, evening. AI connects.
+                        <div class="result">&#10003; Qualified + Booked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>&#127891; Built for Student Finance England Qualification</h4>
+                <p>Voice AI confirms SFE eligibility, course interest, and location before anyone reaches your consultants. Qualified leads get booked directly. Unqualified leads go into a separate nurture pipeline. Your team only works the leads worth working.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Full-Funnel Tracking</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Right now you know your cost per lead is &pound;4&ndash;5. That's where your visibility ends. You don't know your cost per enrolled student &mdash; and that's the only number that matters.</p>
+
+                            <h5>What your current setup tracks:</h5>
+                            <ul class="muted-list">
+                                <li>Leads generated (from Meta)</li>
+                                <li>Cost per lead (&pound;4&ndash;5)</li>
+                                <li>Enrolments (manually counted from consultant reports)</li>
+                            </ul>
+                            <p>Then you distribute leads on Google Sheets and trust each consultant to chase and report back. You have no way to verify effort, identify who's performing, or know which campaign is actually generating enrolments vs. just leads.</p>
+
+                            <h5>What we track:</h5>
+                            <ul>
+                                <li><strong>Lead &rarr; Contact rate:</strong> Did we actually reach them?</li>
+                                <li><strong>Contact &rarr; Qualified rate:</strong> Did they pass SFE, course, and location checks?</li>
+                                <li><strong>Qualified &rarr; Booked rate:</strong> Did they book a consultation?</li>
+                                <li><strong>Booked &rarr; Show rate:</strong> Did they show up?</li>
+                                <li><strong>Show &rarr; Enrolment rate:</strong> Did they enrol?</li>
+                                <li><strong>True cost per enrolled student:</strong> All the way through the funnel.</li>
+                            </ul>
+
+                            <h5>Why this changes decisions:</h5>
+                            <p>You said your issue is quality, not quantity. But without full-funnel tracking, you can't prove that. Maybe quality is fine and the issue is your consultants' follow-up on qualified leads. Maybe one campaign generates great leads and another generates noise. Maybe your Thursday leads enrol at 3x the rate of your Monday leads.</p>
+                            <p>You can't see any of this right now. We make it all visible.</p>
+
+                            <h5>Your weekly report includes:</h5>
+                            <ul>
+                                <li>Leads generated by campaign and ad creative</li>
+                                <li>Voice AI contact and qualification rates</li>
+                                <li>Consultant-level booking and close rates</li>
+                                <li>Cost per lead, per qualified lead, per enrolled student</li>
+                                <li>Pipeline health across all stages</li>
+                            </ul>
+
+                            <p class="stat-callout">Student Partners' true CPA was <strong>&pound;103 per enrolled student</strong> &mdash; not the &pound;5 cost per lead that most agencies would have reported as the headline metric. We track what actually matters.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">You Own Everything</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Some agencies build your campaigns in their accounts and keep your data. If you leave, you start from zero. We don't work that way.</p>
+
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>Ad accounts:</strong> Created in your name. Your Facebook Business Manager, your payment method, your login. We get added as a partner &mdash; you remain the owner.</li>
+                                <li><strong>Meta pixel:</strong> Installed on your domain, in your account. All conversion data, all audience learning, all retargeting pools &mdash; yours.</li>
+                                <li><strong>Landing pages:</strong> Built on your domain or one we purchase and transfer. Not hosted on our servers.</li>
+                                <li><strong>Ad creatives:</strong> All images, copy, and video assets delivered to you in organised folders.</li>
+                                <li><strong>Voice AI scripts:</strong> The full qualification flows, objection handling, and conversation logic &mdash; documented and yours.</li>
+                                <li><strong>CRM data:</strong> Every lead record, every call transcript, every conversation &mdash; exportable in full at any time.</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <ul>
+                                <li>You keep all ad accounts and pixel data</li>
+                                <li>You keep the landing pages live</li>
+                                <li>You keep all lead data from the CRM</li>
+                                <li>You keep the Voice AI scripts to use with another provider</li>
+                                <li>We remove ourselves as partners from your accounts. That's it.</li>
+                            </ul>
+                            <p>No transition fee. No data ransom. No starting over.</p>
+
+                            <h5>Why we do this:</h5>
+                            <p>Because our job is to make the partnership valuable enough that you'd never want to leave &mdash; not to trap you. If we're not delivering, you should be able to walk. And if we are, you'll stay because we're making you money.</p>
+
+                            <p class="stat-callout">Ask any agency you're comparing: <strong>"If I cancel tomorrow, what do I keep?"</strong> Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Numbers</h4>
+                    <div class="math-row"><span class="label">Leads/month</span><span class="value">~1,200</span></div>
+                    <div class="math-row"><span class="label">Enrolments/month</span><span class="value">~200</span></div>
+                    <div class="math-row"><span class="label">Conversion rate</span><span class="value">~16%</span></div>
+                    <div class="math-row"><span class="label">Avg commission/student</span><span class="value">~&pound;1,800</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Investment</h4>
+                    <div class="math-row"><span class="label">Management fee</span><span class="value">&pound;4,000/mo</span></div>
+                    <div class="math-row"><span class="label">Starting ad spend</span><span class="value">&pound;1,000/mo</span></div>
+                    <div class="math-row"><span class="label">Total</span><span class="value">&pound;5,000/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Break-even</span>
+                        <span class="value" style="color: var(--accent-green);">4 additional enrolments</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>+ Enrolments</th>
+                        <th>Revenue</th>
+                        <th>Net</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>+2/mo</td>
+                        <td>&pound;3,000</td>
+                        <td class="loss">&minus;&pound;2,000</td>
+                        <td class="loss">&minus;40%</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>+12/mo</td>
+                        <td>&pound;18,000</td>
+                        <td class="gain">+&pound;13,000</td>
+                        <td class="gain">260%</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>+25/mo</td>
+                        <td>&pound;37,500</td>
+                        <td class="gain">+&pound;32,500</td>
+                        <td class="gain">650%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>What If It Doesn't Work?</h4>
+                <p>The system shows exactly where students drop off. <strong>We'll know within 60 days if it's working &mdash; if not, cancel with 30 days notice. You keep the CRM, the ad accounts, the Voice AI scripts, and every piece of data we've built.</strong></p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Full Growth System</div>
+                <div class="pricing-amount">
+                    <span class="currency">&pound;</span>
+                    <span class="value">4,000</span>
+                    <span class="period">/month</span>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Paid media management (Meta)</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Voice AI intake (1,500 min)</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Landing pages + lead forms</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> CRM setup + team training</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Full-funnel analytics dashboard</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Weekly optimisation calls</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Ad management:</strong> Covers management of up to &pound;3,000/mo in ad spend &bull; Starting budget &pound;1,000/mo, scalable as results come in<br><br>
+                    <strong>Additional:</strong> Voice AI overage &pound;0.15/min &bull; One-time setup &pound;500<br><br>
+                    <strong>Your time:</strong> 2&ndash;3 hrs/week during setup, ~1 hr/week ongoing<br><br>
+                    <strong>Terms:</strong> No long-term contract. 30 days notice to cancel. You keep everything.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>Sign Thursday. Live within three weeks.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Mar 19&ndash;21</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">Mar 21&ndash;24</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">Mar 24 &ndash; Apr 4</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Campaigns</h4>
+                    <div class="date">Apr 1&ndash;7</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>&#128640; Live</h4>
+                    <div class="date">Apr 7</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Review</h4>
+                    <div class="date">Apr 21</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties. You keep everything &mdash; ad accounts, CRM data, landing pages, Voice AI scripts, call recordings, all lead history.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about the CRM we're already building?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Keep building it. When it's ready, we connect our top-of-funnel system (Voice AI, lead qualification, booking) directly into yours. You get the best of both &mdash; our proven intake automation feeding into your custom application and commission tracking. No duplication, no wasted work.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can we advertise on the Tarek Associates brand page?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes &mdash; and we should. We won't use the word "finance" or make claims that violate Meta policy. There are proven ways to generate strong interest in your courses without triggering restrictions. We'll also continue running your secondary accounts in parallel if you want to maintain both sources. More volume, more control.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will my results match Student Partners'?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Same industry, similar market &mdash; but your mix of courses, office locations, and brand recognition will affect your specific numbers. The case study shows what the system delivers when the inputs are right. Our job is to optimise your inputs until the output matches.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do you need from us to get started?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Access to your Facebook Business Manager, your existing lead forms, input on qualification criteria (what makes a good lead vs. a bad one), your consultants' availability for CRM onboarding, and Tarek on the call for the discovery session. That's it.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Thursday &mdash; Tarek, Lakshit, and Yaseer on the call. Bring your questions.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Book a Time &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Tarek Associates &bull; March 2026</div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
