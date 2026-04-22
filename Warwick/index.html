@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Warwick Immigration Canada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* How It Works Cards */
+        .flow-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .flow-cards { grid-template-columns: 1fr; }
+        }
+
+        .flow-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .flow-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .flow-card:nth-child(1) .flow-card-header { background: var(--accent-blue); }
+        .flow-card:nth-child(2) .flow-card-header { background: var(--accent-orange); }
+        .flow-card:nth-child(3) .flow-card-header { background: var(--accent-green); }
+
+        .flow-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .flow-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .flow-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .pricing-tiers { grid-template-columns: 1fr; }
+        }
+
+        .pricing-tier {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .pricing-tier .tier-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .pricing-tier .tier-amount {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .pricing-tier .tier-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 280px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; April 2026</div>
+        <h1>From 6 Consults to 50+</h1>
+        <p>An educational webinar funnel that fills your calendar with paid consultations &mdash; on autopilot.</p>
+        <p class="hero-client">Prepared for Warwick Immigration Canada</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Catherine,</div>
+                <p>Nine years. Two people. <span class="highlight">100% referrals</span>. That's a testament to the quality of your work &mdash; and also exactly why you're ready for the next step.</p>
+                <p>You said it plainly: <span class="highlight">"people are not going to our website to book appointments because they don't really know we exist."</span> That's fixable. But the fix isn't Google Ads &mdash; those only capture people who already know Express Entry is an option for them. The people you want are the nurses in Manchester, the electricians in Florida, the teachers in Jamaica who'd qualify in a heartbeat but have never heard the phrase "Express Entry."</p>
+                <p>We find them with educational webinars. You present once live, then we run it evergreen to a new audience every day. Every registrant hears you teach for 45 minutes before they're offered a paid consultation &mdash; which is why the people who book are already halfway sold.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">An educational webinar funnel that runs 24/7 after one live session</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You teach once. We run it forever. Every day, a new audience of nurses, teachers, and trades workers learns they have a pathway to Canada &mdash; from you.</p>
+
+                            <h5>The structure:</h5>
+                            <ul>
+                                <li><strong>Live webinar (once):</strong> You and/or Hannah present a 45-minute session &mdash; pathways to PR, Express Entry for skilled workers, LMIAs for trades and healthcare. We build the slide deck and talk track with you so it's structured, emotional, and converts.</li>
+                                <li><strong>Evergreen replay (forever):</strong> After day one, the same webinar runs as a high-quality pre-recorded session. Every registrant can watch it on-demand or at a scheduled 7:30pm local time slot each evening.</li>
+                                <li><strong>Multi-channel nurture:</strong> Registrants who don't show up get emailed, SMS'd, and WhatsApp'd over 7 days with a fresh replay link. No-shows become show-ups. Show-ups become bookings.</li>
+                                <li><strong>One refresh per month:</strong> You do one new live webinar per month &mdash; we A/B test topics, openers, and presenters (you vs. Hannah) to find what converts best in each region.</li>
+                            </ul>
+
+                            <h5>Built for global expansion:</h5>
+                            <ul>
+                                <li><strong>Start with the US and UK/Europe</strong> &mdash; your comfort zones, your strongest existing pipeline, zero visa friction for those nationals entering Canada.</li>
+                                <li><strong>Expand to a third region in month 3-4</strong> once the system is validated. Middle East, East Asia, Southeast Asia, North Africa &mdash; we've built this exact funnel in all of them.</li>
+                                <li><strong>Language expansion when ready:</strong> As Hannah sharpens her French, we can launch a Francophone funnel targeting France, Belgium, Morocco. Native-language webinars convert materially better than English-only.</li>
+                            </ul>
+
+                            <p class="stat-callout">Our lowest-performing client on this exact funnel generated <strong>50 additional paid consultations in 30 days</strong>. The highest generated 150. Your ceiling is your capacity, not the top of the funnel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Only paid consultations at $295 CAD book your calendar</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You already do paid-only consultations. We just engineer the flow so nobody books a slot without paying first &mdash; no free advice, no no-shows, no time lost.</p>
+
+                            <h5>The payment flow:</h5>
+                            <ul>
+                                <li><strong>Price stated upfront:</strong> At the end of the webinar, the CTA clearly states "Book a 30-minute consultation &mdash; $295 CAD." No ambiguity, no surprise.</li>
+                                <li><strong>Payment link sent:</strong> Clicking "Book Now" opens the payment page. Stripe, LawPay, or Clio Payments &mdash; whichever you prefer (we integrate with all three).</li>
+                                <li><strong>No payment = no booking:</strong> The calendar slot is literally not held until payment clears. No confirmation email, no calendar invite.</li>
+                                <li><strong>Instant handoff:</strong> Payment clears &rarr; calendar invite sent &rarr; lead pushed into Clio with all the context from their webinar registration. You wake up to a fully qualified, pre-paid consultation on your calendar.</li>
+                            </ul>
+
+                            <h5>Why this works so well post-webinar:</h5>
+                            <ul>
+                                <li><strong>They've already spent 45 minutes with you.</strong> By the time they pay $295, you're not a stranger &mdash; you're the expert who just taught them more about Canadian immigration than they've ever known.</li>
+                                <li><strong>Tire-kickers don't pay.</strong> The people on your calendar have already demonstrated they're serious enough to invest $295.</li>
+                                <li><strong>Your 30-min slots protect themselves.</strong> No more blocking time for someone who ghosts.</li>
+                            </ul>
+
+                            <p class="stat-callout">A Regina-based immigration consultancy we work with generated <strong>162 paid consultations at $265 CAD in 30 days</strong> &mdash; roughly $42,900 in consultation revenue alone, before a single retainer was signed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Track every dollar from Facebook click to signed retainer</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies report "cost per lead" and stop there. That number is worthless. What matters is cost per signed retainer &mdash; and we track it all the way through.</p>
+
+                            <h5>What we measure:</h5>
+                            <ul>
+                                <li><strong>Cost per lead:</strong> What it costs to get someone to raise their hand</li>
+                                <li><strong>Cost per webinar attendee:</strong> What it costs to actually get someone to watch</li>
+                                <li><strong>Cost per paid consultation:</strong> What it costs to get $295 on the calendar</li>
+                                <li><strong>Cost per signed retainer:</strong> What it costs to get a full paying client</li>
+                                <li><strong>True ROI:</strong> Revenue generated vs. ad spend &mdash; including both consult fees and retainer value</li>
+                            </ul>
+
+                            <h5>How we do it:</h5>
+                            <ul>
+                                <li><strong>Fresh Meta pixel:</strong> Properly configured with every conversion event on your site</li>
+                                <li><strong>UTM tracking:</strong> Every ad, campaign, and audience tagged so we know exactly which Facebook ad is driving which paid consult</li>
+                                <li><strong>Clio integration:</strong> We connect the funnel into your Clio pipeline so the full journey &mdash; click &rarr; register &rarr; attend &rarr; pay &rarr; retain &mdash; is visible in one place</li>
+                                <li><strong>Closed-loop reporting:</strong> When you mark someone as "retained" in Clio, we trace it back to the exact ad that brought them in</li>
+                            </ul>
+
+                            <h5>Your weekly report includes:</h5>
+                            <ul>
+                                <li>Leads generated (by region, by audience, by ad)</li>
+                                <li>Registration &rarr; show-up rate</li>
+                                <li>Webinar attendance numbers and attention time</li>
+                                <li>Paid consultation conversion rate</li>
+                                <li>Retainer close rate and revenue generated</li>
+                                <li>True CPA, true ROAS, and projected LTV</li>
+                            </ul>
+
+                            <p class="stat-callout">Once you know your CPA, scale is just math. <strong>Want 10 more clients next month? Add $X to ad spend. Done.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>A Regina-Based Immigration Consultancy &mdash; Last 30 Days</h2>
+                <p>Caribbean-targeted webinar funnel &bull; Express Entry for nurses, teachers, and trades</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">6,400+</div>
+                    <div class="label">Registered</div>
+                    <div class="rate">across evergreen + live</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">~48%</div>
+                    <div class="label">Show Rate</div>
+                    <div class="rate">live + evergreen</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">162</div>
+                    <div class="label">Paid Consults</div>
+                    <div class="rate">$265 CAD each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$42.9K</div>
+                    <div class="label">Consult Revenue</div>
+                    <div class="rate">in one month</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">~16</div>
+                    <div class="label">Projected Retainers</div>
+                    <div class="rate">at 10% conversion</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$91K</div>
+                    <div class="label">Total Projected Rev</div>
+                    <div class="rate">consults + retainers</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">$42,900 in one month</div>
+                <div class="label">From one live webinar, then running evergreen to a new audience every day</div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section">
+            <div class="section-header">
+                <h2>How the Funnel Works</h2>
+                <p>A nurse in Manchester sees your ad on Instagram. Three days later, she's paid $295 and she's on your calendar.</p>
+            </div>
+
+            <div class="flow-cards">
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 1</span><span>Ad &rarr; Landing</span></div>
+                    <div class="flow-card-body">
+                        Sees ad: "Canada needs nurses in 2026 &mdash; attend our free webinar." Clicks. Registers with name, email, phone.
+                        <div class="result">Enters nurture sequence</div>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 2</span><span>Webinar</span></div>
+                    <div class="flow-card-body">
+                        Watches 45-min session on Express Entry for healthcare workers &mdash; either immediately or at 7:30pm local.
+                        <div class="result">Leaves educated + interested</div>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 3</span><span>Paid Booking</span></div>
+                    <div class="flow-card-body">
+                        Receives booking link post-webinar. Pays $295 CAD via your payment provider. Slot confirmed in Clio.
+                        <div class="result">&#10003; On your calendar, prepaid</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Built for Your Target Regions</h4>
+                <p>We launch in the US first &mdash; your strongest existing pipeline. Then UK/Europe, where your dual citizenship and trade show work already give you credibility. Each region gets its own ads, its own webinar angle, and its own qualification path. Expansion into a third region happens in month 3-4, once the first two are validated.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">We only win when you win</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies charge $3K-$8K per month in retainers whether your funnel works or not. We don't.</p>
+
+                            <h5>How our pricing reflects this:</h5>
+                            <ul>
+                                <li><strong>No monthly management fee.</strong> Zero.</li>
+                                <li><strong>One-time build fee ($1,000 CAD)</strong> &mdash; covers the full funnel architecture, landing pages, email/SMS/WhatsApp nurture sequences, Clio integration, Meta pixel setup, and your first webinar coaching.</li>
+                                <li><strong>25% of paid consultation revenue + first-retainer revenue</strong> from leads that come in through the funnel. If we don't generate revenue, we don't get paid.</li>
+                                <li><strong>Your existing referral business is untouched.</strong> We only take a share of new revenue we generate.</li>
+                            </ul>
+
+                            <h5>What this means in practice:</h5>
+                            <p>You asked the right question on our call: "Is there a big margin here?" With our model, the margin only shrinks when revenue expands &mdash; and when revenue expands, your dollar amount still grows. If we bring in zero paid consultations, you owe us zero commission. If we bring in 100, you keep 75% of every dollar we generate, and the math gets better the bigger we get.</p>
+
+                            <p class="stat-callout">We have <strong>direct financial skin in the game</strong>. Most agencies don't. Ask the ones you're comparing if they'd accept a performance-based structure. Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+                <p>Your existing referral business stays 100% yours. These numbers are only about new webinar-sourced revenue.</p>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Baseline</h4>
+                    <div class="math-row"><span class="label">Consults/month</span><span class="value">~6</span></div>
+                    <div class="math-row"><span class="label">Consult fee</span><span class="value">$295 CAD</span></div>
+                    <div class="math-row"><span class="label">Source</span><span class="value">100% referrals</span></div>
+                    <div class="math-row"><span class="label">Avg retainer</span><span class="value">~$3,000 CAD</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Your Investment</h4>
+                    <div class="math-row"><span class="label">One-time build</span><span class="value">$1,000 CAD</span></div>
+                    <div class="math-row"><span class="label">Meta ad spend</span><span class="value">~$1,800/mo</span></div>
+                    <div class="math-row"><span class="label">CRM execution</span><span class="value">~$1,000/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Performance fee</span>
+                        <span class="value" style="color: var(--accent-green);">25% of new revenue</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>New Consults</th>
+                        <th>New Retainers</th>
+                        <th>Gross Rev</th>
+                        <th>Your Take-Home*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>+20/mo</td>
+                        <td>+2/mo</td>
+                        <td>$11,900</td>
+                        <td class="gain">+$6,125</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>+50/mo</td>
+                        <td>+5/mo</td>
+                        <td>$29,750</td>
+                        <td class="gain">+$19,513</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>+100/mo</td>
+                        <td>+10/mo</td>
+                        <td>$59,500</td>
+                        <td class="gain">+$41,825</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">*Take-home = gross revenue minus 25% performance fee minus ~$2,800/mo hard costs (ad spend + CRM). Assumes $295 avg consult, $3,000 avg retainer, 10% consult-to-retainer conversion.</p>
+
+            <div class="callout">
+                <h4>What If It Doesn't Work?</h4>
+                <p>Your maximum risk is <strong>~$3,800 in month 1</strong> (one-time build + first month of hard costs). After that, we either see strong signs within 3 weeks &mdash; at which point the funnel is paying for itself many times over &mdash; or we don't, and you walk with 30 days notice.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Performance-Based Partnership</div>
+                <div class="pricing-subtitle">No monthly retainer. We only earn when you earn.</div>
+
+                <div class="pricing-tiers">
+                    <div class="pricing-tier">
+                        <div class="tier-label">One-Time Build</div>
+                        <div class="tier-amount">$1,000 CAD</div>
+                        <div class="tier-desc">Full funnel architecture, landing pages, nurture sequences, Clio integration, first-webinar coaching.</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-label">Hard Costs (not paid to us)</div>
+                        <div class="tier-amount">~$2,800/mo</div>
+                        <div class="tier-desc">~$1,800 Meta ad spend + ~$1,000 CRM execution (SMS, email, WhatsApp). Billed directly by the platforms.</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-label">Performance Fee</div>
+                        <div class="tier-amount">25%</div>
+                        <div class="tier-desc">Of paid consultation revenue and first-transaction retainer revenue generated through the funnel. Zero if we generate zero.</div>
+                    </div>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Meta ad campaigns (multi-region)</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Full webinar funnel build</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Landing pages + payment flow</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Clio integration</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Email + SMS + WhatsApp nurture</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Full-funnel analytics + weekly reports</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Weekly optimization calls</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Webinar coaching + slide deck support</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Your time:</strong> 4-6 hrs during week 1 (discovery + webinar prep), one 45-min webinar on launch day, one refresh webinar per month, ~1 hr/week on review calls.<br><br>
+                    <strong>Commission scope:</strong> 25% applies only to the first paid consult and first retainer per lead. If a client returns 12 months later for new work, that's 100% yours. Existing referral clients are never touched.<br><br>
+                    <strong>Terms:</strong> Month-to-month. 30 days written notice to cancel.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>From signing to first paid consults in under three weeks.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">May 1-2</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">May 5-7</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">May 8-15</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Webinar Prep</h4>
+                    <div class="date">May 14-16</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Live Launch</h4>
+                    <div class="date">May 22</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>First Review</h4>
+                    <div class="date">Jun 12</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties. We'll work with you to ensure a smooth wind-down of active campaigns and any paid consultations already in your pipeline.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why 25% on retainers and not just consults?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Because the funnel is what generates the retainer, not just the consult. Without the webinar, that nurse in Manchester never books with you. Without the paid consult, she never signs a retainer. Our job is the whole journey, so our fee reflects the whole journey. First retainer only &mdash; after that, they're 100% yours for life.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How will Meta charge my card?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            If your Meta ad account is brand new, expect frequent small charges (every $5-$60) in the first few weeks &mdash; Meta does this to verify the card. After ~30 days of clean billing, charges consolidate to once-weekly or once-monthly. We'd recommend giving your credit card company a heads-up and using a points card (Aeroplan/Amex) so you earn travel points on every dollar of ad spend. Meta also issues a clean monthly invoice for your bookkeeper.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do I need to provide?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Access to your Meta business manager (or we help you set it up), access to Clio, your payment provider of choice (LawPay, Clio Payments, or Stripe all work), subject-matter input for the webinar, and 4-6 hours of your time in week 1 for discovery and webinar prep. That's it.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will I know if it's working before the money adds up?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes. Within three weeks of launch, we'll have enough data to tell you honestly whether the funnel is worth continuing. Registration numbers, show rates, and early paid-consult conversions are leading indicators we can read at week 2-3. If the signs are wrong, we'll say so ourselves &mdash; you shouldn't have to guess.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next: Wednesday April 29</h2>
+            <p>2pm Eastern &bull; 12pm Mountain &bull; 11am Pacific &mdash; with you and Hannah. Bring your questions.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Confirm or Reschedule &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Warwick Immigration Canada &bull; April 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
