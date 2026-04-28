@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Wings Migration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Webinar Flow */
+        .flow-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .flow-cards { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .flow-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .flow-card-header {
+            padding: 0.5rem 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .flow-card:nth-child(1) .flow-card-header { background: var(--accent-blue); }
+        .flow-card:nth-child(2) .flow-card-header { background: var(--accent-purple); }
+        .flow-card:nth-child(3) .flow-card-header { background: var(--accent-orange); }
+        .flow-card:nth-child(4) .flow-card-header { background: var(--accent-green); }
+
+        .flow-card-body {
+            padding: 0.85rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .flow-card-body .title {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            font-size: 0.88rem;
+        }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-subhead {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-subhead strong {
+            color: var(--accent-green);
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Commission breakdown */
+        .commission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 500px) {
+            .commission-grid { grid-template-columns: 1fr; }
+        }
+
+        .commission-card {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+
+        .commission-card .commission-label {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .commission-card .commission-split {
+            color: var(--text-secondary);
+        }
+
+        .commission-card .you-get {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 400px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2500px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        /* Honest Take section */
+        .honest-take {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(239, 68, 68, 0.04) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.18);
+            border-left: 3px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 1.5rem 1.75rem;
+        }
+
+        .honest-take h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .honest-take h3::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .honest-take p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .honest-take p strong {
+            color: var(--text-primary);
+        }
+
+        .honest-take ul {
+            margin: 0.5rem 0 0.75rem 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .honest-take ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .honest-take ul li strong {
+            color: var(--text-primary);
+        }
+
+        /* Special offer banner */
+        .offer-banner {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(99, 102, 241, 0.06) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .offer-banner .badge {
+            background: var(--accent-purple);
+            color: white;
+            padding: 0.35rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .offer-banner .text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .offer-banner .text strong {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let&apos;s Talk &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; April 2026</div>
+        <h1>From Skeptic to System</h1>
+        <p>A webinar funnel built on shared risk &mdash; we only win when you do.</p>
+        <p class="hero-client">Prepared for Wings Migration</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Satinder,</div>
+                <p>You said it on our call: <span class="highlight">you&apos;ve been burned before.</span> Money spent, no results. So when you ask about pricing, what you&apos;re really asking is: <em>where&apos;s the trap this time?</em></p>
+                <p>There isn&apos;t one. <span class="highlight">No long-term contract. No setup fee for you.</span> You pay for the ad budget, the CRM execution, and a percentage of revenue we generate together. If we don&apos;t generate, we don&apos;t get paid. If we do, you keep 75% of every consultation and first retainer &mdash; and 100% of every retainer after that.</p>
+                <p>You&apos;re also our <span class="highlight">first client in the Australia/New Zealand market</span>. The webinar funnel itself is proven across 13 firms in Canada, the US, and the UK. Below is exactly what we&apos;ve done for one of them &mdash; live numbers, not projections.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">A complete webinar funnel that creates demand &mdash; not just captures it</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most ads target people who already know they want to migrate. Our funnel creates the audience &mdash; people who didn&apos;t even know they were eligible.</p>
+                            
+                            <h5>Step 1: The Ads</h5>
+                            <ul>
+                                <li><strong>Profession-specific creative:</strong> Separate ads for nurses, healthcare workers, teachers, engineers, tech professionals, trades. Each ad speaks directly to that audience instead of generic "move to Australia" messaging.</li>
+                                <li><strong>Run in your target regions:</strong> Starting with Southeast Asia, India, Pakistan, Bangladesh, Philippines &mdash; and any other country you want for skilled migration into Australia.</li>
+                                <li><strong>78+ ad variations tested:</strong> We don&apos;t guess what works. We let the data show us, then scale the winners and kill the losers.</li>
+                            </ul>
+
+                            <h5>Step 2: The Landing Page</h5>
+                            <ul>
+                                <li><strong>Mobile + desktop optimized:</strong> High-converting registration page designed and built by our team.</li>
+                                <li><strong>Two-option register:</strong> "Watch the webinar in 5 minutes" OR "Register for live tonight at 7:30pm." Either way, registered &rarr; tracked &rarr; nurtured.</li>
+                                <li><strong>Multi-channel confirmation:</strong> Email + SMS + WhatsApp message with the webinar link, sent within seconds of registration.</li>
+                            </ul>
+
+                            <h5>Step 3: The Webinar</h5>
+                            <ul>
+                                <li><strong>You record it once, live, with us collaborating on structure.</strong> After that, it plays daily as a "live-style" pre-recorded webinar &mdash; viewers can chat, ask questions, and feel like part of the audience.</li>
+                                <li><strong>The structure is the secret:</strong> Targets six prioritized professions, debunks four common myths (proof of funds, age, job offer, prior rejection), shows three pathways into Australia, then makes the ask.</li>
+                                <li><strong>Education first, pitch second:</strong> By the time the consultation offer comes up, attendees have already decided they want to talk to you.</li>
+                            </ul>
+
+                            <h5>Step 4: Paid Consultation Booking</h5>
+                            <ul>
+                                <li>Webinar attendees who want a 1-on-1 strategy session pay <strong>$150 AUD upfront</strong> (recommended price &mdash; more on this below) and book directly into your calendar.</li>
+                                <li>Payment clears &rarr; calendar invite sent &rarr; consultation locked in. No payment, no booking.</li>
+                            </ul>
+
+                            <p class="stat-callout">Across 13 firms running this funnel, the <strong>least successful client books 50 paid consultations per month. The most successful books 220.</strong> Your floor is well above what most agencies promise as a ceiling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Multi-region targeting in your priority markets</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You said you want to focus on Australia, then New Zealand, then Germany. Here&apos;s how we structure that.</p>
+                            
+                            <h5>Months 1&ndash;3: Australia</h5>
+                            <ul>
+                                <li><strong>Primary destination:</strong> All ad spend, all webinars, all funnel optimization focused on bringing skilled migrants into Australia.</li>
+                                <li><strong>Source regions:</strong> Whichever countries you specify &mdash; Southeast Asia, South Asia, Africa, Middle East. We can run simultaneously in multiple source markets.</li>
+                                <li><strong>Why we start narrow:</strong> One market, one offer, one funnel. We need clean data before we scale.</li>
+                            </ul>
+
+                            <h5>Months 4&ndash;6: New Zealand</h5>
+                            <ul>
+                                <li>Once Australia is producing predictable results, we duplicate the proven funnel for New Zealand-bound migrants.</li>
+                                <li>Same source regions, different webinar content, same backend system.</li>
+                            </ul>
+
+                            <h5>Months 6+: Germany</h5>
+                            <ul>
+                                <li>Targeted specifically at the recruitment-firm partnerships you mentioned (nurses, electricians).</li>
+                                <li>Webinar can be built in multiple languages &mdash; we&apos;ve done it in French, Arabic, Farsi, Hindi, Urdu.</li>
+                            </ul>
+
+                            <h5>Built around your time zones</h5>
+                            <p>Webinars run at times your audience is awake. Consultations book into your real-time Australian calendar availability. Our team works across Toronto, Brazil, Pakistan, and Bangladesh &mdash; managing time zones is what we do.</p>
+
+                            <p class="stat-callout">For most clients, after two months of single-region focus, we expand globally. Wings Migration has a <strong>much higher ceiling than most</strong> because of your multi-destination capability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Real-time tracking from ad click to retainer signed</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">If past agencies just showed you "we got X leads this month" and called it a day &mdash; that&apos;s why you got burned. Lead counts don&apos;t pay bills. Retained clients do.</p>
+                            
+                            <h5>The full funnel we track:</h5>
+                            <ul>
+                                <li><strong>Cost per lead:</strong> What it takes to get a webinar registration</li>
+                                <li><strong>Cost per webinar attendee:</strong> Did they actually show up?</li>
+                                <li><strong>Cost per paid consultation:</strong> Did they convert?</li>
+                                <li><strong>Cost per signed retainer:</strong> Did they become a real client?</li>
+                            </ul>
+
+                            <h5>How we track it:</h5>
+                            <ul>
+                                <li><strong>Meta pixel</strong> properly configured with all conversion events</li>
+                                <li><strong>UTM tracking</strong> on every ad, audience, and creative variation</li>
+                                <li><strong>CRM pipeline</strong> we build out (similar to what you saw on the call) &mdash; webinar pipeline + ever-webinar pipeline, with clear stages from registration through retainer</li>
+                                <li><strong>Closed-loop reporting:</strong> When you mark a client as "retained," we trace it back to the exact ad that brought them in</li>
+                            </ul>
+
+                            <h5>Why this matters for you specifically:</h5>
+                            <p>Once we know the math &mdash; e.g. "$X spent yields one paid consultation, and Y% of those become retainers" &mdash; scaling becomes arithmetic, not gambling. Want 30 more retainers next quarter? We know exactly what to invest.</p>
+
+                            <p class="stat-callout">On the call you saw a real example: <strong>~$3,000 in ad spend produced ~$70,000 in tracked revenue across 130 paid consultations and 7 signed retainers</strong> &mdash; in 5 weeks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Proof -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Live Proof &mdash; March 23 to April 27, 2026</h2>
+                <p>Canadian RCIC consultancy &bull; Outland funnel &bull; What you saw on screen</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">8,500</div>
+                    <div class="label">Leads</div>
+                    <div class="rate">5 weeks</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">1,300</div>
+                    <div class="label">Webinar Shows</div>
+                    <div class="rate">from first cohort</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">130</div>
+                    <div class="label">Paid Consults</div>
+                    <div class="rate">$265 CAD each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">7</div>
+                    <div class="label">Retainers Signed</div>
+                    <div class="rate">already converted</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$70K</div>
+                    <div class="label">Revenue</div>
+                    <div class="rate">in 5 weeks</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$101K</div>
+                    <div class="label">Projected</div>
+                    <div class="rate">with normal close rate</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">~23x ROI</div>
+                <div class="label">~$3,000 ad spend &rarr; $70,000 in tracked revenue</div>
+            </div>
+        </section>
+
+        <!-- Webinar Funnel In Action -->
+        <section class="section">
+            <div class="section-header">
+                <h2>How The Funnel Flows</h2>
+                <p>Four stages. Each one tracked. Each one optimizable.</p>
+            </div>
+
+            <div class="flow-cards">
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>Stage 1</span><span>Ad</span></div>
+                    <div class="flow-card-body">
+                        <div class="title">Profession-Specific Hook</div>
+                        "Are you a nurse / engineer / teacher? Australia needs you. Attend our free webinar."
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>Stage 2</span><span>Register</span></div>
+                    <div class="flow-card-body">
+                        <div class="title">Landing Page + Pop-up</div>
+                        Name, email, phone, time zone. Choose: watch in 5 min or live tonight.
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>Stage 3</span><span>Educate</span></div>
+                    <div class="flow-card-body">
+                        <div class="title">The Webinar</div>
+                        45-min interactive session: prioritized professions, myth-busting, three pathways, live Q&amp;A.
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>Stage 4</span><span>Convert</span></div>
+                    <div class="flow-card-body">
+                        <div class="title">Paid Consultation</div>
+                        $150 AUD upfront. Books into your calendar. You take it from here.
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>About the consultation price</h4>
+                <p>Your current $100 AUD consultation price is below what works for our partnership math. We strongly recommend pricing at <strong>$150 AUD minimum</strong> &mdash; this is the lowest we&apos;ve ever launched a partner at. Even after our 25% share, you keep $112.50 per consultation, more than your current full take. Across 130 consultations, that&apos;s an additional $1,625 in your pocket vs. staying at $100.</p>
+            </div>
+        </section>
+
+        <!-- Why Mortar Metrics -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">Shared risk, shared upside</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies charge a flat retainer whether they perform or not. We don&apos;t. The reason is simple: if we don&apos;t produce, we don&apos;t deserve to be paid.</p>
+                            
+                            <h5>Where your money actually goes:</h5>
+                            <ul>
+                                <li><strong>Ad spend ($1,800 AUD/mo min):</strong> Goes directly to Meta. Not into our pocket.</li>
+                                <li><strong>CRM execution (~$2,500 AUD/mo):</strong> Goes to running your automations &mdash; emails, SMS, WhatsApp messages, reminders, nurture sequences across thousands of leads. This scales with your volume.</li>
+                                <li><strong>Our share (25%):</strong> Only on revenue we directly generate &mdash; consultations and the first retainer per lead.</li>
+                            </ul>
+
+                            <h5>What that means in practice:</h5>
+                            <ul>
+                                <li>If you do $0 in revenue from our funnel, we make $0.</li>
+                                <li>If a lead becomes a retainer two months later for a different service, we take nothing from that.</li>
+                                <li>If a client comes back a year later for a second service, we take nothing from that.</li>
+                                <li>We only earn when our system directly closes a deal for the first time.</li>
+                            </ul>
+
+                            <h5>Our risk in this partnership:</h5>
+                            <p>For Wings Migration, we deploy a <strong>6-person team</strong>: 1 PPC specialist, 1 growth specialist, 2 backend developers, plus Yaseer and a dedicated account lead. That team gets paid whether you do or not. The first month is real out-of-pocket cost for us &mdash; we&apos;re betting on the partnership working as much as you are.</p>
+
+                            <p class="stat-callout">This is also why we waived the <strong>$1,000 setup fee</strong> for you &mdash; you&apos;re our first client in the Australia/New Zealand market. We want this partnership to succeed enough that we&apos;re absorbing more of the upfront risk.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&check;</span>
+                        <span class="accordion-title">A team that&apos;s actually done this 13 times before</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">The reason past agencies failed you isn&apos;t that paid ads don&apos;t work. It&apos;s that they didn&apos;t have a proven funnel and they didn&apos;t track the right metrics.</p>
+                            
+                            <h5>Our track record on this exact funnel:</h5>
+                            <ul>
+                                <li><strong>13 active clients</strong> running this Outland webinar funnel right now</li>
+                                <li><strong>RCIC consultants, immigration law firms, immigration agencies</strong> &mdash; the same buyer profile as Wings</li>
+                                <li><strong>Source regions:</strong> Caribbean, Europe, North Africa, East Africa, Middle East, Southeast Asia, East Asia</li>
+                                <li><strong>Destination countries:</strong> Canada, US, UK &mdash; and now Australia/NZ with you</li>
+                            </ul>
+
+                            <h5>What &quot;same lead journey&quot; actually means:</h5>
+                            <p>You asked on the call: am I a guinea pig? The honest answer is &mdash; not really. Someone in India deciding between Australia, Canada, or the UK behaves the same way: they want to know if they&apos;re eligible, what the pathway looks like, what it costs, and how long it takes. The webinar structure that works for "into Canada" works for "into Australia" because the psychology of the lead is identical.</p>
+                            <p>What changes is the <strong>specific immigration content</strong> &mdash; programs, point systems, regional pathways. That&apos;s your expertise. We provide the funnel; you provide the immigration knowledge.</p>
+
+                            <h5>Multi-language capability:</h5>
+                            <p>Our team has built webinars in French, Arabic, Farsi, Hindi, and Urdu. If you want to expand into multilingual markets, we can build webinars in your audience&apos;s native language &mdash; which significantly increases conversion rates.</p>
+
+                            <p class="stat-callout">Your benefit as our first AU/NZ client: <strong>$1,000 setup fee waived, dedicated focus during ramp, and the chance to lock in this partnership before we expand to other firms in your market.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Honest Take -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Honest Take</h2>
+                <p>You asked specifically: what hasn&apos;t worked? Here&apos;s the truthful answer.</p>
+            </div>
+
+            <div class="honest-take">
+                <h3>Where this funnel struggles</h3>
+                <p>The Outland funnel &mdash; advertising abroad to bring people <em>into</em> a country &mdash; is what we just walked through. That&apos;s our strongest play, and we don&apos;t have a bad campaign on this side of our business.</p>
+                <p>Where we&apos;ve seen campaigns underperform is on <strong>Inland services</strong> &mdash; advertising to people already inside a country trying to extend, change visa class, or stay. That market is significantly more competitive, more expensive per lead, and slower to break even (often 3&ndash;4 months before the math turns positive).</p>
+                <p><strong>If you ever want to expand into Inland services for people already in Australia, expect a different conversation</strong> &mdash; longer timeline, higher costs, lower margins. We&apos;ll be honest with you about it then. For now, the Outland focus we&apos;re proposing is the strongest position we can put you in.</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">If you&apos;d like a candid walk-through of one of our weaker campaigns to see how we&apos;d handle a struggling situation transparently, ask Yaseer directly on Friday &mdash; he&apos;ll show you.</p>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+                <p>Conservative numbers. Real costs. What you actually take home.</p>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Per-Transaction Split</h4>
+                    <div class="math-row"><span class="label">Consultation ($150 AUD)</span><span class="value">You: $112.50</span></div>
+                    <div class="math-row"><span class="label">First retainer ($3,000 AUD est.)</span><span class="value">You: $2,250</span></div>
+                    <div class="math-row"><span class="label">Subsequent retainers</span><span class="value" style="color: var(--accent-green);">You: 100%</span></div>
+                    <div class="math-row"><span class="label">Same-lead repeat services</span><span class="value" style="color: var(--accent-green);">You: 100%</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Monthly Investment</h4>
+                    <div class="math-row"><span class="label">Ad spend (min)</span><span class="value">$1,800 AUD</span></div>
+                    <div class="math-row"><span class="label">CRM execution</span><span class="value">~$2,500 AUD</span></div>
+                    <div class="math-row"><span class="label">Setup fee</span><span class="value" style="color: var(--accent-green);">WAIVED</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Fixed monthly cost</span>
+                        <span class="value">~$4,300 AUD</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Consults / Retainers</th>
+                        <th>Your Gross</th>
+                        <th>Less Costs</th>
+                        <th>Your Net</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Floor (least successful client)<span class="tag worst">Worst</span></td>
+                        <td>50 / 5</td>
+                        <td>$16,875</td>
+                        <td>&minus;$4,300</td>
+                        <td class="gain">+$12,575</td>
+                    </tr>
+                    <tr>
+                        <td>Mid-tier average<span class="tag expected">Expected</span></td>
+                        <td>80 / 8</td>
+                        <td>$27,000</td>
+                        <td>&minus;$4,300</td>
+                        <td class="gain">+$22,700</td>
+                    </tr>
+                    <tr>
+                        <td>Strong (live case study level)<span class="tag strong">Upside</span></td>
+                        <td>130 / 13</td>
+                        <td>$43,875</td>
+                        <td>&minus;$4,300</td>
+                        <td class="gain">+$39,575</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <h4>What If It Doesn&apos;t Work?</h4>
+                <p>Within <strong>two weeks of going live</strong>, we know if leads are converting at expected rates. If they&apos;re not, we don&apos;t bury it &mdash; we tell you and adjust. <strong>You can cancel any month with no penalty, no clawback, no fee.</strong> Your only commitment is honesty: tell us if results are off, and we&apos;ll fix it or part ways cleanly.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="offer-banner">
+                <span class="badge">First in AU/NZ</span>
+                <span class="text"><strong>$1,000 setup fee waived.</strong> Limited gesture for our first Australia/New Zealand market partner.</span>
+            </div>
+
+            <div class="pricing">
+                <div class="pricing-title">Revenue-Share Partnership</div>
+                <div class="pricing-amount">
+                    <span class="value">25%</span>
+                </div>
+                <div class="pricing-subhead">
+                    <strong>of consultation revenue + first retainer per lead.</strong> No retainer fee. No long-term contract. Month-to-month.
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&check;</span> Webinar funnel build (full)</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> High-converting landing pages</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Meta + Google paid media</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> CRM pipeline + automations</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Multi-channel nurture (Email/SMS/WhatsApp)</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> 6-person dedicated team</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Full-funnel tracking + reporting</div>
+                    <div class="pricing-feature"><span class="check">&check;</span> Multi-region campaign capability</div>
+                </div>
+
+                <div class="commission-grid">
+                    <div class="commission-card">
+                        <div class="commission-label">Per Consultation ($150 AUD)</div>
+                        <div class="commission-split">You keep <span class="you-get">$112.50</span> &bull; We earn $37.50</div>
+                    </div>
+                    <div class="commission-card">
+                        <div class="commission-label">Per First Retainer ($3,000 AUD est.)</div>
+                        <div class="commission-split">You keep <span class="you-get">$2,250</span> &bull; We earn $750</div>
+                    </div>
+                </div>
+
+                <div class="pricing-note" style="margin-top: 1.25rem;">
+                    <strong>Variable monthly costs (not management fees):</strong><br>
+                    &bull; Ad spend: $1,800 AUD/mo minimum (paid directly to Meta)<br>
+                    &bull; CRM execution: ~$2,500 AUD/mo (scales with lead volume)<br><br>
+                    <strong>Setup:</strong> $0 AUD <em>(waived from $1,000 &mdash; first AU/NZ client)</em><br><br>
+                    <strong>Your time:</strong> Webinar collaboration during build (~5&ndash;10 hours), one live recording. After that, taking the consultations we book.<br><br>
+                    <strong>Terms:</strong> Month-to-month. Cancel any month with no penalty. No long-term contract.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>You said: "If I have to go in, I&apos;ll go immediate." Here&apos;s what that looks like.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">Day 1</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">Day 2&ndash;3</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">Day 3&ndash;7</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Launch Ads</h4>
+                    <div class="date">Day 8</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>First Webinar</h4>
+                    <div class="date">Day 12</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>First Results</h4>
+                    <div class="date">Day 16</div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 1rem;">
+                <h4>Why this matters</h4>
+                <p>By <strong>Day 16</strong> &mdash; less than two and a half weeks from signing &mdash; you&apos;ll have real data on whether the funnel is working. Not a 60-day "trust us." Not a "results take time." Real conversions, tracked end-to-end. If we&apos;re missing benchmarks, we adjust before month one even closes.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions From The Call</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Month-to-month. No notice period. No cancellation fee. No clawback on commissions already earned. Walk away after month one, three, eight, or fourteen &mdash; same rules apply. The only thing we ask is honesty about why so we can improve.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why am I the first in AU/NZ &mdash; should I be worried?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The funnel is proven across 13 firms in Canada, the US, and the UK. The lead psychology &mdash; someone in India choosing between Canada, Australia, or the UK &mdash; is identical. What changes is the immigration program content, which is your expertise, not ours. Being first in AU/NZ means you get the $1,000 setup waived and locked-in dedicated focus during ramp.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I really need to raise consultation prices to $150?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes &mdash; for the partnership math to work for both of us. At $100 with our 25% share, you walk with $75. At $150, you walk with $112.50 &mdash; which is more than your <em>full</em> current take. Across 130 consultations a month, that&apos;s an extra $1,625 in your pocket. We&apos;ve never launched a partner below $150, so this is the floor.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What access do I need to give your team?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Three things: domain access (so we can deploy the landing pages), Meta Business Manager access (to run ads through your ad account), and your consultation booking URL. That&apos;s it. We don&apos;t need direct access to your Google Calendar or email &mdash; we integrate without it. If your Meta Business Manager has restricted access issues, we&apos;ll help sort that out as part of onboarding.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I see one of your weaker campaigns?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes. Ask Yaseer on Friday and he&apos;ll walk you through an Inland services campaign that struggled &mdash; specifically why it struggled, what we did about it, and how we communicated with the client through it. You wanted transparency. You&apos;ll get it.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Friday, 10:30am Your Time</h2>
+            <p>Bring your hard questions. Ask for the bad campaign walk-through.<br>Decide if this is a partnership worth signing.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Confirm Friday&apos;s Meeting &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer Chaudhry</div>
+        <div class="footer-company">Co-founder &amp; CEO, Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Wings Migration &bull; Satinder Preet Singh &bull; April 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
