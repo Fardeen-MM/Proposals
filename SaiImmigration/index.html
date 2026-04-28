@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Sai Immigration Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Webinar Flow Cards */
+        .voice-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .voice-cards { grid-template-columns: 1fr; }
+        }
+
+        .voice-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .voice-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .voice-card:nth-child(1) .voice-card-header { background: var(--accent-blue); }
+        .voice-card:nth-child(2) .voice-card-header { background: var(--accent-orange); }
+        .voice-card:nth-child(3) .voice-card-header { background: var(--accent-green); }
+
+        .voice-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .voice-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .voice-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-amount .currency {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-amount .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-subtitle strong {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Split breakdown box */
+        .split-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.02) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .split-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .split-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .split-row:last-child { border-bottom: none; }
+        .split-row .label { color: var(--text-secondary); }
+        .split-row .you { color: var(--accent-green); font-weight: 700; }
+        .split-row .mm { color: var(--accent-blue-light); font-weight: 600; }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 400px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2500px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+
+        /* Language tags */
+        .lang-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .lang-tag {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-blue-light);
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta" target="_blank" rel="noopener">Book a Call &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; April 2026</div>
+        <h1>From Local Practice to Global Paid Consultations</h1>
+        <p>A multilingual webinar funnel that turns ad spend into paid consultations on autopilot.</p>
+        <p class="hero-client">Prepared for Sai Immigration Consultancy Services</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Balaji,</div>
+                <p>You've got an edge most of your competitors don't &mdash; you speak <span class="highlight">Hindi and Tamil</span>. That's a direct line into the largest immigration markets in the world: India, Sri Lanka, Pakistan, Bangladesh, and the Tamil-speaking diaspora across Southeast Asia and the Middle East.</p>
+                <p>Right now you're focused inland and not really charging for consultations. The opportunity sitting on the other side of that is a <span class="highlight">paid consultation engine running in three languages, 24/7</span>, while you sleep.</p>
+                <p>We just built this for an RCIC agency in the Caribbean. <span class="highlight">180 paid consultations in 30 days at $265 each.</span> Same system, different language, different region. Yours would be Hindi, Tamil, and English &mdash; and the math gets even better because the audience is bigger.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">A webinar that runs itself, every day, in 3 languages</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You do the live webinar one time per language. After that, the system runs it daily, automatically, for every new lead &mdash; while you're sleeping, with clients, or on vacation.</p>
+
+                            <h5>How it works:</h5>
+                            <ul>
+                                <li><strong>You record once, live:</strong> One Hindi webinar, one Tamil webinar, one English webinar. 45 minutes each. Done in your first two weeks with us.</li>
+                                <li><strong>System runs them on loop:</strong> Every new lead picks a slot ("starts in 7 minutes" / "starts in 1 hour"). They watch what feels like a live event &mdash; with a chat, a host, a Q&amp;A. It converts like live because to them, it is.</li>
+                                <li><strong>Language-matched targeting:</strong> Hindi speakers see Hindi ads &rarr; Hindi webinar. Tamil speakers see Tamil ads &rarr; Tamil webinar. English speakers see English ads &rarr; English webinar. No mixing, no friction.</li>
+                                <li><strong>Auto-reminders:</strong> SMS, email, and WhatsApp before the webinar. Show rates around 50% (industry average for free webinars is 30-35%).</li>
+                            </ul>
+
+                            <h5>Why this beats running ads straight to a consultation booking:</h5>
+                            <ul>
+                                <li>Cold traffic doesn't book paid consultations. They need to know who you are, that you're real, that you're qualified.</li>
+                                <li>The webinar does that work for you &mdash; positions you as the expert, educates them on programs they're eligible for, builds trust.</li>
+                                <li>By the time they hit the "book consultation" button, they've already spent 45 minutes with you.</li>
+                            </ul>
+
+                            <p class="stat-callout">The Caribbean RCIC agency: <strong>7,000 webinar registrations in 30 days, 180 paid consultations booked, $47,700 in consultation revenue alone.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Paid consultations only &mdash; no more free advice</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Right now you're not charging much for consultations. That's leaving money on the table and attracting the wrong people. This system flips it.</p>
+
+                            <h5>The payment flow:</h5>
+                            <ul>
+                                <li><strong>$150 CAD per consultation</strong> communicated clearly at the end of the webinar (we'll test $150 to start &mdash; can move to $200 once volume is proven).</li>
+                                <li><strong>Payment link sent immediately:</strong> Stripe checkout, secure, mobile-friendly. They pay before they pick a calendar slot.</li>
+                                <li><strong>No payment, no booking:</strong> The calendar literally cannot lock until payment clears. No-shows drop dramatically because they've already paid.</li>
+                                <li><strong>Auto-confirm:</strong> Payment clears &rarr; calendar invite, confirmation email, WhatsApp message all fire. Hands-off.</li>
+                            </ul>
+
+                            <h5>Why this works for your practice:</h5>
+                            <ul>
+                                <li><strong>Tire-kickers screen themselves out.</strong> The people on your calendar paid $150 to talk to you &mdash; they're serious.</li>
+                                <li><strong>You make money on Day 1.</strong> Even before a single retainer signs, the consultation revenue alone covers the system cost. Most months it's pure profit on consultations.</li>
+                                <li><strong>Your time is protected.</strong> No more 30-minute calls with people who just wanted free advice and disappeared.</li>
+                            </ul>
+
+                            <p class="stat-callout">At $150 &times; 50 paid consultations a month = <strong>$7,500/month in consultation revenue alone</strong>, before a single retainer signs. The Caribbean agency hit 180 in their first month.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Track every dollar from ad to consultation to retainer</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Most agencies hand you a "cost per lead" report and call it a day. We track all the way to retainer revenue &mdash; per ad, per language, per region.</p>
+
+                            <h5>What we track:</h5>
+                            <ul>
+                                <li><strong>Cost per webinar registrant</strong> &mdash; per language, per country</li>
+                                <li><strong>Cost per webinar attendee</strong> &mdash; who actually showed up</li>
+                                <li><strong>Cost per paid consultation</strong> &mdash; the real conversion number</li>
+                                <li><strong>Cost per signed retainer</strong> &mdash; the only metric that matters</li>
+                                <li><strong>Revenue by language</strong> &mdash; is Hindi outperforming Tamil? Is the Middle East beating South Asia? We'll know.</li>
+                            </ul>
+
+                            <h5>How we do it:</h5>
+                            <ul>
+                                <li><strong>Fresh Meta pixel:</strong> Configured with all conversion events firing properly across the funnel.</li>
+                                <li><strong>UTM tracking:</strong> Every ad, every campaign, every language tagged so we trace each lead back to the source.</li>
+                                <li><strong>Full CRM stack:</strong> We set you up on a CRM that tracks every lead from registration through retainer signing, with WhatsApp, SMS, and email automations built in.</li>
+                                <li><strong>Closed-loop reporting:</strong> When you mark someone as retained, we trace it back to the exact ad in the exact language that brought them.</li>
+                            </ul>
+
+                            <h5>Why this matters for scaling:</h5>
+                            <p>Once we know your cost per paid consultation is $20 and your cost per retainer is $400, the math is simple:</p>
+                            <ul>
+                                <li>Want 100 more paid consultations? Invest $2,000 more in ads.</li>
+                                <li>Want to expand from South Asia into the Middle East? Test with $500, see the numbers, scale what works.</li>
+                                <li>Want to push Tamil harder than Hindi? The data tells you immediately if it's worth it.</li>
+                            </ul>
+
+                            <p class="stat-callout">The Caribbean agency turned <strong>$3,000 in total system spend (ads + CRM)</strong> into <strong>$47,700 in paid consultation revenue</strong> in their first 30 days. That's 16x return on the consultation revenue alone &mdash; before retainers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>RCIC Agency &mdash; Caribbean Markets &mdash; March/April 2026</h2>
+                <p>Same system. Different language, different region. First 30 days.</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">7,000</div>
+                    <div class="label">Registrations</div>
+                    <div class="rate">webinar signups</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">3,500</div>
+                    <div class="label">Attended</div>
+                    <div class="rate">50% show rate</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">180</div>
+                    <div class="label">Paid Consults</div>
+                    <div class="rate">$265 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$47.7K</div>
+                    <div class="label">Consult Revenue</div>
+                    <div class="rate">in 30 days</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">~18</div>
+                    <div class="label">Retainers (proj.)</div>
+                    <div class="rate">10% close target</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$90K+</div>
+                    <div class="label">Total (proj.)</div>
+                    <div class="rate">consults + retainers</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">~16x ROI</div>
+                <div class="label">$3,000 system spend &rarr; $47,700 in paid consultations alone</div>
+            </div>
+        </section>
+
+        <!-- Webinar Funnel in Action -->
+        <section class="section">
+            <div class="section-header">
+                <h2>How a Lead Becomes a Paid Consultation</h2>
+                <p>The journey, from ad click to $150 in your account.</p>
+            </div>
+
+            <div class="voice-cards">
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>STEP 1</span><span>AD</span></div>
+                    <div class="voice-card-body">
+                        Lead in India sees a Hindi ad on Instagram about Canada PR. They tap "Apply Now."
+                        <div class="result">&rarr; Lands on registration page</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>STEP 2</span><span>WEBINAR</span></div>
+                    <div class="voice-card-body">
+                        They register, get SMS + WhatsApp + email reminders, and watch your 45-minute Hindi webinar.
+                        <div class="result">&rarr; Educated, qualified, ready</div>
+                    </div>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-card-header"><span>STEP 3</span><span>BOOK</span></div>
+                    <div class="voice-card-body">
+                        End of webinar: payment link. They pay $150, calendar locks, you're booked.
+                        <div class="result">&#10003; Paid consultation locked in</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Built for Hindi, Tamil &amp; English &mdash; Globally</h4>
+                <p>Every part of this stack is built once per language. South Asia, the Tamil diaspora across Singapore, Malaysia, the UK, the Middle East, plus English-speaking markets globally. Your language ability is the moat. The system makes it scale.</p>
+                <div class="lang-tags">
+                    <span class="lang-tag">Hindi</span>
+                    <span class="lang-tag">Tamil</span>
+                    <span class="lang-tag">English</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">We Only Make Money When You Make Money</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">There's no monthly retainer here. No "$3,000/month whether the system works or not." After the one-time build, we get paid 30% of the revenue the system generates &mdash; and nothing if it generates nothing.</p>
+
+                            <h5>How most agencies work:</h5>
+                            <ul class="muted-list">
+                                <li>Charge $3,000-$7,000/month flat fee</li>
+                                <li>Get paid whether you make a single sale or not</li>
+                                <li>Have no real skin in the game</li>
+                                <li>Lock you into 6 or 12 month contracts</li>
+                            </ul>
+
+                            <h5>How we work:</h5>
+                            <ul>
+                                <li><strong>$1,000 one-time build:</strong> Pays for the team's time to construct the entire system &mdash; ads, landing pages, webinar setup, CRM, automations, payment integration. That's it for upfront cost.</li>
+                                <li><strong>30% of revenue going forward:</strong> Consultations and retainers. If we don't bring in revenue, you don't pay us.</li>
+                                <li><strong>Month-to-month, no lock-in:</strong> 30 days notice and you walk. We earn our spot every month.</li>
+                            </ul>
+
+                            <h5>What this means in practice:</h5>
+                            <p>We are aligned with you. Every decision we make &mdash; which ads to scale, which language to push harder, which audience to test &mdash; is one we benefit from only if it actually generates revenue. No hiding behind "well, we got you a lot of leads."</p>
+
+                            <p class="stat-callout">If we generate $0 in revenue for you, we earn $0 after the build fee. <strong>That's the deal.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Built for Immigration Practices, Globally</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">We don't dabble in immigration. This is the core of what we do, and we've run this exact system in nearly every region of the world.</p>
+
+                            <h5>Where we've run this system:</h5>
+                            <ul>
+                                <li><strong>Caribbean:</strong> Jamaica, Trinidad &amp; Tobago, Barbados, Grenada (the case study above)</li>
+                                <li><strong>South Asia:</strong> India, Pakistan, Bangladesh, Sri Lanka</li>
+                                <li><strong>East &amp; Southeast Asia:</strong> Vietnam, Thailand, Hong Kong, Japan, Korea</li>
+                                <li><strong>Europe:</strong> UK, France, Germany, Spain</li>
+                                <li><strong>Africa &amp; Middle East:</strong> North Africa, Gulf states</li>
+                                <li><strong>Americas:</strong> South America, North America</li>
+                            </ul>
+
+                            <h5>What that means for you:</h5>
+                            <p>Your three languages cover the South Asian diaspora globally. We've already run this in those exact countries. We know what creative works, what hooks convert, what objections come up, what regional ad costs look like. You're not paying us to learn &mdash; you're paying us to deploy what we already know works.</p>
+
+                            <h5>The team:</h5>
+                            <p>A team of 20 across Toronto, Bangladesh, Pakistan, and Brazil. Half local in Toronto, half offshore for cost-efficient execution. You'll be in a WhatsApp group with at least three people from our team working on your account day-to-day &mdash; not just talking to Yaseer once a month.</p>
+
+                            <p class="stat-callout">References available on request. <strong>You can talk to current clients running this exact system before you commit a dollar.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+                <p>What you keep after our 30% and ad/CRM costs.</p>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>The Numbers We're Working With</h4>
+                    <div class="math-row"><span class="label">Paid consultation</span><span class="value">$150 CAD</span></div>
+                    <div class="math-row"><span class="label">Average retainer</span><span class="value">$3,000 CAD</span></div>
+                    <div class="math-row"><span class="label">Conservative close rate</span><span class="value">5-10%</span></div>
+                    <div class="math-row"><span class="label">Languages targeted</span><span class="value">3 (Hi/Ta/En)</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Your Monthly Costs</h4>
+                    <div class="math-row"><span class="label">Meta ad spend</span><span class="value">~$1,800 CAD</span></div>
+                    <div class="math-row"><span class="label">CRM execution</span><span class="value">~$500 CAD</span></div>
+                    <div class="math-row"><span class="label">Mortar Metrics fee</span><span class="value">30% of revenue</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Fixed monthly costs</span>
+                        <span class="value" style="color: var(--accent-green);">~$2,300 CAD</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split-box">
+                <h4>How Revenue Splits (Per Transaction)</h4>
+                <div class="split-row">
+                    <span class="label">$150 paid consultation</span>
+                    <span><span class="you">You: $105</span> &nbsp;|&nbsp; <span class="mm">MM: $45</span></span>
+                </div>
+                <div class="split-row">
+                    <span class="label">$3,000 retainer signed</span>
+                    <span><span class="you">You: $2,100</span> &nbsp;|&nbsp; <span class="mm">MM: $900</span></span>
+                </div>
+                <div class="split-row">
+                    <span class="label">$5,000 retainer signed</span>
+                    <span><span class="you">You: $3,500</span> &nbsp;|&nbsp; <span class="mm">MM: $1,500</span></span>
+                </div>
+            </div>
+
+            <table class="scenarios" style="margin-top: 1.5rem;">
+                <thead>
+                    <tr>
+                        <th>Monthly Scenario</th>
+                        <th>Consults</th>
+                        <th>Retainers</th>
+                        <th>Total Revenue</th>
+                        <th>Your Net*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>25</td>
+                        <td>0</td>
+                        <td>$3,750</td>
+                        <td class="loss">-$1,675</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>50</td>
+                        <td>2</td>
+                        <td>$13,500</td>
+                        <td class="gain">+$7,150</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>100</td>
+                        <td>5</td>
+                        <td>$30,000</td>
+                        <td class="gain">+$18,700</td>
+                    </tr>
+                    <tr>
+                        <td>Caribbean comp<span class="tag strong">Proven</span></td>
+                        <td>180</td>
+                        <td>~18</td>
+                        <td>$81,000</td>
+                        <td class="gain">+$54,400</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">*Net = Total Revenue &minus; 30% MM fee &minus; $2,300 monthly ad/CRM costs. Excludes the one-time $1,000 build fee.</p>
+
+            <div class="callout">
+                <h4>What If It Doesn't Work?</h4>
+                <p>The system will show exactly where leads drop off &mdash; registration, attendance, payment, or close. <strong>You'll know within 30 days if it's working. If not, give 30 days notice and walk.</strong> The only money committed is the one-time $1,000 build fee.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Performance Partnership</div>
+                <div class="pricing-amount">
+                    <span class="currency">$</span>
+                    <span class="value">1,000</span>
+                    <span class="period">CAD one-time</span>
+                </div>
+                <div class="pricing-subtitle">Then <strong>30% of revenue</strong> &mdash; only when you make money.</div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Multilingual webinar build (Hindi, Tamil, English)</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Meta ad campaigns &amp; creative</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Landing pages + registration funnel</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Stripe payment integration</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> CRM setup + WhatsApp/SMS/email automations</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Calendar booking system</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Full-funnel tracking &amp; reporting</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Weekly optimization &amp; dedicated team</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Your monthly costs (paid directly, not to us):</strong> ~$1,800 CAD ad spend on your Meta account &bull; ~$500 CAD CRM execution<br><br>
+                    <strong>Our fee:</strong> 30% of consultation revenue + 30% of retainer revenue. Only paid when you collect.<br><br>
+                    <strong>Terms:</strong> Month-to-month. 30 days written notice to cancel. No long-term lock-in.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>One week to build. Live in week two.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign &amp; Kickoff</h4>
+                    <div class="date">Day 1</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">Days 2-7</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Live Webinars</h4>
+                    <div class="date">Days 8-10</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>&#127757; Campaigns Live</h4>
+                    <div class="date">Day 11</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>30-Day Review</h4>
+                    <div class="date">Day 30</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why is the $1,000 build fee due upfront?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            That fee covers our team's actual build time &mdash; landing pages, ads, webinar setup, CRM, automations, integrations, and creative assets across three languages. It's roughly a week of work for multiple people. Because we don't charge a monthly retainer afterward, the build fee is how we cover the upfront engineering. After that, we only earn when you earn. The fee is non-refundable, but you can cancel any time after with 30 days notice &mdash; no penalties, no long-term commitment.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I talk to current clients before signing?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes. We'll send you direct contact info for one or two current immigration clients running this exact system. Call them, ask anything &mdash; results, communication, hiccups, what they wish they'd known. We'd rather you hear it from them than from us.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why a webinar &mdash; can't we just run ads to a booking page?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Cold traffic doesn't pay $150 to a stranger. They need to know who you are, see your face, hear you explain a program they're eligible for, and trust you. The webinar does that work in 45 minutes. Skip the webinar and you'd need 5-10x the ad spend to get the same paid bookings &mdash; or you get bookings from people who never paid.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to charge less than $150 to start?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            $150 is the recommendation based on what's working in similar markets, but it's flexible. Some clients run $99 to start, scale up to $200 once volume is proven. The system supports A/B testing on the price &mdash; we can run two prices in parallel and let the data decide.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do I need to provide to get started?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Access to your Meta business manager, a domain we can use for landing pages, about 4-5 hours for the live webinar recordings (one per language), and your input on qualification questions and pricing. We handle everything else.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties, no long-term commitment. The one-time $1,000 build fee is non-refundable, but there's nothing else holding you in.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Next Steps</h2>
+            <p>Want to talk to a current client first? Just reply. Ready to move forward? Book a call below.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button" target="_blank" rel="noopener">Book a Call &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer Choudhury</div>
+        <div class="footer-company">CEO, Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Sai Immigration Consultancy Services &bull; April 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
