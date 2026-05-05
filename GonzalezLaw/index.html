@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | JM Gonzalez Law</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            background: rgba(8, 8, 12, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0ea572;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 2.5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-client {
+            color: var(--accent-blue-light);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Main */
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Letter */
+        .letter {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .letter-greeting {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .letter p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .letter .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .letter-signature {
+            margin-top: 1.25rem;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            color: var(--accent-blue-light);
+            font-style: italic;
+        }
+
+        /* Funnel */
+        .funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .funnel { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .funnel-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .funnel-item .number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .funnel-item:nth-child(1) .number,
+        .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number,
+        .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number,
+        .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+
+        .funnel-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .funnel-item .rate {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .roi-box .value {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .roi-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* How It Works Cards */
+        .flow-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .flow-cards { grid-template-columns: 1fr; }
+        }
+
+        .flow-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .flow-card-header {
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .flow-card:nth-child(1) .flow-card-header { background: var(--accent-blue); }
+        .flow-card:nth-child(2) .flow-card-header { background: var(--accent-orange); }
+        .flow-card:nth-child(3) .flow-card-header { background: var(--accent-green); }
+
+        .flow-card-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .flow-card-body .result {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .flow-card:nth-child(3) .result { color: var(--accent-green); }
+
+        .info-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Math */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .math-grid { grid-template-columns: 1fr; }
+        }
+
+        .math-box {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .math-box h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+
+        /* Scenarios */
+        .scenarios {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenarios th,
+        .scenarios td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .scenarios th {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+
+        .tag {
+            font-size: 0.58rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 0.4rem;
+        }
+
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+
+        .callout h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .callout p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .callout p strong { color: var(--text-primary); }
+
+        /* Pricing */
+        .pricing {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        .pricing-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .pricing-tiers { grid-template-columns: 1fr; }
+        }
+
+        .pricing-tier {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .pricing-tier .tier-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .pricing-tier .tier-amount {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .pricing-tier .tier-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .pricing-features { grid-template-columns: 1fr; }
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-feature .check {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .pricing-note strong { color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 450px) {
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-blue-light);
+            font-size: 0.7rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+        .faq-question .toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 280px; }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .cta h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--accent-blue-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover { color: var(--accent-green); }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Accordion Styles */
+        .accordion-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--accent-green);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .accordion-toggle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.25rem 1.5rem 2.75rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .accordion-content h5 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .accordion-content h5:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .accordion-content li strong {
+            color: var(--text-primary);
+        }
+
+        .accordion-content p {
+            margin: 0.5rem 0;
+        }
+
+        .accordion-content .accent-text {
+            color: var(--accent-blue-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .accordion-content .stat-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .accordion-content .stat-callout strong {
+            color: var(--accent-green);
+        }
+
+        .accordion-content .muted-list {
+            opacity: 0.7;
+        }
+
+        .accordion-content .muted-list li {
+            text-decoration: line-through;
+            text-decoration-color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Let's Talk &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; May 2026</div>
+        <h1>Beyond Word-of-Mouth.</h1>
+        <p>A Spanish-language webinar funnel that brings paid business-immigration consultations from Latin America &mdash; recorded once, then runs on autopilot.</p>
+        <p class="hero-client">Prepared for JM Gonzalez Law</p>
+    </section>
+
+    <div class="main">
+        <!-- Letter -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Jorge,</div>
+                <p>Three years solo, after associate stints in New York. Your mom Maritza, <span class="highlight">26 years of paralegal experience</span>, anchoring the practice with the network she's built over almost three decades. Word of mouth bringing <span class="highlight">four to five clients in a good month</span> &mdash; varying month to month, depending on who's referring whom.</p>
+                <p>Then you named the goal yourself at the end: <span class="highlight">"to reach people we can't reach currently."</span> That's the only thing this proposal is built to do.</p>
+                <p>You mentioned trying Instagram a couple years ago and a Google Ads campaign right now &mdash; and you said you haven't put real money behind either, so you don't actually know yet whether they work. Here's why those typically don't on their own: they only catch the small minority of people already searching for an immigration lawyer. The bigger market &mdash; Latin American business owners, executives, and investors who don't yet know they qualify for an L-1, an E-2, or an EB-1C &mdash; <span class="highlight">those people aren't searching</span>. They need to be educated first. That's what a webinar funnel does.</p>
+                <p>The numbers I showed you on the call are real. Kay Wilson at Northern Connections in Saskatchewan generated <span class="highlight">160+ paid consultations and over $88,000 in tracked revenue in a single month</span>, on roughly $3,000 of ad spend. Same playbook works for an immigration law practice &mdash; different country, different language, same lead psychology.</p>
+                <p>The structure is straightforward: <span class="highlight">$1,000 USD one-time build fee. $1,800/month minimum ad spend, paid directly to Meta. 25% of paid consultation revenue and the first retainer per lead.</span> No monthly management fee. If we don't book you consultations, we don't get paid that month. Cancel anytime with 30 days notice.</p>
+                <p>You raised two specific concerns at the end: the upfront startup cost and not knowing what to put in a webinar you've never given. The first I just answered above. The second is what we do for a living. We script the webinar with you, structure the slides, run the live recording session alongside you, and you're done. <span class="highlight">You record it once. Forty-five minutes.</span> After that, the system runs without you presenting again.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">A Spanish-language webinar funnel built for Latin American business clients</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Looking at your case work &mdash; L-1A's for executives of Colombian, Venezuelan, Chilean, Mexican, and Peruvian companies; E-2 treaty-investor visas; EB-1C for major shareholders &mdash; your existing clientele tells me exactly which market this funnel should target first.</p>
+
+                            <h5>How the funnel works:</h5>
+                            <ul>
+                                <li><strong>Meta ad campaigns in Spanish and English</strong> targeting business owners, executives, investors, and managers across Mexico, Colombia, Venezuela, Chile, Peru, Ecuador, and any other Latin American markets you specify.</li>
+                                <li><strong>Pathway-specific creative:</strong> Separate ads for executives considering L-1A intracompany transfers, investors looking at E-2 treaty visas, and majority shareholders eligible for EB-1C. Generic "move to America" ads don't convert this audience.</li>
+                                <li><strong>A bilingual landing page</strong> that lets prospects register and start watching within minutes &mdash; or pick a fixed daily slot in their time zone.</li>
+                                <li><strong>A 32-slide webinar deck and script</strong>, co-built with you. You record it live once with a real audience. After that it runs pre-recorded every day, looking live to every new attendee.</li>
+                            </ul>
+
+                            <h5>What the webinar covers:</h5>
+                            <ul>
+                                <li>The business-immigration pathways most Latin American owners and executives don't realize they qualify for &mdash; L-1, E-2, EB-1C, EB-5</li>
+                                <li>Anonymized real case examples from your practice, showing what actually got approved</li>
+                                <li>The myths that stop qualified people from applying ("I need to invest $5M for E-2," "I need to already have a US office for L-1," "I need a job offer to immigrate")</li>
+                                <li>Your firm's positioning &mdash; a Spanish-speaking, Latin-America-focused immigration practice with real wins for executives and investors from the region</li>
+                                <li>A clear CTA at the end &mdash; book a paid 45-minute consultation to find out which pathway fits</li>
+                            </ul>
+
+                            <h5>Why Spanish-first, Latin America-first:</h5>
+                            <p>You said most of your existing clients are people already in the US. That's true today because that's who Maritza's network reaches. But your case file &mdash; Colombian fruit exporters, Venezuelan auto-parts companies, Chilean tech investors, Peruvian apparel manufacturers &mdash; tells me you already serve Latin American business owners exceptionally well. The market is there. We just put a funnel in front of it.</p>
+
+                            <p class="stat-callout">Northern Connections' webinar generates <strong>~6 booked paid consultations per day</strong> on $90 of daily ad spend &mdash; in English, into the Caribbean. Same model, your language, your market.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Paid consultations only &mdash; your time goes to clients who paid to see you</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You said most months you sign four to five clients. The bottleneck on volume isn't your ability to take cases &mdash; it's the time spent on inquiries that go nowhere.</p>
+
+                            <h5>The booking flow:</h5>
+                            <ul>
+                                <li><strong>Price stated upfront:</strong> Webinar attendees see the consultation fee clearly during the pitch, in the chat, and in the SMS &mdash; no ambiguity, no haggling.</li>
+                                <li><strong>Stripe payment required to book:</strong> Payment processed first. The system literally cannot place a slot on your calendar until the charge clears.</li>
+                                <li><strong>Instant confirmation:</strong> Payment clears &rarr; calendar invite sent &rarr; Zoom link generated &rarr; CRM updated &rarr; you and Maritza notified. All within seconds.</li>
+                                <li><strong>Reminders that prevent no-shows:</strong> 24-hour, 1-hour, and 15-minute reminders across SMS, email, and WhatsApp. Show rates jump from 50&ndash;60% to 85&ndash;95%.</li>
+                            </ul>
+
+                            <h5>Pricing strategy &mdash; you have options:</h5>
+                            <ul>
+                                <li><strong>$150 USD:</strong> Wide open. Highest volume, fills calendar quickly. Good for filling capacity at the start.</li>
+                                <li><strong>$200 USD:</strong> About half the volume, similar gross revenue, higher intent. Recommended starting point.</li>
+                                <li><strong>$300 USD:</strong> Fewer bookings, more revenue per booking, only the most committed get through.</li>
+                            </ul>
+
+                            <h5>What you net at each price (after 25% performance fee):</h5>
+                            <ul>
+                                <li>$150 consultation &rarr; <strong>$112.50 to you</strong>, $37.50 to us</li>
+                                <li>$200 consultation &rarr; <strong>$150 to you</strong>, $50 to us</li>
+                                <li>$300 consultation &rarr; <strong>$225 to you</strong>, $75 to us</li>
+                            </ul>
+
+                            <h5>Why this works for a solo practice:</h5>
+                            <p>You and Maritza can comfortably handle a defined number of consultations per month. We're not trying to flood you with 200 inquiries &mdash; we're trying to fill <em>your</em> capacity with people who already paid to be there. Once you're at full capacity and signing 8&ndash;10 retainers a month, that's your signal to hire support &mdash; and the revenue from the system funds it.</p>
+
+                            <p class="stat-callout">At $200 &times; 40 paid consultations per month = <strong>$8,000 in consultation revenue alone</strong>, before a single retainer is signed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">We build the webinar with you &mdash; you record it once</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You told me you've never done a webinar before and you'd need to think about what to include. That's our problem, not yours.</p>
+
+                            <h5>What we do:</h5>
+                            <ul>
+                                <li><strong>Script and slide deck:</strong> 32-slide structure, written collaboratively. You bring the immigration knowledge; we structure how it gets presented for maximum conversion.</li>
+                                <li><strong>Live coaching session:</strong> We walk you through the script, flag the moments that matter (myth-busting, case studies, the CTA), and run a dry-run before the live recording.</li>
+                                <li><strong>Live recording day:</strong> We run the live webinar with a real audience of 200&ndash;500 people. You present for 45 minutes. We handle the chat, the poll prompts, the tech, the registration system, and the follow-up sequences.</li>
+                                <li><strong>The recording becomes your evergreen asset</strong> &mdash; it runs every day going forward, looking live to every new attendee.</li>
+                            </ul>
+
+                            <h5>What you bring:</h5>
+                            <ul>
+                                <li>Your immigration expertise &mdash; three years solo, plus your years at New York firms, plus Maritza's three decades of context</li>
+                                <li>45 minutes on camera, one time, on the day we record</li>
+                                <li>Approval on the script before we record (every word goes through you first)</li>
+                                <li>A short list of anonymized case examples we can reference ("Colombian fruit exporter, L-1A approved" &mdash; no names, no identifying details)</li>
+                            </ul>
+
+                            <h5>What you don't have to do:</h5>
+                            <ul>
+                                <li>Build slides, write copy, run the platform, handle the audience, edit the recording, manage registrations, or respond to chat in real time</li>
+                            </ul>
+
+                            <p class="stat-callout">You record it once. Forty-five minutes. After that, the system runs without you presenting again &mdash; Northern Connections is at <strong>~6 paid consultations per day</strong>, every day, on autopilot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">End-to-end tracking &mdash; your true cost per signed client, not just per lead</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You said your current Google Ads campaign is "just seeing how the system works" because you haven't put much into it. The honest answer is the problem isn't the spend level &mdash; it's that Google Ads typically can't tell you what you actually need to know.</p>
+
+                            <h5>What we track at every stage:</h5>
+                            <ul>
+                                <li><strong>Cost per lead</strong> &mdash; raw ad performance</li>
+                                <li><strong>Cost per webinar registration</strong> &mdash; who actually committed to learning more</li>
+                                <li><strong>Cost per webinar attendee</strong> &mdash; who actually showed up</li>
+                                <li><strong>Cost per paid consultation</strong> &mdash; paid, on the calendar</li>
+                                <li><strong>Cost per signed retainer</strong> &mdash; the only number that actually matters</li>
+                                <li><strong>True CPA broken down by country, ad variant, and visa pathway</strong></li>
+                            </ul>
+
+                            <h5>Your CRM and dashboard:</h5>
+                            <ul>
+                                <li>Every lead has a full timeline &mdash; which ad they clicked, when they registered, when they watched, what they paid, when they signed</li>
+                                <li>Pipeline stages from "registered" through "watched webinar," "booked consultation," "consultation completed," "retainer signed"</li>
+                                <li>Multi-channel inbox &mdash; WhatsApp, SMS, email, Instagram and Facebook DMs all routed into one view</li>
+                                <li>Weekly performance reports with retainer attribution by source</li>
+                            </ul>
+
+                            <h5>Why this matters when you scale:</h5>
+                            <p>Once we know your true cost per retainer is, say, $400 and your average retainer is $7,500, the math becomes simple. Want 5 more retainers next month? Invest $2,000 more. Want to fund hiring a second paralegal or a junior associate? You know exactly what ad spend justifies it. No more guessing whether ads "work."</p>
+
+                            <p class="stat-callout">Northern Connections' true cost per paid consultation is <strong>~$6 USD</strong> &mdash; a number that's only meaningful because every step from impression to booked slot is tracked.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof: The Funnel -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Northern Connections Canada Immigration &mdash; 30 Day Snapshot</h2>
+                <p>RCIC consultancy &bull; Saskatchewan &bull; Caribbean outland webinar funnel</p>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-item">
+                    <div class="number">8,500</div>
+                    <div class="label">Webinar Signups</div>
+                    <div class="rate">30 days</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">160+</div>
+                    <div class="label">Paid Consults</div>
+                    <div class="rate">$265 each</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$45K</div>
+                    <div class="label">Consult Revenue</div>
+                    <div class="rate">cash upfront</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">~16</div>
+                    <div class="label">Expected Retainers</div>
+                    <div class="rate">10% close rate</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$48K</div>
+                    <div class="label">Retainer Revenue</div>
+                    <div class="rate">$3K average</div>
+                </div>
+                <div class="funnel-item">
+                    <div class="number">$88K+</div>
+                    <div class="label">Total Revenue</div>
+                    <div class="rate">in one month</div>
+                </div>
+            </div>
+
+            <div class="roi-box">
+                <div class="value">~29x ROI</div>
+                <div class="label">$3,000 ad spend &rarr; $88,000+ in first-month revenue</div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section">
+            <div class="section-header">
+                <h2>How the Funnel Will Work</h2>
+                <p>An executive in Bogot&aacute; sees your ad on Instagram. Three days later, he's paid $200 and he's on your calendar.</p>
+            </div>
+
+            <div class="flow-cards">
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 1</span><span>Ad &rarr; Landing</span></div>
+                    <div class="flow-card-body">
+                        Sees a Meta ad: "Latin American business owner? Discover the US visa pathway you may already qualify for." Clicks. Registers with name, email, phone, time zone.
+                        <div class="result">Enters nurture sequence</div>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 2</span><span>Webinar</span></div>
+                    <div class="flow-card-body">
+                        Watches 45-min session on L-1, E-2, and EB-1C pathways for Latin American business owners &mdash; either immediately or at 7:30pm local.
+                        <div class="result">Leaves educated + interested</div>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 3</span><span>Paid Booking</span></div>
+                    <div class="flow-card-body">
+                        Receives booking link via email + SMS + WhatsApp. Pays $200 USD via Stripe. Slot confirmed in your calendar with Zoom link auto-generated.
+                        <div class="result">&#10003; On your calendar, prepaid</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Built for a solo practice</h4>
+                <p>Volume is controlled by consultation price, not ad spend. If your calendar is full, we raise the price within the same week &mdash; fewer bookings, same or higher revenue. You and Maritza never get outpaced by the system; the system fills the capacity you actually have.</p>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">We only win when you do &mdash; true performance pricing</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">No monthly management fee. No retainer. If the funnel doesn't book paid consultations, we don't get paid that month. Period.</p>
+
+                            <h5>What most agencies charge:</h5>
+                            <ul>
+                                <li>$3,000&ndash;$10,000 per month management fee, charged whether they deliver or not</li>
+                                <li>Separate fees for landing pages, CRM, automations</li>
+                                <li>Long-term contracts (3, 6, 12 months)</li>
+                            </ul>
+
+                            <h5>What we charge you:</h5>
+                            <ul>
+                                <li><strong>$1,000 USD build fee (one-time)</strong> &mdash; webinar build, landing page, ad campaign setup, CRM, tracking, Stripe integration</li>
+                                <li><strong>$1,800 USD/month minimum ad spend</strong> &mdash; paid directly to Meta, not to us</li>
+                                <li><strong>CRM execution costs</strong> &mdash; SMS, WhatsApp, email firing. Starts low (~$300&ndash;500/mo at launch volume) and scales with the funnel.</li>
+                                <li><strong>25% of paid consultation revenue and the first retainer per lead</strong></li>
+                                <li><strong>Your existing referral business is never touched.</strong> If a client comes through Maritza's network, we take nothing.</li>
+                            </ul>
+
+                            <h5>Why this structure works in your favor:</h5>
+                            <p>If we deliver one retainer at $7,500, that's $5,625 to you and $1,875 to us. That single retainer covers the month's ad spend with margin to spare. If we deliver four retainers, you net well over $20,000 after the performance fee and recurring costs. Our incentives are aligned. If the funnel isn't converting, we're losing time. You're only losing ad spend &mdash; which is your decision to keep running.</p>
+
+                            <p class="stat-callout">Ask any agency you're comparing: <strong>"If you generate zero clients for me this month, what do I pay you?"</strong> Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">We've run this playbook in immigration, in five languages, across three continents</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Kay's funnel is in English, in the Caribbean. Yours will be in Spanish, in Latin America. The reason the playbook transfers is that we've already run it across multiple regions and languages &mdash; and immigration is our largest vertical.</p>
+
+                            <h5>Who we are:</h5>
+                            <ul>
+                                <li><strong>Four years</strong> operating out of Toronto, building client acquisition systems for professional services</li>
+                                <li><strong>Twenty-plus immigration law firms and consultancies</strong> currently running campaigns with us across North America</li>
+                                <li>Clients across <strong>Canada, the US, the UK, and Australia</strong>, with ad campaigns running internationally</li>
+                                <li>Specifically experienced with <strong>EB-2, EB-5, L-1, and E-2 campaigns</strong> targeting Latin American and Gulf audiences</li>
+                            </ul>
+
+                            <h5>Languages we've built webinar systems in:</h5>
+                            <ul>
+                                <li><strong>English</strong> &mdash; North America, Caribbean, South Asia</li>
+                                <li><strong>Spanish</strong> &mdash; for US immigration firms targeting Latin America</li>
+                                <li><strong>French</strong> &mdash; immigration firms serving France and francophone Africa</li>
+                                <li><strong>Mandarin and Cantonese</strong> &mdash; targeting Chinese speakers globally</li>
+                                <li><strong>Arabic</strong> &mdash; Middle East and North Africa</li>
+                                <li><strong>Farsi and Hindi</strong> &mdash; in adjacent markets</li>
+                            </ul>
+
+                            <h5>Regions we've advertised in:</h5>
+                            <p>North America. The Caribbean. South America. Europe. The Middle East and Gulf. Africa. Southeast Asia. East Asia. Each region has its own ad cost profile and cultural rhythm. We know which levers work where.</p>
+
+                            <p class="stat-callout">Range we see on funnels like this: <strong>50 paid consultations per month on the low end, 150+ on the high end</strong>. Your variables &mdash; Spanish-speaking Latin American audience, business immigration positioning, established Florida and NY bar credentials &mdash; sit comfortably inside the range we've already delivered on.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">You own everything from day one</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Some agencies build your campaigns in their ad accounts, use proprietary software, and hold your data hostage. If you leave, you start from zero. We don't operate that way.</p>
+
+                            <h5>What you own from day one:</h5>
+                            <ul>
+                                <li><strong>Meta Business Manager</strong> in your name, with your billing</li>
+                                <li><strong>Meta pixel</strong> installed on your site, in your account &mdash; all conversion data, all audience learning, yours</li>
+                                <li><strong>Landing pages</strong> built on your domain, not on our servers</li>
+                                <li><strong>Webinar content</strong> &mdash; slide deck, script, recording &mdash; all yours</li>
+                                <li><strong>CRM and pipeline</strong> built in your account, all automations stay in your name</li>
+                                <li><strong>Stripe account</strong> connected to your bank &mdash; we never touch the money. It flows straight to you, and we invoice our 25% after the fact</li>
+                                <li><strong>Every lead</strong> &mdash; every webinar registrant, every paid consult, every retainer &mdash; exportable and yours</li>
+                            </ul>
+
+                            <h5>If we part ways:</h5>
+                            <p>You keep running the ads yourself or hire someone else. The Facebook page stays yours. The pixel keeps learning. The CRM keeps running. We remove ourselves as partners from your accounts. That's it. No transition fee, no data ransom, no starting over.</p>
+
+                            <p class="stat-callout">Ask any agency you're comparing: <strong>"If I cancel, what do I keep?"</strong> Watch how they answer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Math -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+                <p>Your existing referral business stays 100% yours. These numbers are only about new webinar-sourced revenue.</p>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Your Current Baseline</h4>
+                    <div class="math-row"><span class="label">Retainers/month</span><span class="value">~4&ndash;5 (good month)</span></div>
+                    <div class="math-row"><span class="label">Primary source</span><span class="value">Word of mouth</span></div>
+                    <div class="math-row"><span class="label">Practice areas</span><span class="value">L-1A, E-2, EB-1C, family</span></div>
+                    <div class="math-row"><span class="label">Years solo</span><span class="value">3</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Your Investment</h4>
+                    <div class="math-row"><span class="label">One-time build</span><span class="value">$1,000 USD</span></div>
+                    <div class="math-row"><span class="label">Meta ad spend</span><span class="value">~$1,800/mo</span></div>
+                    <div class="math-row"><span class="label">CRM execution</span><span class="value">~$300&ndash;500/mo</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Performance fee</span>
+                        <span class="value" style="color: var(--accent-green);">25% of new revenue</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>New Consults</th>
+                        <th>New Retainers</th>
+                        <th>Gross Rev</th>
+                        <th>Your Take-Home*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>+10/mo</td>
+                        <td>+1/mo</td>
+                        <td>$7,000</td>
+                        <td class="gain">+$3,050</td>
+                    </tr>
+                    <tr>
+                        <td>Conservative<span class="tag expected">Expected</span></td>
+                        <td>+40/mo</td>
+                        <td>+4/mo</td>
+                        <td>$28,000</td>
+                        <td class="gain">+$18,800</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>+80/mo</td>
+                        <td>+8/mo</td>
+                        <td>$56,000</td>
+                        <td class="gain">+$39,800</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">*Take-home = gross revenue minus 25% performance fee minus ~$2,200/mo hard costs (ad spend + CRM). Assumes $200 USD avg consult, $5,000 USD avg retainer (conservative blended estimate across L-1, E-2, family, and EB-1C work), 10% consult-to-retainer conversion.</p>
+
+            <div class="callout">
+                <h4>What If It Doesn't Work?</h4>
+                <p>Your maximum exposure is <strong>~$3,300 in month 1</strong> (one-time build + first month of ad spend + CRM). After that, we either see strong signs within 3&ndash;4 weeks &mdash; at which point the funnel is paying for itself many times over &mdash; or we don't, and you walk with 30 days notice. The leads stay yours either way.</p>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Performance-Based Partnership</div>
+                <div class="pricing-subtitle">No monthly retainer. We only earn when you earn.</div>
+
+                <div class="pricing-tiers">
+                    <div class="pricing-tier">
+                        <div class="tier-label">One-Time Build</div>
+                        <div class="tier-amount">$1,000 USD</div>
+                        <div class="tier-desc">Full funnel architecture, Spanish + English landing pages, nurture sequences, CRM integration, Stripe setup, first-webinar coaching.</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-label">Hard Costs (not paid to us)</div>
+                        <div class="tier-amount">~$2,200/mo</div>
+                        <div class="tier-desc">~$1,800 Meta ad spend + ~$300&ndash;500 CRM execution (SMS, email, WhatsApp) at launch volume. Billed directly by the platforms.</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-label">Performance Fee</div>
+                        <div class="tier-amount">25%</div>
+                        <div class="tier-desc">Of paid consultation revenue and the first retainer per lead. Zero if we generate zero.</div>
+                    </div>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Spanish + English Meta ad campaigns</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Full webinar funnel build</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Bilingual landing pages</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> CRM + pipeline build</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Email + SMS + WhatsApp nurture</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Stripe payment integration</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Calendar integration</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Full-funnel analytics + weekly reports</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Webinar coaching + slide deck support</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Latin America market targeting</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Your time:</strong> 3&ndash;4 hrs during week 1 for discovery and webinar prep, one 45-min live recording on launch day, ~1 hr/week ongoing for completed consultations and lead-quality feedback.<br><br>
+                    <strong>Commission scope:</strong> 25% applies only to the first paid consult and the first retainer per lead. If a client returns later for new work, that's 100% yours. Existing referral clients (anyone Maritza's network brings in) are never touched.<br><br>
+                    <strong>Terms:</strong> Month-to-month. 30 days written notice to cancel. Build fee non-refundable. All fees USD.
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>From signing to first paid consults in roughly three weeks.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Sign</h4>
+                    <div class="date">May 8</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Discovery</h4>
+                    <div class="date">May 9-12</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Build</h4>
+                    <div class="date">May 12-22</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Webinar Prep</h4>
+                    <div class="date">May 20-22</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>Live Launch</h4>
+                    <div class="date">May 27</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>First Review</h4>
+                    <div class="date">Jun 26</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>I've never done a webinar before. What do I actually need to do?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            One live recording session, 45 minutes on camera. We script the content with you, build the slides, run the technology, manage the audience and the chat, and coach you through delivery. You bring the immigration knowledge and approve every word of the script before we record. After the recording, you don't present again &mdash; the same recording runs evergreen, every day, in the background.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's my total upfront cost in the first month?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            $1,000 build fee paid to us on signing, $1,800 paid to Meta over the first month for ad spend, and ~$300&ndash;500 in CRM execution costs (SMS, WhatsApp, email firing) that go directly to the platform. Total cash exposure in month one is roughly <strong>$3,300 USD</strong>. After month one, your monthly recurring cost drops to ~$2,200. Performance fees only kick in <em>after</em> revenue is generated &mdash; if the system books no paid consultations, you owe us nothing beyond the build fee.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why didn't my Instagram and Google Ads work before?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You said it yourself &mdash; you didn't put real money behind either, so the data wasn't enough to draw conclusions. But there's a deeper issue. Direct ads send people to a contact form, where they're asked to commit to a phone call with a lawyer they've never heard of. The conversion rate is low and the leads are cold. The webinar is the bridge: the prospect gives you 45 minutes of attention before they're asked for anything, and by the time they see the consultation offer they already trust you.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if Maritza and I can't handle the volume?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Volume is controlled by consultation price, not ad spend. If your calendar fills up, we raise the consultation price within the same week &mdash; fewer bookings, similar gross revenue, higher-intent prospects only. Lowering ad spend is the wrong lever (it makes Meta's algorithm stall). Pricing is the right lever, and we can move it any time. You're never in a situation where the system outpaces what you can comfortably handle.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can we focus on US-based clients instead, since most of mine are inland?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Eventually yes &mdash; but starting outland is faster, cheaper, and more profitable. Inland CPA in the US averages $300&ndash;600+ per lead because the audience is competitive and the keywords are expensive. Outland (advertising in Latin America to bring people <em>into</em> the US) typically runs $5&ndash;30 per booked paid consultation. Once outland is generating consistent revenue, we use that cash flow to fund inland campaigns &mdash; spousal, AOS, citizenship &mdash; which cost more per lead but bring you the in-US clients you're already used to. The end state is both engines running.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the 25% performance fee actually work?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You set the consultation price (recommended $200 USD). Stripe collects payment into your account. We invoice you 25% of the consultation revenue and 25% of the first retainer per lead, after the revenue has landed. If a client comes back six months later for a second matter, we take nothing on that. If a referral comes through Maritza's network independent of the funnel, we take nothing on that either. We only earn on revenue the funnel directly generates, the first time it generates it.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I want to cancel?</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30 days written notice. No penalties, no exit fees. The $1,000 build fee is non-refundable (it's paid out in work delivered). You keep your Facebook page, ad account, Stripe account, CRM, domain, webinar recording, and every lead we ever generated. We remove ourselves as partners from your accounts. That's it.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>Thursday, May 7th &mdash; 9 AM</h2>
+            <p>Bring the questions you've thought of between now and then. Happy to walk through any specific concerns about the webinar content, the pricing structure, or the upfront costs.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Confirm Thursday's Meeting &rarr;</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Jorge Gonzalez &bull; JM Gonzalez Law &bull; May 2026</div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Main accordions (What You Get, Why Us)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) {
+                    item.classList.remove('open');
+                } else {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
