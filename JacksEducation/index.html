@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Partnership Proposal | Jacks Education</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #08080c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #6366f1;
+            --accent-blue-light: #818cf8;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.6; font-size: 15px; }
+        h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; letter-spacing: -0.02em; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.75rem 2rem; background: rgba(8, 8, 12, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.06); display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; }
+        .nav-logo span { color: var(--accent-purple); }
+        .nav-cta { background: var(--accent-green); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; }
+        .nav-cta:hover { background: #0ea572; transform: translateY(-1px); }
+        .hero { padding: 5rem 2rem 2.5rem; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%); }
+        .hero-badge { display: inline-block; background: var(--glass-bg); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem; border: 1px solid var(--glass-border); }
+        .hero h1 { font-size: 3.5rem; line-height: 1.05; margin-bottom: 0.5rem; background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.1rem; color: var(--text-secondary); }
+        .hero-client { color: var(--accent-blue-light); font-weight: 500; margin-top: 0.25rem; }
+        .main { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 2.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .section:last-child { border-bottom: none; }
+        .section-header { margin-bottom: 1.25rem; }
+        .section-header h2 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+        .section-header p { color: var(--text-secondary); font-size: 0.95rem; }
+        .letter { background: var(--glass-bg); border-radius: 16px; padding: 2rem; border: 1px solid var(--glass-border); border-top: 3px solid var(--accent-blue); }
+        .letter-greeting { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; font-style: italic; }
+        .letter p { color: var(--text-secondary); margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .letter .highlight { color: var(--text-primary); font-weight: 600; }
+        .letter-signature { margin-top: 1.25rem; font-family: 'Fraunces', Georgia, serif; font-weight: 500; color: var(--accent-blue-light); font-style: italic; }
+        .funnel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+        @media (max-width: 600px) { .funnel { grid-template-columns: repeat(2, 1fr); } }
+        .funnel-item { background: var(--glass-bg); border-radius: 10px; padding: 1rem; text-align: center; border: 1px solid var(--glass-border); }
+        .funnel-item .number { font-family: 'Fraunces', Georgia, serif; font-size: 1.75rem; font-weight: 700; }
+        .funnel-item:nth-child(1) .number, .funnel-item:nth-child(2) .number { color: var(--accent-blue); }
+        .funnel-item:nth-child(3) .number, .funnel-item:nth-child(4) .number { color: var(--accent-purple); }
+        .funnel-item:nth-child(5) .number, .funnel-item:nth-child(6) .number { color: var(--accent-green); }
+        .funnel-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-top: 0.2rem; }
+        .funnel-item .rate { font-size: 0.75rem; color: var(--text-secondary); }
+        .roi-box { background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 1.25rem; text-align: center; margin-top: 1rem; }
+        .roi-box .value { font-family: 'Fraunces', Georgia, serif; font-size: 2.25rem; font-weight: 700; color: var(--accent-green); }
+        .roi-box .label { color: var(--text-secondary); font-size: 0.9rem; }
+        .flow-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+        @media (max-width: 600px) { .flow-cards { grid-template-columns: 1fr; } }
+        .flow-card { background: var(--glass-bg); border-radius: 10px; overflow: hidden; border: 1px solid var(--glass-border); }
+        .flow-card-header { padding: 0.6rem 1rem; display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; }
+        .flow-card:nth-child(1) .flow-card-header { background: var(--accent-blue); }
+        .flow-card:nth-child(2) .flow-card-header { background: var(--accent-orange); }
+        .flow-card:nth-child(3) .flow-card-header { background: var(--accent-green); }
+        .flow-card-body { padding: 0.9rem 1rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .flow-card-body .result { font-weight: 600; margin-top: 0.4rem; color: var(--text-muted); }
+        .flow-card:nth-child(3) .result { color: var(--accent-green); }
+        .info-box { background: var(--glass-bg); border-radius: 10px; padding: 1rem 1.25rem; border: 1px solid var(--glass-border); }
+        .info-box h4 { margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 600; }
+        .info-box p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
+        .math-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+        @media (max-width: 600px) { .math-grid { grid-template-columns: 1fr; } }
+        .math-box { background: var(--glass-bg); border-radius: 10px; padding: 1.25rem; border: 1px solid var(--glass-border); }
+        .math-box h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; color: var(--text-muted); font-weight: 600; }
+        .math-row { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); font-size: 0.88rem; }
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: var(--text-secondary); }
+        .math-row .value { font-weight: 600; }
+        .scenarios { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1rem; }
+        .scenarios th, .scenarios td { padding: 0.7rem 0.5rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .scenarios th { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 600; }
+        .scenarios .gain { color: var(--accent-green); font-weight: 600; }
+        .scenarios .loss { color: var(--accent-red); font-weight: 600; }
+        .scenarios .even { color: var(--accent-orange); font-weight: 600; }
+        .tag { font-size: 0.58rem; padding: 0.15rem 0.4rem; border-radius: 3px; text-transform: uppercase; font-weight: 600; margin-left: 0.4rem; }
+        .tag.worst { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.expected { background: rgba(99, 102, 241, 0.15); color: var(--accent-blue); }
+        .tag.strong { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+        .callout { background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 10px; padding: 1rem 1.25rem; }
+        .callout h4 { margin-bottom: 0.3rem; font-size: 0.9rem; }
+        .callout p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.55; }
+        .callout p strong { color: var(--text-primary); }
+        .pricing { background: var(--glass-bg); border-radius: 16px; padding: 2rem; border: 1px solid var(--glass-border); text-align: center; border-top: 3px solid var(--accent-green); }
+        .pricing-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .pricing-subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem; }
+        .pricing-tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+        @media (max-width: 600px) { .pricing-tiers { grid-template-columns: 1fr; } }
+        .pricing-tier { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: 10px; padding: 1rem; text-align: left; }
+        .pricing-tier .tier-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 600; margin-bottom: 0.4rem; }
+        .pricing-tier .tier-amount { font-family: 'Fraunces', Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.3rem; }
+        .pricing-tier .tier-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; }
+        .pricing-features { text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem; margin-bottom: 1.25rem; }
+        @media (max-width: 500px) { .pricing-features { grid-template-columns: 1fr; } }
+        .pricing-feature { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .pricing-feature .check { color: var(--accent-green); flex-shrink: 0; }
+        .pricing-note { background: rgba(255, 255, 255, 0.03); padding: 1rem; border-radius: 8px; font-size: 0.8rem; color: var(--text-secondary); text-align: left; line-height: 1.6; }
+        .pricing-note strong { color: var(--text-primary); }
+        .timeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5rem; }
+        @media (max-width: 700px) { .timeline { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 450px) { .timeline { grid-template-columns: repeat(2, 1fr); } }
+        .timeline-item { background: var(--glass-bg); border-radius: 8px; padding: 0.75rem; border: 1px solid var(--glass-border); text-align: center; }
+        .timeline-item h4 { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.15rem; }
+        .timeline-item .date { color: var(--accent-blue-light); font-size: 0.7rem; }
+        .faq-list { display: grid; gap: 0.6rem; }
+        .faq-item { background: var(--glass-bg); border-radius: 10px; border: 1px solid var(--glass-border); overflow: hidden; }
+        .faq-question { padding: 1rem 1.25rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s ease; }
+        .faq-question:hover { background: rgba(255,255,255,0.03); }
+        .faq-question .toggle { font-size: 1.25rem; color: var(--accent-blue); transition: transform 0.2s ease; }
+        .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 280px; }
+        .faq-answer-content { padding: 0 1.25rem 1rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.55; }
+        .cta { text-align: center; padding: 2.5rem 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(16, 185, 129, 0.06) 100%); border-radius: 16px; margin: 2rem 0; }
+        .cta h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        .cta p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%); color: white; padding: 0.85rem 2.25rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35); }
+        .footer { padding: 2rem; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .footer-company { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.6rem; }
+        .footer-contact { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; font-size: 0.85rem; }
+        .footer-contact a { color: var(--accent-blue-light); text-decoration: none; }
+        .footer-contact a:hover { color: var(--accent-green); }
+        .footer-note { font-size: 0.75rem; color: var(--text-muted); }
+        .accordion-list { display: grid; gap: 0.75rem; }
+        .accordion-item { background: var(--glass-bg); border-radius: 12px; border: 1px solid var(--glass-border); border-left: 3px solid var(--accent-green); overflow: hidden; transition: all 0.3s ease; }
+        .accordion-item:hover { border-color: rgba(255, 255, 255, 0.12); }
+        .accordion-header { padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: background 0.2s ease; }
+        .accordion-header:hover { background: rgba(255, 255, 255, 0.03); }
+        .accordion-icon { color: var(--accent-green); font-size: 1rem; flex-shrink: 0; }
+        .accordion-title { flex: 1; font-weight: 600; font-size: 0.95rem; }
+        .accordion-toggle { font-size: 1.25rem; color: var(--accent-blue); transition: transform 0.3s ease; flex-shrink: 0; }
+        .accordion-item.open .accordion-toggle { transform: rotate(45deg); }
+        .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .accordion-item.open .accordion-body { max-height: 2500px; }
+        .accordion-content { padding: 0 1.25rem 1.5rem 2.75rem; color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
+        .accordion-content h5 { color: var(--text-primary); font-size: 0.85rem; font-weight: 600; margin: 1.25rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .accordion-content h5:first-child { margin-top: 0; }
+        .accordion-content ul { margin: 0.5rem 0; padding-left: 1.25rem; }
+        .accordion-content li { margin-bottom: 0.4rem; }
+        .accordion-content li strong { color: var(--text-primary); }
+        .accordion-content p { margin: 0.5rem 0; }
+        .accordion-content .accent-text { color: var(--accent-blue-light); font-style: italic; margin-bottom: 1rem; padding-left: 0.75rem; border-left: 2px solid var(--accent-blue); }
+        .accordion-content .stat-callout { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 8px; padding: 0.9rem 1rem; margin-top: 1rem; color: var(--text-secondary); }
+        .accordion-content .stat-callout strong { color: var(--accent-green); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">MORTAR <span>METRICS</span></div>
+        <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="nav-cta">Book Follow-Up Call &rarr;</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Growth Partnership Proposal &bull; August 2026</div>
+        <h1>20 Students by September 30.</h1>
+        <p>A paid lead engine and a CRM that stops a single enquiry going cold.</p>
+        <p class="hero-client">Prepared for Jacks Education</p>
+    </section>
+
+    <div class="main">
+
+        <!-- LETTER -->
+        <section class="section">
+            <div class="letter">
+                <div class="letter-greeting">Jakaria,</div>
+                <p>Three to four years in the market. Your own company since last February. And <span class="highlight">all your marketing running on a referral basis</span> &mdash; agents across London and the UK, a good website, and no paid acquisition at all.</p>
+                <p>That's not a weakness. It's the reason your numbers are what they are. You told me your conversion rate is <span class="highlight">over 90%</span> &mdash; that if a student doesn't qualify for September you hold onto them and place them in January somewhere else. Most consultancies would kill for that. The constraint isn't your closing. It's that the referral network only produces as many students as it produces, and you now have <span class="highlight">GBS and Icon College waiting on 20 students by the end of September</span> to convert those contracts into something permanent.</p>
+                <p>So the job is narrow and the clock is real: put paid traffic in front of the right people, get their details into your hand within minutes, and let you do the thing you already do better than the agencies you used to sit next to. <span class="highlight">&pound;1,500 per month</span> for the build and management, with your ad budget of <span class="highlight">&pound;40&ndash;50 per day</span> and <span class="highlight">&pound;250&ndash;500 a month of CRM execution</span> billed straight to your own accounts. Nothing else.</p>
+                <p>You said it yourself &mdash; it isn't about whether you can afford it, it's about <span class="highlight">whether it's realistic</span>. Two months to the intake deadline is tight but it is enough, provided the ads go live in the next fortnight and you keep the promise you already made me: <span class="highlight">"within not five minutes, maybe in three minutes I'm gonna give them a call."</span> Hold to that and the maths works. Miss it and no amount of ad spend saves the campaign.</p>
+                <div class="letter-signature">&mdash; Yaseer</div>
+            </div>
+        </section>
+
+        <!-- WHAT YOU GET -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Get</h2>
+            </div>
+            <div class="accordion-list">
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Meta ads on your own pages, built for volume from day one</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You have two months and two universities to feed. That rules out the slow, clever build. We start with the format that produces the most enquiries per pound and refine from there.</p>
+
+                            <h5>Phase one &mdash; instant forms:</h5>
+                            <ul>
+                                <li><strong>Runs on your pages:</strong> Every ad publishes from the Jacks Education Facebook and Instagram accounts, so the following you build is yours and compounds after the campaign.</li>
+                                <li><strong>No landing page friction:</strong> The enquiry form opens inside Facebook or Instagram. Name, contact, prior study, course interest, funding status &mdash; filled in without ever leaving the app.</li>
+                                <li><strong>Cheap enquiries, fast data:</strong> Instant-form enquiries in this market typically land in the <strong>&pound;2&ndash;3</strong> range. At &pound;40&ndash;50 a day that's meaningful daily volume from week one, and enough signal within a fortnight to know which courses, campuses and audiences are actually pulling.</li>
+                                <li><strong>Targeted to your contracts:</strong> Separate campaigns for GBS &mdash; London, Birmingham, Manchester, Leeds &mdash; and Icon College in East London, so the enquiries match the campus you're placing into.</li>
+                            </ul>
+
+                            <h5>Phase two &mdash; when you have a team to feed:</h5>
+                            <ul>
+                                <li><strong>VSL funnel:</strong> A landing page with a video of you explaining the route into a UK university, then a questionnaire, then a booked call. Fewer enquiries, at <strong>&pound;12&ndash;20</strong> each rather than &pound;2&ndash;3 &mdash; but someone who watches the video and completes the form is serious.</li>
+                                <li><strong>Recorded webinar:</strong> Teach the whole admissions process once, run it daily forever, and offer the free consultation at the end. This is the January-intake play, not the September one. We build it after your contracts are secured.</li>
+                            </ul>
+
+                            <p class="stat-callout">The evergreen webinar model is what put <strong>8,500 registrations in 30 days</strong> through Northern Connections Canada Immigration. Different sector, same machine &mdash; and the reason we're not starting there is timing, not doubt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">Automated messaging that reaches the student before you can dial</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">Someone scrolling Instagram fills in your form because at that exact moment the idea of studying in the UK feels possible. Ten minutes later they've seen four other things and forgotten you entirely. The messaging exists to hold that moment open until you get to the phone.</p>
+
+                            <h5>What fires automatically:</h5>
+                            <ul>
+                                <li><strong>Within two minutes:</strong> WhatsApp, email, Facebook Messenger and Instagram DM all go out, thanking them and opening with a question &mdash; have you studied at university before, when are you looking to start.</li>
+                                <li><strong>The question is doing work:</strong> A reply tells you their intent before you dial, so you already know whether you're talking about funding, course fit, or eligibility when they pick up.</li>
+                                <li><strong>AI follow-up:</strong> If you haven't replied yet, the bot keeps the conversation moving rather than letting it die in an unanswered thread. It hands over the moment you step in.</li>
+                                <li><strong>Multi-day sequence:</strong> Non-responders keep receiving structured follow-ups across channels rather than being written off after one attempt.</li>
+                            </ul>
+
+                            <h5>What is still on you:</h5>
+                            <p>The messaging buys you minutes, not hours. Enquiries land in your email and your phone as they arrive, and the call still has to happen inside five minutes, roughly 9am to 8pm. You've told me you'll do it in three. That single habit is the difference between this campaign working and this campaign being an expensive lesson &mdash; and it's the exact place you watched GCC lose students while you were subletting their office.</p>
+
+                            <p class="stat-callout">Multi-channel nurture is why Northern Connections converted <strong>160+ registrations into paid consultations</strong> in a single month. Registrations don't convert. Follow-up converts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">The same CRM pipeline you saw on our call, built around your intake</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">What you saw on screen was a live education consultancy pipeline &mdash; in communication, awaiting documents, file received, transferred to applications, deferred, not eligible, unreachable. Yours gets built to the same standard and customised to how you actually place students.</p>
+
+                            <h5>How it's set up:</h5>
+                            <ul>
+                                <li><strong>Stages match your process:</strong> Configured around your two contracts, your document requirements, and the January fallback you already use when a student misses September.</li>
+                                <li><strong>Enquiries arrive automatically:</strong> Every form submission lands in the pipeline with its full ad and campaign source attached, and simultaneously in your email so you can dial without opening anything.</li>
+                                <li><strong>Numbers provisioned:</strong> Calling and SMS run through the system where you want them to.</li>
+                                <li><strong>Training included:</strong> We walk you through every stage and every automation until you're moving students through it without thinking about it.</li>
+                                <li><strong>Built for the team you're hiring:</strong> Right now it's just you. In January, when you're recruiting, records get assigned per person and nothing depends on one inbox.</li>
+                            </ul>
+
+                            <h5>Sequencing:</h5>
+                            <p>Ads launch first. The CRM is refined in the weeks after, while enquiries are already coming in. Waiting for a perfect pipeline before spending a pound would cost you the two weeks you don't have.</p>
+
+                            <p class="stat-callout">A tracked pipeline is how we can attribute <strong>&pound;88K+ of first-month revenue</strong> at Northern Connections back to specific ads. Without it, you're guessing which campaign paid for itself.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CASE STUDY -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Northern Connections Canada Immigration &mdash; 30 Day Snapshot</h2>
+                <p>RCIC consultancy &bull; Saskatchewan &bull; Caribbean outland webinar funnel</p>
+            </div>
+            <div class="funnel">
+                <div class="funnel-item"><div class="number">8,500</div><div class="label">Webinar Signups</div><div class="rate">30 days</div></div>
+                <div class="funnel-item"><div class="number">160+</div><div class="label">Paid Consults</div><div class="rate">$265 each</div></div>
+                <div class="funnel-item"><div class="number">$45K</div><div class="label">Consult Revenue</div><div class="rate">cash upfront</div></div>
+                <div class="funnel-item"><div class="number">~16</div><div class="label">Expected Retainers</div><div class="rate">10% close rate</div></div>
+                <div class="funnel-item"><div class="number">$48K</div><div class="label">Retainer Revenue</div><div class="rate">$3K average</div></div>
+                <div class="funnel-item"><div class="number">$88K+</div><div class="label">Total Revenue</div><div class="rate">in one month</div></div>
+            </div>
+            <div class="roi-box">
+                <div class="value">~29x ROI</div>
+                <div class="label">$3,000 ad spend &rarr; $88,000+ in first-month revenue</div>
+            </div>
+            <div class="info-box" style="margin-top: 1rem;">
+                <h4>What This Means for Jacks Education</h4>
+                <p>These numbers came out of a two-person consultancy in Saskatchewan with no paid acquisition before we started &mdash; a cold audience, a competitive market, and eight weeks to prove it. The machinery that produced them is the machinery we're building for you: paid traffic aimed at people who don't yet know you exist, follow-up that reaches them within minutes across every channel they use, and a pipeline that tracks every enquiry through to an outcome. That's a different sector and a different offer at the end of the funnel, which is exactly the point &mdash; the system isn't specific to immigration, and it's the same system running behind the education consultancies you already know by name. We walked through the EDUEX pipeline live on our call; happy to go through it in as much detail as you want on the follow-up.</p>
+            </div>
+        </section>
+
+        <!-- CASE STUDY 2 -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Student Partners &mdash; Six Month Snapshot</h2>
+                <p>UK education consultancy &bull; two full intake cycles &bull; Mortar Metrics client for over two years</p>
+            </div>
+            <div class="funnel">
+                <div class="funnel-item"><div class="number">2,250</div><div class="label">Enquiries</div><div class="rate">at &pound;4 each</div></div>
+                <div class="funnel-item"><div class="number">900</div><div class="label">Qualified</div><div class="rate">40% of enquiries</div></div>
+                <div class="funnel-item"><div class="number">225</div><div class="label">Applications</div><div class="rate">25% of qualified</div></div>
+                <div class="funnel-item"><div class="number">90</div><div class="label">Enrolments</div><div class="rate">40% of applications</div></div>
+                <div class="funnel-item"><div class="number">72</div><div class="label">Milestones Met</div><div class="rate">80% recognised</div></div>
+                <div class="funnel-item"><div class="number">&pound;108&ndash;144K</div><div class="label">Commission Revenue</div><div class="rate">across six months</div></div>
+            </div>
+            <div class="roi-box">
+                <div class="value">12&ndash;16x</div>
+                <div class="label">&pound;9,000 ad spend &rarr; &pound;108,000&ndash;&pound;144,000 over two intakes</div>
+            </div>
+            <div class="info-box" style="margin-top: 1rem;">
+                <h4>This Is Your Sector, Your Country, Your Funnel</h4>
+                <p>Student Partners are a UK education consultancy placing students into UK universities &mdash; the same work you do, running the same instant-form funnel we're proposing for you, at &pound;1,500 a month in ad spend. They've been with us over two years and these are two consecutive intake cycles from that period. You asked what you'd need to spend to hit 20 students: on these rates, a single intake cycle produces around 30 enrolments. Where your numbers will differ is response time and call quality &mdash; and on both of those you're starting ahead of most, with a referral conversion rate above 90% and a commitment to dial inside three minutes.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <h2>How the Funnel Will Work</h2>
+                <p>A prospective student in East London sees your ad on Instagram at 9pm. By 9.05pm you're on the phone to her.</p>
+            </div>
+            <div class="flow-cards">
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 1</span><span>Ad &rarr; Form</span></div>
+                    <div class="flow-card-body">Sees a Jacks Education ad about September places at a London campus. Taps. Fills in the instant form without leaving Instagram.
+                        <div class="result">Enquiry in your inbox</div>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 2</span><span>Contact</span></div>
+                    <div class="flow-card-body">WhatsApp and email fire within two minutes asking when she's looking to start. You call inside five.
+                        <div class="result">Live conversation, same evening</div>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-card-header"><span>STEP 3</span><span>Placement</span></div>
+                    <div class="flow-card-body">You qualify her, match her to GBS or Icon, and move her through documents in the pipeline.
+                        <div class="result">&#10003; Enrolled against your contract</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>Built Around the September Deadline</h4>
+                <p>Everything in the first eight weeks is pointed at one number: 20 students placed for the October intake. Campaigns are split by campus so enquiries arrive matched to the contract they'll be counted against, and the lower entry requirements at Icon College give you somewhere to place applicants who wouldn't clear GBS &mdash; the same routing you already do manually with London School of Commerce.</p>
+            </div>
+        </section>
+
+        <!-- WHY MORTAR METRICS -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Mortar Metrics</h2>
+            </div>
+            <div class="accordion-list">
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">We already run this funnel across the UK education sector</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">You recognised half the names on our call. That isn't a coincidence &mdash; this is the sector we've spent the most time in.</p>
+
+                            <h5>What that means practically:</h5>
+                            <ul>
+                                <li><strong>The creative is not being invented for you:</strong> We know which ad angles produce enquiries for UK university placement, which courses draw volume, and which audiences waste budget.</li>
+                                <li><strong>We know the failure mode:</strong> It is almost never lead volume. It's response time and call quality &mdash; exactly the diagnosis you made yourself watching GCC's floor.</li>
+                                <li><strong>Scale is a known quantity:</strong> One client in this sector runs &pound;750&ndash;800 a day and pushes past &pound;1,500 a day at January intake. The ceiling is your capacity and your budget, not the traffic.</li>
+                                <li><strong>Referred in, not sold in:</strong> Imran at GCC referred EDUEX to us. That's the standard we're held to in this network.</li>
+                            </ul>
+
+                            <p class="stat-callout">You start at <strong>&pound;40&ndash;50 per day</strong> because that's what the September deadline and your cash flow support &mdash; not because that's where this stops.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">&#10003;</span>
+                        <span class="accordion-title">A flat fee, and we'll tell you when it isn't working</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <p class="accent-text">One number, month to month, no commission on your students and no lock-in.</p>
+
+                            <h5>How the money works:</h5>
+                            <ul>
+                                <li><strong>&pound;1,500 per month to us.</strong> Build, campaign management, messaging automation, CRM configuration and ongoing optimisation.</li>
+                                <li><strong>Hard costs are yours and stay visible:</strong> Meta bills your card directly for ad spend, and CRM execution &mdash; the email, SMS, WhatsApp and calling that runs through the pipeline &mdash; runs at &pound;250&ndash;500 a month on your own account. We never touch either, mark them up, or bundle them into our fee.</li>
+                                <li><strong>No commission on enrolments:</strong> Your university commissions are yours in full. We don't take a cut of a student's placement, and we don't take a cut of your referral network &mdash; which stays entirely outside this arrangement.</li>
+                                <li><strong>Month to month:</strong> 30 days' written notice, no minimum term.</li>
+                            </ul>
+
+                            <h5>The honest part:</h5>
+                            <p>A flat fee means we get paid whether the campaign performs or not. What you should hold us to instead is candour: if two weeks of data says the enquiry cost or the enrolment rate doesn't support continuing, we will tell you that directly rather than letting you spend into September hoping it turns. Ask any agency you're comparing: <strong>"At what point will you tell me to stop spending?"</strong> Watch how they answer.</p>
+
+                            <p class="stat-callout">Your total exposure through to the intake deadline is <strong>roughly &pound;5,900&ndash;7,000</strong> across two months, and you can stop after either one.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- THE MATH -->
+        <section class="section">
+            <div class="section-header">
+                <h2>The Math</h2>
+                <p>Your referral and agent business stays entirely yours &mdash; these numbers are only about paid acquisition.</p>
+            </div>
+
+            <div class="math-grid">
+                <div class="math-box">
+                    <h4>Where You Are Today</h4>
+                    <div class="math-row"><span class="label">Lead source</span><span class="value">100% referral</span></div>
+                    <div class="math-row"><span class="label">Your conversion rate</span><span class="value">90%+</span></div>
+                    <div class="math-row"><span class="label">Students needed</span><span class="value">20 by Sept 30</span></div>
+                    <div class="math-row"><span class="label">Paid acquisition</span><span class="value">None</span></div>
+                </div>
+                <div class="math-box">
+                    <h4>Your Investment</h4>
+                    <div class="math-row"><span class="label">Meta ad spend</span><span class="value">&pound;1,200&ndash;1,500/mo</span></div>
+                    <div class="math-row"><span class="label">CRM execution</span><span class="value">&pound;250&ndash;500/mo</span></div>
+                    <div class="math-row"><span class="label">Commission on students</span><span class="value">None</span></div>
+                    <div class="math-row" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.4rem; padding-top: 0.5rem;">
+                        <span class="label">Mortar Metrics fee</span>
+                        <span class="value" style="color: var(--accent-green);">&pound;1,500/mo</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="scenarios">
+                <thead>
+                    <tr><th>Scenario</th><th>Enquiries</th><th>Enrolled by Sept 30</th><th>Two-Month Cost</th><th>Cost Per Student*</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Below expectations<span class="tag worst">Worst</span></td>
+                        <td>~900&ndash;1,300</td><td>10</td><td>&pound;5,900&ndash;7,000</td><td class="even">~&pound;650</td>
+                    </tr>
+                    <tr>
+                        <td>Target hit<span class="tag expected">Expected</span></td>
+                        <td>~900&ndash;1,300</td><td>20</td><td>&pound;5,900&ndash;7,000</td><td class="gain">~&pound;325</td>
+                    </tr>
+                    <tr>
+                        <td>Strong<span class="tag strong">Upside</span></td>
+                        <td>~900&ndash;1,300</td><td>35</td><td>&pound;5,900&ndash;7,000</td><td class="gain">~&pound;185</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">*Cost per student includes the Mortar Metrics fee, all ad spend, and CRM execution across August and September, using the midpoint of the hard-cost range. Enquiry range assumes &pound;2&ndash;3 per instant-form enquiry at &pound;40&ndash;50/day &mdash; a sector benchmark, not a guarantee. Enrolment counts depend on your response time and close rate; we don't control either.</p>
+
+            <div class="callout">
+                <h4>What If It Doesn't Work?</h4>
+                <p>Your maximum exposure is <strong>one month at a time</strong> &mdash; &pound;1,500 to us, whatever you've told Meta to spend, and &pound;250&ndash;500 of CRM execution. Thirty days' written notice ends it. The ad account, the pixel, every conversion event it has learned from, your domain and every enquiry the campaign ever produced are in your name and stay with you.</p>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section">
+            <div class="pricing">
+                <div class="pricing-title">Flat Monthly Partnership</div>
+                <div class="pricing-subtitle">One fee. No commission on your students. No minimum term.</div>
+
+                <div class="pricing-tiers">
+                    <div class="pricing-tier">
+                        <div class="tier-label">Monthly Fee</div>
+                        <div class="tier-amount">&pound;1,500 GBP</div>
+                        <div class="tier-desc">Campaign build and management, creative, messaging automation, AI follow-up, CRM configuration and training.</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-label">Hard Costs (not paid to us)</div>
+                        <div class="tier-amount">~&pound;1,450&ndash;2,000/mo</div>
+                        <div class="tier-desc">&pound;40&ndash;50/day Meta ad spend billed direct by Meta, plus &pound;250&ndash;500/mo CRM execution for email, SMS, WhatsApp and calling.</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-label">Commission</div>
+                        <div class="tier-amount">None</div>
+                        <div class="tier-desc">No percentage of university commission, no per-student fee, and nothing on your referral or agent business.</div>
+                    </div>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Meta campaigns on your own pages</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Instant-form build and iteration</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Ad creative and copy</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Campus-split campaigns (GBS / Icon)</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> WhatsApp, email, Messenger, Instagram automation</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> AI conversation follow-up</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> CRM pipeline build and customisation</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> CRM training and support</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Meta pixel and conversion tracking</div>
+                    <div class="pricing-feature"><span class="check">&#10003;</span> Ongoing optimisation and reporting</div>
+                </div>
+
+                <div class="pricing-note">
+                    <strong>Your time:</strong> A few hours in week one for discovery and account access. After that, the phone &mdash; enquiries called inside five minutes, roughly 9am to 8pm, and WhatsApp replies as they come in.<br><br>
+                    <strong>Not included:</strong> The VSL funnel and the recorded webinar are later phases, quoted separately once the September intake is secured. Staff recruitment for calling can be arranged if you decide you want it &mdash; that's a conversation, not part of this fee.<br><br>
+                    <strong>Terms:</strong> Month-to-month. 30 days' written notice to cancel. Ad spend is billed by Meta and CRM execution by the platform, both to your own accounts, and neither is ever handled by us.
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Timeline</h2>
+                <p>Eight weeks to the intake deadline. The first fortnight is the one that matters.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item"><h4>Confirm</h4><div class="date">Aug 4&ndash;6</div></div>
+                <div class="timeline-item"><h4>Discovery</h4><div class="date">Aug 7&ndash;8</div></div>
+                <div class="timeline-item"><h4>Ads Live</h4><div class="date">Aug 11&ndash;13</div></div>
+                <div class="timeline-item"><h4>First Enquiries</h4><div class="date">Aug 13+</div></div>
+                <div class="timeline-item"><h4>CRM Build</h4><div class="date">Aug 17&ndash;28</div></div>
+                <div class="timeline-item"><h4>Intake Deadline</h4><div class="date">Sept 30</div></div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Questions</h2>
+            </div>
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <div class="faq-question"><span>Whose Facebook and Instagram pages do the ads run on?</span><span class="toggle">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">
+                        Yours. Every ad publishes from the Jacks Education accounts, so the followers and engagement accumulate to your brand rather than ours. The Meta business manager, ad account and pixel are all set up in your name with your billing from day one.
+                    </div></div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><span>Do I own the CRM?</span><span class="toggle">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">
+                        Your data does &mdash; every enquiry, contact record, note and document is yours and exportable at any time. The pipeline structure, automation logic and nurture sequences we build are Mortar Metrics intellectual property and stay with us. If you cancel, you keep all your data, and continued access to the CRM itself is available on a monthly subscription priced at that point based on your usage and user count.
+                    </div></div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><span>What happens if I cancel?</span><span class="toggle">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">
+                        Thirty days' written notice, no penalty. You keep the Meta business manager and ad account, the pixel and everything it has learned, your domain, and every enquiry the campaign generated. CRM access continues by subscription if you want it; your data is exported to you either way.
+                    </div></div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><span>How will Meta charge my card?</span><span class="toggle">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">
+                        A new ad account gets charged frequently and in small amounts at first &mdash; every &pound;5 to &pound;50 &mdash; while Meta verifies the card. After about 30 days of clean billing it consolidates to weekly or monthly. Warn your bank so nothing gets blocked, and use a points card if you have one. Meta issues a clean monthly invoice for your accountant.
+                    </div></div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><span>When do we build the webinar?</span><span class="toggle">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">
+                        After September. The webinar &mdash; recorded once, running daily, ending in a free consultation booking &mdash; is a strong asset and it's where a lot of the money in this model sits. But it takes time to build and refine, and you don't have that time before the October intake. We secure your contracts first, then build it for January.
+                    </div></div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><span>What if the enquiries are poor quality?</span><span class="toggle">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">
+                        Some will be, and that's inherent to instant forms &mdash; the form is easy to fill in, so people fill it in casually. It's the trade for volume and cheap data in a two-month window. Speed is the filter: a casual enquirer called within three minutes often turns out to be serious, and the same person called the next day never answers. We refine the targeting weekly from what the data shows.
+                    </div></div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><span>What do I need to provide?</span><span class="toggle">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">
+                        Access to your Meta business manager (or we set one up in your name), your page access, your website domain for pixel installation, details of your university contracts and entry requirements, and a few hours in week one. After that, your availability on the phone.
+                    </div></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="next-steps">
+            <h2>This Week &mdash; Wednesday or Thursday</h2>
+            <p>Bring your questions on the CRM and the September targets. If we confirm this week, ads are live before mid-August.</p>
+            <a href="https://api.mortarmetrics.com/widget/booking/6ZArPUCxnRQQ4aaGMXQr" class="cta-button">Book Follow-Up Call &rarr;</a>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-name">Yaseer</div>
+        <div class="footer-company">Mortar Metrics Inc.</div>
+        <div class="footer-contact">
+            <a href="tel:+14168928796">+1 416-892-8796</a>
+            <a href="tel:+19295934561">+1 929-593-4561</a>
+            <a href="mailto:yaseer@mortarmetrics.com">yaseer@mortarmetrics.com</a>
+        </div>
+        <div class="footer-note">Prepared for Jakaria &bull; Jacks Education &bull; August 2026</div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('open');
+                if (wasOpen) { item.classList.remove('open'); }
+                else { item.classList.add('open'); }
+            });
+        });
+    </script>
+</body>
+</html>
